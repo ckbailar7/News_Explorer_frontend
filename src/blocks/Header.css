@@ -1,7 +1,12 @@
+@font-face {
+  font-family: "Roboto Medium";
+  src: url("/src/vendor/fonts/Roboto-Medium.ttf");
+}
+
 .header__container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
   align-items: center;
   position: fixed;
   background-image: url("../assets/headerBackground.svg");
@@ -13,22 +18,23 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 576px;
   max-height: 576px;
 }
 .header__upperBar {
-  width: 100%;
   display: flex;
   width: 1440px;
   height: 80px;
+  border-bottom: solid 1px #fff;
 }
 .header__logo {
   z-index: 2;
   display: flex;
   line-height: 24px;
   height: 24px;
-  margin: 30px 0px 26px 104px;
-  width: 100%;
+  margin: 30px 104px 26px 104px;
+  width: 1440px;
+
   justify-content: space-between;
 }
 
@@ -42,6 +48,8 @@
   z-index: 2;
   display: flex;
   align-items: center;
+  font-family: "Roboto Medium";
+  size: 18px;
 }
 
 .header__logo_white {
@@ -55,19 +63,75 @@
   height: 24px;
 }
 .header__buttons_home-button {
-  width: 49px;
-  height: 24px;
   margin-right: 48px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s ease, opacity 0.3s ease;
+  color: #fff;
+}
+
+.header__buttons_home-button button {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  background: none;
+  color: #fff;
   border: none;
+  outline: none;
 }
 
 .header__buttons_home-button:hover {
   color: #fff;
   transition: 0.5s;
   cursor: pointer;
+  border-bottom: 2px solid #fff;
 }
 
 .header__buttons_signin-button {
+  border: 2px solid #fff;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
   width: 152px;
+  justify-content: center;
+  color: #fff;
+}
+
+.header__buttons_signin-button button {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  background: none;
+  color: #fff;
+  border: none;
+  width: 152px;
+  border-radius: 0%;
+  outline: none;
+}
+
+.header__buttons_signin-button:hover {
+  color: #fff;
+
+  cursor: pointer;
+  border-bottom: 2px solid #fff;
+}
+
+.header__buttons_signin-button:hover p {
+  opacity: 0.7;
+}
+
+.header__user_isLoggedInFalse-greeting {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+.header__user_greeting-heading_1 {
+  width: 608px;
+  height: 128px;
+  font-size: 60px;
+}
+
+.header__user_greeting-heading_2 {
+  width: 608px;
   height: 24px;
+  font-size: 18px;
 }

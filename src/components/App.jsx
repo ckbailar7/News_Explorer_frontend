@@ -5,7 +5,8 @@ import { Router, Route, Routes, useNavigate } from "react-router-dom";
 import viteLogo from "/vite.svg";
 import Header from "./Header";
 import Main from "./Main.jsx";
-import Footer from "./Footer";
+import Footer from "./Footer.jsx";
+
 import "../blocks/App.css";
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />}></Route>
         </Routes>
-        <Footer></Footer>
+        <Footer />
       </currentUserContext.Provider>
     </div>
   );
