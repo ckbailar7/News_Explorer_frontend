@@ -1,0 +1,12 @@
+.AboutComponent__container {
+  max-width: 1440px; /* Optional: limit width for larger screens */
+  height: auto; /* Let content dictate the height */
+  background-color: #fff;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  margin: 0 auto; /* Centers within the page if width is smaller */
+  padding: 20px; /* Optional: for spacing around content */
+
+  width: 100%;
+}

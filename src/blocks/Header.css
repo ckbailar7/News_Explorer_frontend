@@ -128,10 +128,12 @@
   width: 608px;
   height: 128px;
   font-size: 60px;
+  color: #fff;
 }
 
 .header__user_greeting-heading_2 {
   width: 608px;
   height: 24px;
   font-size: 18px;
+  color: #fff;
 }

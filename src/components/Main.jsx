@@ -1,6 +1,6 @@
 import "../blocks/Main.css";
 import NewsCardComponent from "./NewsCardComponent";
-import AboutComponent from "./AboutComponent";
+import AboutComponent from "../components/AboutComponent";
 const Main = ({}) => {
   return (
     // Main — the main component of the main page
@@ -9,8 +9,9 @@ const Main = ({}) => {
       {/* NewsCard — the news articles */}
       <NewsCardComponent></NewsCardComponent>
       {/* About — the component that displays information about the author */}
-      <AboutComponent></AboutComponent>
-      {/* Footer Component moved from app.js */}
+      <div className="AboutComponent__wrapper">
+        <AboutComponent />
+      </div>
     </main>
   );
 };
