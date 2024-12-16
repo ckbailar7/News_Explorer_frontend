@@ -1,4 +1,7 @@
 .content__container {
   background-image: url("../assets/headerBackground.svg");
   background-repeat: no-repeat;
+  max-width: 1440px;
+  min-width: 1100px;
+  margin: 0 auto;
 }

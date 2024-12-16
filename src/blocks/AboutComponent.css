@@ -10,3 +10,8 @@
 
   width: 100%;
 }
+
+.AboutComponent__image {
+  width: 464px;
+  height: 464px;
+}

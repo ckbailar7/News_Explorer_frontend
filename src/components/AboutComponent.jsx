@@ -1,9 +1,19 @@
 import "../blocks/AboutComponent.css";
+import AboutPhoto from "../assets/AboutPlaceholderPhoto.svg";
 
 const AboutComponent = ({}) => {
   return (
     <div className="AboutComponent__container">
-      <h1 className="AboutComponent__Header1"></h1>
+      <div className="AboutComponent__image">
+        <img src={AboutPhoto} alt="" />
+      </div>
+      <h1 className="AboutComponent__Header1">About the author</h1>
+      <p className="AboutComponent__paragraph">
+        This block describes the project author. Here you should indicate your
+        name, what you do, and which development technologies you know. You can
+        also talk about your experience with TripleTen, what you learned there,
+        and how you can help potential customers.
+      </p>
     </div>
   );
 };
