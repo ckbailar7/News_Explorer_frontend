@@ -1,17 +1,25 @@
 .AboutComponent__container {
-  max-width: 1440px; /* Optional: limit width for larger screens */
-  height: auto; /* Let content dictate the height */
+  max-width: 1440px;
+  height: auto;
   background-color: #fff;
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
-  margin: 0 auto; /* Centers within the page if width is smaller */
-  padding: 20px; /* Optional: for spacing around content */
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
 
   width: 100%;
+}
+
+.AboutComponent__image_wrapper {
 }
 
 .AboutComponent__image {
   width: 464px;
   height: 464px;
+  border-radius: 100px;
+}
+
+.AboutComponent__HeadersWrapper {
+  margin: 51px auto 223px 56px;
 }
