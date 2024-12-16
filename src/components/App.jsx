@@ -19,7 +19,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <div id="content__container">
+    <div id="content__container" className="content__container">
       {/* creating CurrentUser Provider with value of currentUser */}
       <currentUserContext.Provider value={currentUser}>
         <Header isLoggedIn={isLoggedIn} />

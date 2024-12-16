@@ -1,11 +1,13 @@
 .SearchFormComponent__container {
-  margin-top: 88px;
   width: 100%;
+  width: 1440px;
+  height: 576px;
+  /* background-image: url("../assets/headerBackground.svg"); */
+  display: flex;
+  flex-direction: column;
 }
 
 .SearchFormComponent__Search-Bar__container {
-  display: inline-block;
-  justify-content: center;
   height: 64px;
   width: 100%;
   /* padding: 20px 0; */

@@ -5,25 +5,24 @@ import { useContext } from "react";
 import { currentUserContext } from "../contexts/currentUserContext";
 import { NavLink } from "react-router-dom";
 import NavigationComponent from "./NavigationComponent";
-import SearchFormComponent from "../components/SearchFormComponent.jsx";
 const Header = ({}) => {
   const currentUser = useContext(currentUserContext);
 
   return (
     <header className="header__container">
       <div className="header__upperbar">
+        <div className="header__logo">
+          <div className="header__logo_white">
+            <NavLink to="/">
+              <img
+                src={HeaderLogo}
+                className="header__logo_white_image"
+                alt="header logo"
+              />
+            </NavLink>
+          </div>
+        </div>
         <NavigationComponent />
-      </div>
-
-      <div className="header__user_isLoggedInFalse-greeting">
-        <h1 className="header__user_greeting-heading_1">
-          What's going on in the world?
-        </h1>
-        <h2 className="header__user_greeting-heading_2">
-          Find the latest news on any topic and save them to your personal
-          account
-        </h2>
-        <SearchFormComponent />
       </div>
     </header>
   );

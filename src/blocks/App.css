@@ -1,18 +1,4 @@
-.main {
-  padding: 0 20px;
-}
-body,
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-#content__container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-main {
-  flex-grow: 1;
+.content__container {
+  background-image: url("../assets/headerBackground.svg");
+  background-repeat: no-repeat;
 }

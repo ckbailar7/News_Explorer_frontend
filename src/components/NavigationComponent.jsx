@@ -2,11 +2,12 @@ import HeaderLogo from "../assets/headerLogoWhite.svg";
 import { useContext } from "react";
 import { currentUserContext } from "../contexts/currentUserContext";
 import { NavLink } from "react-router-dom";
+import "../blocks/Header.css";
 
 const NavigationComponent = ({}) => {
   return (
     <div className="NavigationComponent__container">
-      <div className="header__logo">
+      {/* <div className="header__logo">
         <div className="header__logo_white">
           <NavLink to="/">
             <img
@@ -15,15 +16,14 @@ const NavigationComponent = ({}) => {
               alt="header logo"
             />
           </NavLink>
-        </div>
+        </div> */}
 
-        <div className="header__buttons">
-          <div className="header__buttons_home-button">
-            <button>Home</button>
-          </div>
-          <div className="header__buttons_signin-button">
-            <button>Sign in</button>
-          </div>
+      <div className="header__buttons">
+        <div className="header__buttons_home-button">
+          <button>Home</button>
+        </div>
+        <div className="header__buttons_signin-button">
+          <button>Sign in</button>
         </div>
       </div>
     </div>
