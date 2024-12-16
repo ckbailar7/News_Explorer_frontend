@@ -70,8 +70,10 @@
   align-items: center;
   justify-items: center;
   width: 152px;
+  height: 24px;
   justify-content: center;
   color: #fff;
+  cursor: pointer;
 }
 
 .header__buttons_signin-button button {
