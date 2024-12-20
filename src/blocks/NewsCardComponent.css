@@ -1,0 +1,9 @@
+.news-card {
+  margin: 20px;
+  width: 400px;
+  height: 576px;
+}
+
+.news-card__list {
+  position: relative;
+}
