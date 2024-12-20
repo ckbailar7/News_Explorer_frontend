@@ -17,9 +17,26 @@
 .AboutComponent__image {
   width: 464px;
   height: 464px;
-  border-radius: 100px;
+  border-radius: 1000px;
 }
 
 .AboutComponent__HeadersWrapper {
   margin: 51px auto 223px 56px;
+}
+
+.AboutComponent__Header1 {
+  width: 600px;
+  height: 46px;
+  line-height: 46px;
+}
+
+.AboutComponent__paragraph-container {
+  width: 600px;
+  height: 120px;
+  display: flex;
+}
+
+.AboutComponent__paragraph {
+  display: flex;
+  align-items: center;
 }

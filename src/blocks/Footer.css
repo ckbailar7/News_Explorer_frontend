@@ -1,0 +1,42 @@
+.footer {
+  color: #b6bcbf;
+}
+
+.footer__container {
+  display: flex;
+  width: 1440px;
+  height: 80px;
+  border-bottom: solid 1px #fff;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__buttons_container {
+  margin-right: 104px;
+  display: inline-flex;
+}
+
+.footer__container button {
+  background: none;
+  border: none;
+  padding: 0 20px;
+  width: 24px;
+  height: 24px;
+}
+
+.footer__container button:hover {
+  cursor: pointer;
+}
+
+.footer__buttons_noIcon_container {
+  margin-right: 40px;
+  display: flex;
+  justify-content: space-between;
+  width: 163px;
+  height: 24px;
+  margin: 30px 40px 26px 0;
+}
+
+.footer__buttons_withIcon_container {
+  margin: 28px 0 28px 40px;
+}
