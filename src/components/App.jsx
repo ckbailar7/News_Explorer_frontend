@@ -8,7 +8,6 @@ import Main from "./Main.jsx";
 import Footer from "./Footer.jsx";
 
 import "../blocks/App.css";
-//Branch management check
 
 function App() {
   const [currentUser, setCurrentUser] = useState({
