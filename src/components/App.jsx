@@ -15,6 +15,7 @@ function App() {
     email: "",
     name: "",
   });
+  const [defaultCardArray, setDefaultCardArray] = useState([]);
   // Setting isLoggedIn default value to false
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -24,7 +25,10 @@ function App() {
       <currentUserContext.Provider value={currentUser}>
         <Header isLoggedIn={isLoggedIn} />
         <Routes>
-          <Route path="/" element={<Main />}></Route>
+          <Route
+            path="/"
+            element={<Main defaultCardArray={defaultCardArray} />}
+          ></Route>
         </Routes>
         <Footer />
       </currentUserContext.Provider>

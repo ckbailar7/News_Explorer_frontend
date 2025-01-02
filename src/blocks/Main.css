@@ -1,0 +1,16 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.NewsCardComponent__wrapper {
+  display: flex;
+  width: 1440px;
+  height: auto;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}

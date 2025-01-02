@@ -1,9 +1,39 @@
 .news-card {
-  margin: 20px;
   width: 400px;
   height: 576px;
+  margin: 16px;
+  background-color: #fff;
+
+  border-radius: 16px;
+  overflow: hidden;
 }
 
-.news-card__list {
+.news-card__item {
   position: relative;
+}
+
+.news-card__image-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  display: block;
+}
+
+.news-card__image {
+  width: auto;
+  height: 272px;
+  width: 100%;
+}
+
+.news-card__bookmark-button {
+  background-image: url("../assets//bookmarkSVG.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 24px;
+  right: 100px;
 }
