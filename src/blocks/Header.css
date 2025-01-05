@@ -55,6 +55,7 @@
   color: #fff;
   border: none;
   outline: none;
+  font-size: 18px;
 }
 
 .header__buttons_home-button:hover {
@@ -112,4 +113,42 @@
   height: 24px;
   font-size: 18px;
   color: #fff;
+}
+
+.header__profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 112px;
+  height: 48px;
+  background-color: transparent;
+  border-radius: 50%;
+
+  color: #000;
+  margin-right: 50px;
+  border: 1px solid white;
+  border-radius: 100px;
+}
+
+.header__profile-currentUser-placeholder {
+  color: #fff;
+  min-width: 39px;
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+.header__profile-currentUser-logout_button {
+  background-image: url("../assets/logoutloaderWhite.svg");
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+}
+
+.header__button_saved-articles button {
+  margin-right: 50px;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
 }

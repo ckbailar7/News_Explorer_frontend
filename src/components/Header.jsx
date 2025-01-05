@@ -5,7 +5,8 @@ import { useContext } from "react";
 import { currentUserContext } from "../contexts/currentUserContext";
 import { NavLink } from "react-router-dom";
 import NavigationComponent from "./NavigationComponent";
-const Header = ({}) => {
+import NavigationComponentLoggedIn from "./NavigationComponentLoggedIn";
+const Header = ({ isLoggedIn }) => {
   const currentUser = useContext(currentUserContext);
 
   return (
@@ -22,7 +23,7 @@ const Header = ({}) => {
             </NavLink>
           </div>
         </div>
-        <NavigationComponent />
+        {isLoggedIn ? <NavigationComponentLoggedIn /> : <NavigationComponent />}
       </div>
     </header>
   );
