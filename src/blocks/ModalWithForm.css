@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Roboto 900";
+  src: url("../vendor/fonts/Roboto/Roboto-Bold.ttf");
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -25,11 +30,13 @@
   width: 100%;
   border-radius: 20px;
   padding: 28px 31px 36px 28px;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal__content-button {
   position: relative;
-  background-image: url("../images/Unioncloseclose.svg");
+  background-image: url("../assets/close.svg");
   background-repeat: no-repeat;
   background-position: center;
   width: 20px;
@@ -37,7 +44,7 @@
   opacity: 100%;
   border: none;
   top: -20px;
-  right: -20px;
+  right: -60px;
   background-color: transparent;
   float: right;
   cursor: pointer;
@@ -49,8 +56,8 @@
 
 .modal__content-title {
   margin: 0;
-  font-size: 16px;
-  font-family: "Cabinet Grotesk medium";
+  font-size: 24px;
+  font-family: "Roboto 900";
   /* padding-bottom: 24px; */
 }
 
@@ -60,6 +67,7 @@
   font-family: "Cabinet Grotesk medium";
   width: 496px;
   /* height: 436px; */
+  align-items: center;
 }
 
 .modalWithForm__name {
@@ -150,4 +158,26 @@
 .modal__content-ButtonContainer {
   display: flex;
   flex-direction: row;
+}
+
+.modalWithForm__name {
+  width: 358px;
+  height: 64px;
+  color: #2f71e5;
+}
+
+.modalWithForm__name-signInButton {
+  width: 360px;
+  height: 64px;
+  border-radius: 100px;
+  color: #2f71e5;
+  background-color: #2f71e5;
+}
+
+.modalWithForm__name-signUpTransfer {
+  text-decoration: none;
+}
+
+.modalWithForm__name-signInButton_text {
+  color: #fff;
 }

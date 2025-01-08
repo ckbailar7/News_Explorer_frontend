@@ -6,3 +6,8 @@
   min-width: 1100px;
   margin: 0 auto;
 }
+
+.content__container_profile {
+  background-image: none;
+  background-color: #fff;
+}

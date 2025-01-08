@@ -1,8 +1,8 @@
 import ModalWithForm from "./ModalWithForm";
 
-const LoginModal = ({}) => {
+const LoginModal = ({ onClose }) => {
   return (
-    <ModalWithForm title="Login">
+    <ModalWithForm onClose={onClose} title="Sign in">
       <div className="modalWithForm">
         <label className="modalWithForm__name">
           Email
@@ -27,6 +27,15 @@ const LoginModal = ({}) => {
             placeholder="Password"
           />
         </label>
+        <button className="modalWithForm__name-signInButton">
+          <p className="modalWithForm__name-signInButton_text">Sign in</p>
+        </button>
+        <p>
+          Or{" "}
+          <a className="modalWithForm__name-signUpTransfer" href="/signup">
+            Signup
+          </a>
+        </p>
       </div>
     </ModalWithForm>
   );

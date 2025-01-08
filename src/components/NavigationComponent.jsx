@@ -4,7 +4,7 @@ import { currentUserContext } from "../contexts/currentUserContext";
 import { NavLink } from "react-router-dom";
 import "../blocks/Header.css";
 
-const NavigationComponent = ({}) => {
+const NavigationComponent = ({ onCreateLoginModal }) => {
   return (
     <div className="NavigationComponent__container">
       {/* <div className="header__logo">
@@ -23,7 +23,7 @@ const NavigationComponent = ({}) => {
           <button>Home</button>
         </div>
         <div className="header__buttons_signin-button">
-          <button>Sign in</button>
+          <button onClick={onCreateLoginModal}>Sign in</button>
         </div>
       </div>
     </div>

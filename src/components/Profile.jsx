@@ -1,3 +1,5 @@
+import "../blocks/App.css";
+
 const Profile = ({ name, numberOfSavedArticles }) => {
   return (
     <div className="profile__container">
