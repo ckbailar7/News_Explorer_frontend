@@ -43,35 +43,24 @@
 }
 .header__buttons_home-button,
 .header__button_saved-articles {
+  opacity: 1;
   margin-right: 48px;
   border-bottom: 2px solid transparent;
   transition: border-bottom 0.3s ease, opacity 0.3s ease;
   color: #fff;
-}
-
-.header__buttons_home-button button,
-.header__button_saved-articles button {
-  opacity: 1;
-  transition: opacity 0.3s ease;
   background: none;
-  color: #fff;
   border: none;
   outline: none;
   font-size: 18px;
   cursor: pointer;
 }
+
 .header__buttons_home-button:hover,
 .header__button_saved-articles:hover {
   border-bottom: 2px solid #fff;
   transition: 0.3s;
   cursor: pointer;
 }
-/* .header__buttons_home-button:hover {
-  color: #fff;
-  transition: 0.5s;
-  cursor: pointer;
-  border-bottom: 2px solid #fff;
-} */
 
 .header__buttons_signin-button {
   border: 2px solid #fff;
@@ -130,7 +119,6 @@
   width: 112px;
   height: 48px;
   background-color: transparent;
-  /* border-radius: 50%; */
 
   color: #000;
   margin-right: 50px;
@@ -153,24 +141,54 @@
   border: none;
 }
 
-/* .header__button_saved-articles {
-  margin-right: 48px;
-  border-bottom: 2px solid transparent;
-  transition: border-bottom 0.3s ease, opacity 0.3s ease;
-  color: #fff;
-} */
+.header__buttons a {
+  text-decoration: none;
+}
 
-/* .header__button_saved-articles button {
+.header__buttons_home-button-profilePage {
+  color: black;
+  background-color: transparent;
+
   opacity: 1;
   transition: opacity 0.3s ease;
   background: none;
-  color: #fff;
+
   border: none;
   outline: none;
   font-size: 18px;
   cursor: pointer;
-} */
+  margin-right: 48px;
+}
 
-.header__buttons a {
-  text-decoration: none;
+.header__buttons_home-button-profilePage button,
+.header__button_saved-articles button {
+  background: none;
+  border: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  background: none;
+  margin-right: 48px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.header__profile-currentUser-placeholder-profile_page {
+  color: black;
+  min-width: 39px;
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+.header__profile-currentUser-logout_button-profile_page {
+  background-image: url("../assets/logoutLightBackground.svg");
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+}
+
+.header__profile-name-profile_page {
+  color: black;
 }

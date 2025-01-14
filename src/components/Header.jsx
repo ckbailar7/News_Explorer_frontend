@@ -22,7 +22,7 @@ const Header = ({ isLoggedIn, onCreateLoginModal, closeModal }) => {
     <header className="header__container">
       <div className="header__upperbar">
         <div className="header__logo">
-          <div className="header__logo_white">
+          <div className="header__logo header__logo_white">
             <NavLink to="/">
               <img
                 src={headerLogoChange}
