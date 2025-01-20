@@ -26,6 +26,10 @@ const Header = ({ isLoggedIn, onCreateLoginModal, closeModal }) => {
     ? "header__savedArticlesButton--profilePage"
     : "header__savedArticlesButton";
 
+  const headerProfileNameChange = isProfilePage
+    ? "header__profileNameButton--profilePage"
+    : "header__profileNameButton";
+
   const navigation = isLoggedIn ? (
     <nav className="header__navigation header__navigation--logged-in">
       <div className="header__homeButton--container">
@@ -42,7 +46,7 @@ const Header = ({ isLoggedIn, onCreateLoginModal, closeModal }) => {
       </div>
       <div className="header__profileButton--container">
         <NavLink to="/profile">
-          <button className="header__profileButton">ProfileName</button>
+          <button className={headerProfileNameChange}>ProfileName</button>
         </NavLink>
         <button className="header__logoutButton"></button>
       </div>

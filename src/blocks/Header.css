@@ -184,14 +184,14 @@
   border-radius: 100px;
 }
 
-.header__profileButton--container {
+/* .header__profileButton--container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 112px;
   height: 48px;
   background-color: transparent;
-}
+} */
 
 .header__buttons_home-button-profilePage button,
 .header__button_saved-articles button {
@@ -267,13 +267,13 @@
   font-size: 18px;
 }
 
-.header__profileButton--container {
+/* .header__profileButton--container {
   width: 112px;
   height: 48px;
-}
+} */
 
 .header__logoutButton {
-  width: 24px;
+  width: 30px;
   height: 24px;
   background-color: transparent;
   border: none;
@@ -292,4 +292,31 @@
   outline: none;
   font-size: 18px;
   cursor: pointer;
+}
+
+.header__profileButton--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 112px;
+  height: 48px;
+  background-color: transparent;
+}
+
+.header__profileNameButton {
+  width: 112px;
+  height: 48px;
+  background-color: transparent;
+  border: none;
+  color: #b6bcbf;
+  font-size: 18px;
+}
+
+.header__profileNameButton--profilePage {
+  width: 112px;
+  height: 48px;
+  background-color: transparent;
+  border: none;
+  color: #000;
+  font-size: 18px;
 }
