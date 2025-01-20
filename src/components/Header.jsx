@@ -14,21 +14,31 @@ const Header = ({ isLoggedIn, onCreateLoginModal, closeModal }) => {
 
   const isProfilePage = location.pathname === "/profile";
 
+  const headerUniversalButtonClassName = (baseClass, isProfilePage) =>
+    isProfilePage ? `${baseClass}--profilePage` : baseClass;
+
   const headerLogoChange = isProfilePage
     ? "/src/assets/NewsExplorerNewsExplorerHeaderDark.svg"
     : "/src/assets/headerLogoWhite.svg";
 
-  const headerHomeButtonChange = isProfilePage
-    ? "header__homeButton-profilePage"
-    : "header__homeButton";
+  const headerProfileLogoutButtonChange = isProfilePage
+    ? "header__logoutButton--profilePage"
+    : "header__logoutButton";
 
-  const headerSavedArticlesButtonChange = isProfilePage
-    ? "header__savedArticlesButton--profilePage"
-    : "header__savedArticlesButton";
+  const headerHomeButtonChange = headerUniversalButtonClassName(
+    "header__homeButton",
+    isProfilePage
+  );
 
-  const headerProfileNameChange = isProfilePage
-    ? "header__profileNameButton--profilePage"
-    : "header__profileNameButton";
+  const headerSavedArticlesButtonChange = headerUniversalButtonClassName(
+    "header__savedArticlesButton",
+    isProfilePage
+  );
+
+  const headerProfileNameChange = headerUniversalButtonClassName(
+    "header__profileNameButton",
+    isProfilePage
+  );
 
   const navigation = isLoggedIn ? (
     <nav className="header__navigation header__navigation--logged-in">
@@ -46,9 +56,11 @@ const Header = ({ isLoggedIn, onCreateLoginModal, closeModal }) => {
       </div>
       <div className="header__profileButton--container">
         <NavLink to="/profile">
-          <button className={headerProfileNameChange}>ProfileName</button>
+          <button className={headerProfileNameChange}>
+            {currentUser?.name || "Prof"}
+          </button>
         </NavLink>
-        <button className="header__logoutButton"></button>
+        <button className={headerProfileLogoutButtonChange}></button>
       </div>
     </nav>
   ) : (

@@ -208,9 +208,10 @@
 }
 
 .header__navigation {
-  width: 1440px;
+  gap: 10px;
+  width: 519px;
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   align-items: center;
 }
 
@@ -237,7 +238,7 @@
   border: none;
   font-size: 18px;
 }
-.header__homeButton-profilePage {
+.header__homeButton--profilePage {
   margin-right: 76px;
   width: 49px;
   height: 24px;
@@ -278,6 +279,16 @@
   background-color: transparent;
   border: none;
   background-image: url("../assets/logoutloaderWhite.svg");
+  background-repeat: no-repeat;
+}
+
+.header__logoutButton--profilePage {
+  width: 30px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  background-image: url("../assets/logoutLightBackground.svg");
+  background-repeat: no-repeat;
 }
 
 .header__buttons_home-button,
@@ -304,7 +315,7 @@
 }
 
 .header__profileNameButton {
-  width: 112px;
+  /* width: 112px; */
   height: 48px;
   background-color: transparent;
   border: none;
@@ -313,7 +324,7 @@
 }
 
 .header__profileNameButton--profilePage {
-  width: 112px;
+  /* width: 112px; */
   height: 48px;
   background-color: transparent;
   border: none;
