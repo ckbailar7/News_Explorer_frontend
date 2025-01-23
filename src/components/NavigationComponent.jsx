@@ -9,7 +9,7 @@ import "../blocks/Header.css";
 const NavigationComponent = ({ onCreateLoginModal }) => {
   const location = useLocation();
 
-  const isProfilePage = location.pathname === "/profile";
+  const isProfilePage = location.pathname === "/saved-news";
   return (
     <div className="NavigationComponent__container">
       <div className="header__buttons">

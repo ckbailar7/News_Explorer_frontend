@@ -12,7 +12,7 @@ const Header = ({ isLoggedIn, onCreateLoginModal, closeModal }) => {
   const currentUser = useContext(currentUserContext);
   const location = useLocation();
 
-  const isProfilePage = location.pathname === "/profile";
+  const isProfilePage = location.pathname === "/saved-news";
 
   const headerUniversalButtonClassName = (baseClass, isProfilePage) =>
     isProfilePage ? `${baseClass}--profilePage` : baseClass;
@@ -48,14 +48,14 @@ const Header = ({ isLoggedIn, onCreateLoginModal, closeModal }) => {
         </NavLink>
       </div>
       <div className="header__savedArticlesButton--container">
-        <NavLink to="/profile">
+        <NavLink to="/saved-news">
           <button className={headerSavedArticlesButtonChange}>
             Saved Articles
           </button>
         </NavLink>
       </div>
       <div className="header__profileButton--container">
-        <NavLink to="/profile">
+        <NavLink to="/saved-news">
           <button className={headerProfileNameChange}>
             {currentUser?.name || "Prof"}
           </button>

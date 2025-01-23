@@ -56,7 +56,7 @@ function App() {
     <div
       id="content__container"
       className={`content__container ${
-        location.pathname === "/profile" ? "content__container_profile" : ""
+        location.pathname === "/saved-news" ? "content__container_profile" : ""
       }`}
     >
       {/* creating CurrentUser Provider with value of currentUser */}
@@ -73,7 +73,7 @@ function App() {
             element={<Main defaultCardArray={defaultCardArray} />}
           ></Route>
           <Route
-            path="/profile"
+            path="/saved-news"
             element={<Profile name={"user1"} numberOfSavedArticles={5} />}
           ></Route>
         </Routes>

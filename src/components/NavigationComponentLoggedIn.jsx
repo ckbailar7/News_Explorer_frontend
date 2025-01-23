@@ -7,7 +7,7 @@ import "../blocks/Header.css";
 const NavigationComponentLoggedIn = ({ currentUser }) => {
   const location = useLocation();
 
-  const isProfilePage = location.pathname === "/profile";
+  const isProfilePage = location.pathname === "saved-news";
 
   console.log("Current location:", location.pathname);
   console.log("Is profile page:", isProfilePage);
@@ -36,7 +36,7 @@ const NavigationComponentLoggedIn = ({ currentUser }) => {
             Saved Articles
           </button>
         </div>
-        <NavLink to="/profile">
+        <NavLink to="/saved-news">
           {currentUser ? (
             <div
               className={
