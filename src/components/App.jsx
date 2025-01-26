@@ -42,7 +42,7 @@ function App() {
   };
 
   useEffect(() => {
-    setIsLoggedIn(true);
+    setIsLoggedIn(false);
   }, []);
 
   const closeModal = () => setActiveModal("");
@@ -51,7 +51,17 @@ function App() {
   //   const timer = setTimeout(() => setIsLoading(false), 3000); // setting preloader response time as 3000 miliseconds or 3 seconds
   //   return () => clearTimeout(timer); // cleanup after use
   // }, []);
-
+  useEffect(() => {
+    const closeByEscape = (e) => {
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    };
+    document.addEventListener("keydown", closeByEscape);
+    return () => {
+      document.removeEventListener("keydown", closeByEscape);
+    };
+  }, []);
   return (
     <div
       id="content__container"

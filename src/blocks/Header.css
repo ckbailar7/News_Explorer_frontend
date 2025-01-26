@@ -339,5 +339,27 @@
   font-size: 18px;
 }
 
+.header__loginButton {
+  /* opacity: 1;
+  transition: opacity 0.3s ease;
+  background: none;
+  color: #fff;
+  border: none;
+  width: 152px;
+  border-radius: 0%;
+  outline: none; */
+
+  opacity: 1;
+  margin-right: 48px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s ease, opacity 0.3s ease;
+  color: #b6bcbf;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 1200px) and (max-width: 1399px) {
 }

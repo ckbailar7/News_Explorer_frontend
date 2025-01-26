@@ -65,8 +65,14 @@ const Header = ({ isLoggedIn, onCreateLoginModal, closeModal }) => {
     </nav>
   ) : (
     <nav className="header__navigation">
-      <NavLink to="/login">Login</NavLink>
-      <NavLink to="/register">Register</NavLink>
+      <div className="header__loginButton--container">
+        <button onClick={onCreateLoginModal} className="header__loginButton">
+          Sign in
+        </button>
+      </div>
+      <NavLink to="/">
+        <button className={headerHomeButtonChange}>Home</button>
+      </NavLink>
     </nav>
   );
 

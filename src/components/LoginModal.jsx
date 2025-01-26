@@ -13,7 +13,7 @@ const LoginModal = ({ onClose }) => {
             type="email"
             minLength="1"
             maxLength="300"
-            placeholder="Email"
+            placeholder="Enter email"
           />
         </label>
         <label className="modalWithForm__name">
@@ -24,7 +24,7 @@ const LoginModal = ({ onClose }) => {
             type="password"
             minLength="1"
             maxLength="300"
-            placeholder="Password"
+            placeholder="Enter password"
           />
         </label>
         <button className="modalWithForm__name-signInButton">

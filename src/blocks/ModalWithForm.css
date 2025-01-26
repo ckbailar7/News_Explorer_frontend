@@ -29,9 +29,10 @@
   max-width: 496px;
   width: 100%;
   border-radius: 20px;
-  padding: 28px 31px 36px 28px;
+  padding: 0px 31px 36px 28px;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
 }
 
 .modal__content-button {
@@ -39,14 +40,14 @@
   background-image: url("../assets/close.svg");
   background-repeat: no-repeat;
   background-position: center;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   opacity: 100%;
   border: none;
-  top: -20px;
-  right: -60px;
+  top: -70px;
+  right: -80px;
   background-color: transparent;
-  float: right;
+  margin-right: 6px;
   cursor: pointer;
 }
 
@@ -55,7 +56,7 @@
 }
 
 .modal__content-title {
-  margin: 0;
+  margin: 0px 420px 20px 0px;
   font-size: 24px;
   font-family: "Roboto 900";
   /* padding-bottom: 24px; */
@@ -74,8 +75,12 @@
   display: flex;
   flex-direction: column;
   margin-top: 24px;
-  max-width: 440px;
-  min-height: 52px;
+  margin-right: 150px;
+  /* max-width: 440px;
+  min-height: 52px; */
+  max-width: 458px;
+  color: rgba(0, 0, 0, 1);
+  margin: 22px 156px 0px 36px;
 }
 
 .modalWithForm__image {
@@ -104,6 +109,8 @@
   margin-top: 8px;
   border: none;
   border-bottom: 1px solid black;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 1);
 }
 
 .modalWithForm__image-input {
@@ -171,13 +178,13 @@
   height: 64px;
   border-radius: 100px;
   color: #2f71e5;
-  background-color: #2f71e5;
+  background-color: #e6e8eb;
+}
+
+.modalWithForm__name-signInButton_text {
+  color: #b6bcbf;
 }
 
 .modalWithForm__name-signUpTransfer {
   text-decoration: none;
-}
-
-.modalWithForm__name-signInButton_text {
-  color: #fff;
 }
