@@ -14,7 +14,9 @@ const NewsCardComponent = ({ cardData }) => {
               src={image}
               alt="news-card image"
             />
-            <button className="news-card__bookmark-button"></button>
+            <div className="news-card__bookmark-button--container">
+              <button className="news-card__bookmark-button"></button>
+            </div>
           </div>
         </div>
         <div className="news-card__details">

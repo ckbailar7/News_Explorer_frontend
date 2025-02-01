@@ -1,3 +1,24 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../vendor/fonts/Roboto/Roboto-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("../vendor/fonts/Roboto/Roboto-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto-Italic";
+  src: url("../vendor/fonts/Roboto/Roboto-Italic.ttf");
+  font-weight: 400;
+  font-style: italic;
+}
+
 .SearchFormComponent__container {
   width: 100%;
   width: 1440px;
@@ -12,12 +33,14 @@
   width: 608px;
   height: 128px;
   font-size: 60px;
+  font-weight: 400;
 }
 
 .SearchFormComponent__container-header_2 {
   color: #fff;
   width: 608px;
   height: 24px;
+  font-family: "Roboto";
 }
 
 .SearchFormComponent__Search-Bar__container {

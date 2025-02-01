@@ -25,15 +25,40 @@
   width: 100%;
 }
 
-.news-card__bookmark-button {
-  background-image: url("../assets//bookmarkSVG.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
+.news-card__bookmark-button--container {
   width: 40px;
   height: 40px;
-  border: none;
-  cursor: pointer;
+  background-color: #fff;
   position: absolute;
   top: 24px;
   right: 100px;
+  border-radius: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.news-card__bookmark-button {
+  background-image: url("../assets/BookmarkNormalOuline.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: #fff;
+  width: 14px;
+  height: 19px;
+  border: none;
+  cursor: pointer;
+}
+
+.news-card__bookmark-button:hover {
+  background-image: url("../assets/test1bookmarkhover.svg");
+
+  /* background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: #fff;
+  width: 24px;
+  height: 24px;
+  border: none;
+  cursor: pointer; */
 }

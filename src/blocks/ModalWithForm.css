@@ -177,12 +177,19 @@
   width: 360px;
   height: 64px;
   border-radius: 100px;
-  color: #2f71e5;
+
   background-color: #e6e8eb;
+  border: none;
+}
+
+.modalWithForm__name-signInButton:hover {
+  background-color: #2f71e5;
+  cursor: pointer;
 }
 
 .modalWithForm__name-signInButton_text {
-  color: #b6bcbf;
+  color: #fff;
+  font-size: 18px;
 }
 
 .modalWithForm__name-signUpTransfer {
