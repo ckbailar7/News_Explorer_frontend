@@ -40,3 +40,6 @@
 .footer__buttons_withIcon_container {
   margin: 28px 0 28px 40px;
 }
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+}

@@ -2,7 +2,7 @@ import "../blocks/NewsCardComponent.css";
 import imagePlaceholder from "../assets/news-card_image-placeholder.svg";
 
 const NewsCardComponent = ({ cardData }) => {
-  const { title, description, image, Date } = cardData;
+  const { title, description, image, Date, source } = cardData;
 
   return (
     <div className="news-card">
@@ -23,6 +23,7 @@ const NewsCardComponent = ({ cardData }) => {
           <h2 className="news-card__date">{Date} </h2>
           <h3 className="news-card__title">{title}</h3>
           <p className="news-card__description">{description}</p>
+          <p className="news-card__source">{source}</p>
         </div>
       </div>
     </div>

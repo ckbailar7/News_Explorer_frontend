@@ -216,7 +216,7 @@
 
 .header__navigation {
   gap: 10px;
-  width: 519px;
+  /* width: 519px; */
   display: flex;
   /* justify-content: flex-end; */
   align-items: center;
