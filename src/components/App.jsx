@@ -14,6 +14,7 @@ import Main from "./Main.jsx";
 import Footer from "./Footer.jsx";
 import LoginModal from "./LoginModal";
 import Profile from "./Profile";
+import defaultCards from "../contexts/defaultCardArrayPrototype";
 
 import "../blocks/App.css";
 import Preloader from "./Preloader";
@@ -28,6 +29,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   //
   //
+  const [cards, setCards] = useState([]);
 
   const [defaultCardArray, setDefaultCardArray] = useState([]);
   // Setting isLoggedIn default value to false
@@ -40,6 +42,10 @@ function App() {
   const handleLoginModal = () => {
     setActiveModal("login");
   };
+
+  useEffect(() => {
+    setCards(defaultCards);
+  }, []);
 
   useEffect(() => {
     setIsLoggedIn(true);
@@ -84,7 +90,14 @@ function App() {
           ></Route>
           <Route
             path="/saved-news"
-            element={<Profile name={"user1"} numberOfSavedArticles={5} />}
+            element={
+              <Profile
+                name={"user1"}
+                numberOfSavedArticles={5}
+                cards={cards}
+                savedArticlesKeywords={"Keyword1, Keyword2, Keyword3"}
+              />
+            }
           ></Route>
         </Routes>
         <Footer />
