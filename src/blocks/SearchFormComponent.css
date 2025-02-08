@@ -20,8 +20,8 @@
 }
 
 .SearchFormComponent__container {
-  width: 100%;
-  width: 1440px;
+  width: 100vw;
+  /* width: 1440px; */
   height: 576px;
   /* background-image: url("../assets/headerBackground.svg"); */
   display: flex;

@@ -1,27 +1,31 @@
 .AboutComponent__container {
-  max-width: 1440px;
+  width: 100vw;
+  max-width: 100%;
   height: auto;
   background-color: #fff;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  margin: 0 auto;
-  padding: 20px;
 
-  width: 100%;
+  padding: 20px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 .AboutComponent__image_wrapper {
 }
 
 .AboutComponent__image {
-  width: 464px;
+  width: 100%;
+  max-width: 464px;
   height: 464px;
   border-radius: 1000px;
 }
 
 .AboutComponent__HeadersWrapper {
-  margin: 51px auto 223px 56px;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px 0;
 }
 
 .AboutComponent__Header1 {
