@@ -255,6 +255,48 @@
   font-size: 18px;
 }
 
+.header__nav-list {
+  list-style-type: none;
+  display: flex;
+}
+
+.header__nav-link {
+  margin-right: 76px;
+  width: 49px;
+  height: 24px;
+  color: #b6bcbf;
+  background: none;
+  border: none;
+  font-size: 18px;
+}
+
+.header__login-button {
+  opacity: 1;
+  margin-right: 48px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s ease, opacity 0.3s ease;
+  color: #b6bcbf;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.header__nav-link--profilePage {
+  margin-right: 76px;
+  width: 49px;
+  height: 24px;
+  color: #000;
+  background: none;
+  border: none;
+  font-size: 18px;
+}
+
+.header__profile {
+  display: flex;
+}
+
 .header__savedArticlesButton {
   width: 114px;
   height: 24px;
@@ -280,22 +322,24 @@
   height: 48px;
 } */
 
-.header__logoutButton {
+.header__logout-button {
   width: 30px;
   height: 24px;
   background-color: transparent;
   border: none;
   background-image: url("../assets/logoutloaderWhite.svg");
   background-repeat: no-repeat;
+  list-style-type: none;
 }
 
-.header__logoutButton--profilePage {
+.header__logout-button--profilePage {
   width: 30px;
   height: 24px;
   background-color: transparent;
   border: none;
   background-image: url("../assets/logoutLightBackground.svg");
   background-repeat: no-repeat;
+  list-style-type: none;
 }
 
 .header__buttons_home-button,
