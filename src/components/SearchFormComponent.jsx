@@ -2,24 +2,23 @@ import "../blocks/SearchFormComponent.css";
 
 const SearchFormComponent = ({}) => {
   return (
-    <div className="SearchFormComponent__container">
-      <h1 className="SearchFormComponent__container-header_1">
-        What's going on in the world?
-      </h1>
-      <h2 className="SearchFormComponent__container-header_2">
+    <section className="search-form">
+      <h1 className="search-form__header">What's going on in the world?</h1>
+      <p className="search-form__subtext">
         Find the latest news on any topic and save them to your personal account
-      </h2>
-      <div className="SearchFormComponent__Search-Bar__container">
+      </p>
+      <form className="search-form__bar">
         <input
           type="text"
-          className="SearchFormComponent__Search-Bar__container-input"
+          id="search-input"
+          className="search-form__input "
           placeholder="Enter topic"
         />
-        <button className="SearchFormComponent__Search-Bar__container-search_button">
+        <button type="submit" className="search-form__button">
           Search
         </button>
-      </div>
-    </div>
+      </form>
+    </section>
   );
 };
 

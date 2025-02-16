@@ -8,11 +8,17 @@
   width: 100%;
 }
 
-.NewsCardComponent__wrapper {
+.news-cards-wrapper {
   display: flex;
   /* width: 1440px; */
   height: auto;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
+}
+
+.news-card__header {
+  width: 712px;
+  height: 46px;
+  margin-left: 104px;
 }
