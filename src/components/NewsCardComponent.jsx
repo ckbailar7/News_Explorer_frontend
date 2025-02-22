@@ -8,10 +8,12 @@ const NewsCardComponent = ({ cardData }) => {
     <article className="news-card">
       <figure className="news-card__image-container">
         <img className="news-card__image" src={image} alt={title} />
-        <button
-          className="news-card__bookmark-button"
-          aria-label="Bookmark this article"
-        ></button>
+        <div className="news-card__bookmark-button--container">
+          <button
+            className="news-card__bookmark-button"
+            aria-label="Bookmark this article"
+          ></button>
+        </div>
       </figure>
       <div className="news-card__details">
         <time className="news-card__date" dateTime={Date}>

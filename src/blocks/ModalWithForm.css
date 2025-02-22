@@ -110,7 +110,8 @@
   border: none;
   border-bottom: 1px solid black;
   font-size: 14px;
-  color: rgba(0, 0, 0, 1);
+  color: #000000;
+  opacity: 20%;
 }
 
 .modalWithForm__image-input {
