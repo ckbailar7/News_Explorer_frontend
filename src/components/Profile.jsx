@@ -1,5 +1,6 @@
 import "../blocks/App.css";
 import "../blocks/Main.css";
+import "../blocks/Profile.css";
 import NewsCardComponent from "./NewsCardComponent";
 
 const Profile = ({
@@ -17,7 +18,7 @@ const Profile = ({
         <h1 className="profile__header-greeting-text">{`Hello ${name}, you have ${numberOfSavedArticles} saved articles `}</h1>
         <h3 className="profile__header-greeting-byKeyword">{`By kewords: ${savedArticlesKeywords}`}</h3>
       </div>
-      <div className="NewsCardComponent__wrapper">
+      <div className="profile__newsCard-container">
         {cards.map((card) => (
           <NewsCardComponent key={card.id} cardData={card} />
         ))}

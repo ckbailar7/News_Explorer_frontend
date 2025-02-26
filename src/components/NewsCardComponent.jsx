@@ -1,8 +1,28 @@
 import "../blocks/NewsCardComponent.css";
 import imagePlaceholder from "../assets/news-card_image-placeholder.svg";
+import { useLocation } from "react-router-dom";
 
 const NewsCardComponent = ({ cardData }) => {
   const { title, description, image, Date, source } = cardData;
+  const location = useLocation();
+  const isProfilePage = location.pathname === "/saved-news";
+
+  const renderActionButton = () => {
+    if (isProfilePage) {
+      return (
+        <button
+          className="news-card__delete-button"
+          aria-label="Delete this article"
+        ></button>
+      );
+    }
+    return (
+      <button
+        className="news-card__bookmark-button"
+        aria-label="Bookmark this article"
+      ></button>
+    );
+  };
 
   return (
     <article className="news-card">

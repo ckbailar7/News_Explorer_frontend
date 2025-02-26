@@ -1,0 +1,28 @@
+.profile__newsCard-container {
+  display: flex;
+  /* width: 1440px; */
+  height: auto;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  /* Margin ammount found by halving the projected margin on the brief to take into account the overal width at 1440px, right of 106px and left of 106px, as a result of flexbox, justify and align content  */
+  margin: 0 53px 0 51px;
+}
+
+.profile__header1-text {
+  width: 712px;
+  height: 24px;
+  margin-left: 104px;
+}
+
+.profile__header-greeting-text {
+  width: 530px;
+  height: 92px;
+  margin-left: 104px;
+}
+
+.profile__header-greeting-byKeyword {
+  width: 712px;
+  height: 24px;
+  margin-left: 104px;
+}

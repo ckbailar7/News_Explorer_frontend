@@ -1,4 +1,9 @@
 @font-face {
+  font-family: "Roboto";
+  src: url("../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+}
+
+@font-face {
   font-family: "Roboto Medium";
   src: url("/src/vendor/fonts/Roboto-Medium.ttf");
 }
@@ -157,13 +162,14 @@
   max-width: 1440px;
   height: 80px;
   box-sizing: border-box;
+  border-bottom: 0.5px solid #d1d2d6;
 }
 
 .header__top-bar {
   display: flex;
   width: 100%;
   height: 80px;
-  border-bottom: solid 1px #fff;
+  /* border-bottom: solid 1px #fff; */
   align-items: center;
   justify-content: space-between;
 }
@@ -261,6 +267,7 @@
 }
 
 .header__nav-link {
+  position: relative;
   margin-right: 76px;
   width: 49px;
   height: 24px;
@@ -268,6 +275,54 @@
   background: none;
   border: none;
   font-size: 18px;
+  font-family: "Roboto";
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* .header__nav-link:active {
+  color: #fff;
+} */
+
+.header__nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+}
+
+.header__nav-link--userButton {
+  position: relative;
+  margin-right: 15px;
+  width: 49px;
+  height: 24px;
+  color: #b6bcbf;
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-family: "Roboto";
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.header__nav-link--userButton--profilePage {
+  position: relative;
+  margin-right: 15px;
+  width: 49px;
+  height: 24px;
+  color: #000;
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-family: "Roboto";
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .header__login-button {
@@ -281,6 +336,8 @@
   outline: none;
   font-size: 18px;
   cursor: pointer;
+  font-family: "Roboto";
+  font-weight: 400;
 }
 
 .header__nav-link--profilePage {
@@ -293,8 +350,26 @@
   font-size: 18px;
 }
 
+.header__nav-link--profilePage.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+}
+
 .header__profile {
   display: flex;
+  border: 1px solid #fff;
+  border-radius: 100px;
+}
+
+.header__profile--profilePage {
+  display: flex;
+  border: 1px solid #1a1b22;
+  border-radius: 100px;
 }
 
 .header__savedArticlesButton {

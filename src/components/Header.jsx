@@ -102,16 +102,34 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
                   <NavLink
                     to="/saved-news"
                     className={`header__nav-link ${
-                      isProfilePage ? "header__nav-link" : ""
+                      isProfilePage ? "header__nav-link--profilePage" : ""
                     }`}
                   >
                     Saved Articles
                   </NavLink>
                 </li>
-                <li className="header__profile">
-                  <NavLink to="/saved-news" className="header__nav-link">
+                <li
+                  className={`header__profile ${
+                    isProfilePage ? "header__profile--profilePage" : ""
+                  }`}
+                >
+                  {/* <NavLink
+                    to="/saved-news"
+                    className={`header__nav-link ${
+                      isProfilePage ? "header__nav-link--profilePage" : ""
+                    }`}
+                  >
                     {currentUser?.name || "Profile"}
-                  </NavLink>
+                  </NavLink> */}
+                  <button
+                    className={`header__nav-link--userButton ${
+                      isProfilePage
+                        ? "header__nav-link--userButton--profilePage"
+                        : ""
+                    }`}
+                  >
+                    {currentUser?.name || "Profile"}
+                  </button>
                   <button
                     className={`header__logout-button ${
                       isProfilePage ? "header__logout-button--profilePage" : ""
