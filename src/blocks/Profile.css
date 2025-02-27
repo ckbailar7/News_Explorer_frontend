@@ -7,6 +7,7 @@
   justify-content: center;
   /* Margin ammount found by halving the projected margin on the brief to take into account the overal width at 1440px, right of 106px and left of 106px, as a result of flexbox, justify and align content  */
   margin: 0 53px 0 51px;
+  background-color: #f5f6f7;
 }
 
 .profile__header1-text {

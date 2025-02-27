@@ -195,4 +195,9 @@
 
 .modalWithForm__name-signUpTransfer {
   text-decoration: none;
+  color: #2f71e5;
+}
+
+.modalWithForm__name-signUpTransfer:hover {
+  cursor: pointer;
 }

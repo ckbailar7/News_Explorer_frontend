@@ -1,6 +1,16 @@
 @font-face {
+  font-family: "Roboto";
+  src: url("../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+}
+
+@font-face {
   font-family: "Roboto Slab";
   src: url("../vendor/fonts/Roboto/RobotoSlab-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../vendor/fonts/Roboto/SourceSans3-VariableFont_wght.ttf");
 }
 
 .news-card {
@@ -78,6 +88,8 @@
   width: 149px;
   height: 24px;
   margin: 20px 24px 0 24px;
+  font-family: "Source Sans Pro";
+  font-weight: 400;
 }
 
 .news-card__title {
@@ -95,9 +107,13 @@
   color: #1a1b22;
   font-size: 16px;
   max-height: 110px;
+  font-family: "Roboto";
+  font-weight: 400;
 }
 
 .news-card__source {
   margin: 18px 24px 24px 24px;
   color: #b6bcbf;
+  font-family: "Roboto Slab";
+  font-weight: 700;
 }

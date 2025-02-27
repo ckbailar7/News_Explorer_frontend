@@ -13,6 +13,7 @@ import Header from "./Header";
 import Main from "./Main.jsx";
 import Footer from "./Footer.jsx";
 import LoginModal from "./LoginModal";
+import SignUpModal from "./SignUpModal";
 import Profile from "./Profile";
 import defaultCards from "../contexts/defaultCardArrayPrototype";
 
@@ -41,6 +42,10 @@ function App() {
 
   const handleLoginModal = () => {
     setActiveModal("login");
+  };
+
+  const handleSignUpModal = () => {
+    setActiveModal("signup");
   };
 
   useEffect(() => {
@@ -102,7 +107,18 @@ function App() {
         </Routes>
         <Footer />
 
-        {activeModal === "login" && <LoginModal onClose={closeModal} />}
+        {activeModal === "login" && (
+          <LoginModal
+            onClose={closeModal}
+            handleSignUpModal={handleSignUpModal}
+          />
+        )}
+        {activeModal === "signup" && (
+          <SignUpModal
+            onClose={closeModal}
+            handleLoginModal={handleLoginModal}
+          />
+        )}
       </currentUserContext.Provider>
     </div>
   );

@@ -1,16 +1,15 @@
 import ModalWithForm from "./ModalWithForm";
 
-const LoginModal = ({ onClose, handleSignUpModal }) => {
+const SignUpModal = ({ onClose, handleLoginModal }) => {
   return (
-    <ModalWithForm onClose={onClose} title="Sign in">
+    <ModalWithForm onClose={onClose} title="Sign Up">
       <div className="modalWithForm">
         <label className="modalWithForm__name">
           Email
           <input
-            className="modalWithForm__name-input"
-            name="email"
-            id="email"
             type="email"
+            name="email"
+            className="modalWithForm__name-input"
             minLength="1"
             maxLength="300"
             placeholder="Enter email"
@@ -19,24 +18,35 @@ const LoginModal = ({ onClose, handleSignUpModal }) => {
         <label className="modalWithForm__name">
           Password
           <input
-            className="modalWithForm__name-input"
-            id="password"
             type="password"
+            name="password"
+            className="modalWithForm__name-input"
             minLength="1"
             maxLength="300"
             placeholder="Enter password"
           />
         </label>
+        <label className="modalWithForm__name">
+          Username
+          <input
+            type="username"
+            name="username"
+            className="modalWithForm__name-input"
+            minLength="1"
+            maxLength="300"
+            placeholder="Enter username"
+          />
+        </label>
         <button className="modalWithForm__name-signInButton">
-          <p className="modalWithForm__name-signInButton_text">Sign in</p>
+          <p className="modalWithForm__name-signInButton_text">Sign up</p>
         </button>
         <p>
           Or{" "}
           <a
             className="modalWithForm__name-signUpTransfer"
-            onClick={handleSignUpModal}
+            onClick={handleLoginModal}
           >
-            Signup
+            Sign in
           </a>
         </p>
       </div>
@@ -44,4 +54,4 @@ const LoginModal = ({ onClose, handleSignUpModal }) => {
   );
 };
 
-export default LoginModal;
+export default SignUpModal;
