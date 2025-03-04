@@ -5,7 +5,12 @@ import AboutComponent from "../components/AboutComponent";
 import defaultCards from "../contexts/defaultCardArrayPrototype";
 import { useEffect, useState } from "react";
 
-const Main = () => {
+const Main = ({
+  isLoggedIn,
+  defaultCardArray,
+  onBookmarkClick,
+  onDeleteClick,
+}) => {
   const [cards, setCards] = useState([]);
   // simulate fetching data from database
   useEffect(() => {
@@ -18,7 +23,13 @@ const Main = () => {
         <h1 className="news-card__header">Search results</h1>
         <div className="news-cards-wrapper">
           {cards.map((card) => (
-            <NewsCardComponent key={card.id} cardData={card} />
+            <NewsCardComponent
+              key={card.id}
+              cardData={card}
+              isLoggedIn={isLoggedIn}
+              onBookmarkClick={onBookmarkClick}
+              onDeleteClick={onDeleteClick}
+            />
           ))}
         </div>
       </section>

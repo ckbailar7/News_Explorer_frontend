@@ -48,6 +48,14 @@ function App() {
     setActiveModal("signup");
   };
 
+  const onBookmarkClick = () => {
+    console.log("Hello from onBookmarkClick");
+  };
+
+  const onDeleteClick = () => {
+    console.log("Helllo from onDeleteClick");
+  };
+
   useEffect(() => {
     setCards(defaultCards);
   }, []);
@@ -91,7 +99,14 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Main defaultCardArray={defaultCardArray} />}
+            element={
+              <Main
+                defaultCardArray={defaultCardArray}
+                isLoggedIn={isLoggedIn}
+                onBookmarkClick={onBookmarkClick}
+                onDeleteClick={onDeleteClick}
+              />
+            }
           ></Route>
           <Route
             path="/saved-news"
