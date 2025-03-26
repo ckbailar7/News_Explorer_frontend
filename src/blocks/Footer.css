@@ -41,5 +41,8 @@
   margin: 28px 0 28px 40px;
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1399px) {
+@media (max-width: 320px) {
+  .footer__container {
+    flex-wrap: wrap;
+  }
 }

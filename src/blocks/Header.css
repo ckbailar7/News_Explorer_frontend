@@ -264,6 +264,7 @@
 .header__nav-list {
   list-style-type: none;
   display: flex;
+  align-items: center;
 }
 
 .header__nav-link {
@@ -271,7 +272,7 @@
   margin-right: 76px;
   width: 49px;
   height: 24px;
-  color: #b6bcbf;
+  color: #fff;
   background: none;
   border: none;
   font-size: 18px;
@@ -284,6 +285,24 @@
 /* .header__nav-link:active {
   color: #fff;
 } */
+
+/* .header__nav-link.active {
+  color: #fff;
+} */
+
+.header__nav-link--homePage_nonActive {
+  position: relative;
+  margin-right: 76px;
+  width: 49px;
+  height: 24px;
+  color: #b6bcbf;
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-family: "Roboto";
+  font-weight: 400;
+  text-decoration: none;
+}
 
 .header__nav-link.active::after {
   content: "";
@@ -326,17 +345,26 @@
 }
 
 .header__login-button {
+  border: 1px solid #fff;
+  border-radius: 100px;
+  width: 152px;
+  padding: 12px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 1;
   margin-right: 48px;
-  border-bottom: 2px solid transparent;
+  /* border-bottom: 2px solid transparent; */
   transition: border-bottom 0.3s ease, opacity 0.3s ease;
-  color: #b6bcbf;
-  background: none;
-  border: none;
+
+  color: #fff;
+  background: transparent;
+
   outline: none;
   font-size: 18px;
   cursor: pointer;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
 
@@ -364,6 +392,7 @@
   display: flex;
   border: 1px solid #fff;
   border-radius: 100px;
+  padding: 12px;
 }
 
 .header__profile--profilePage {
@@ -458,8 +487,8 @@
   font-size: 18px;
 }
 
-.header__loginButton {
-  /* opacity: 1;
+/* .header__loginButton { */
+/* opacity: 1;
   transition: opacity 0.3s ease;
   background: none;
   color: #fff;
@@ -468,7 +497,7 @@
   border-radius: 0%;
   outline: none; */
 
-  opacity: 1;
+/* opacity: 1;
   margin-right: 48px;
   border-bottom: 2px solid transparent;
   transition: border-bottom 0.3s ease, opacity 0.3s ease;
@@ -477,8 +506,63 @@
   border: none;
   outline: none;
   font-size: 18px;
-  cursor: pointer;
+  cursor: pointer; */
+/* } */
+
+@media (max-width: 768px) {
+  .header {
+    max-width: 768px;
+    width: 100%;
+  }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1399px) {
+@media (max-width: 425px) {
+  .header {
+    max-width: 425px;
+    width: 100%;
+  }
+
+  .header__top-bar {
+    max-width: 425px;
+  }
+
+  .header__nav-list {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .header {
+    max-width: 375px;
+    width: 100%;
+  }
+
+  .header__top-bar {
+    max-width: 375px;
+  }
+
+  .header__nav-list {
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .header {
+    max-width: 320px;
+    padding: 0;
+    width: 100%;
+  }
+
+  .header__top-bar {
+    max-width: 320px;
+  }
+
+  .header__logo-image {
+    max-width: 117px;
+    height: 24px;
+  }
+
+  .header__nav-list {
+    display: none;
+  }
 }

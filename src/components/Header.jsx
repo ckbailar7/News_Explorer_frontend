@@ -101,7 +101,7 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
                 <li>
                   <NavLink
                     to="/saved-news"
-                    className={`header__nav-link ${
+                    className={`header__nav-link--homePage_nonActive ${
                       isProfilePage ? "header__nav-link--profilePage" : ""
                     }`}
                   >

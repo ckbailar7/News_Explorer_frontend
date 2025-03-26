@@ -1,26 +1,15 @@
 @font-face {
   font-family: "Roboto";
-  src: url("../vendor/fonts/Roboto/Roboto-Regular.ttf");
-  font-weight: 400;
-  font-style: normal;
+  src: url("../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
 }
 
 @font-face {
-  font-family: "Roboto-Bold";
-  src: url("../vendor/fonts/Roboto/Roboto-Bold.ttf");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Roboto-Italic";
-  src: url("../vendor/fonts/Roboto/Roboto-Italic.ttf");
-  font-weight: 400;
-  font-style: italic;
+  font-family: "Roboto Slab";
+  src: url("../vendor/fonts/Roboto/RobotoSlab-VariableFont_wght.ttf");
 }
 
 .SearchFormComponent__container {
-  width: 100vw;
+  /* width: 100vw; */
   /* width: 1440px; */
   height: 576px;
   /* background-image: url("../assets/headerBackground.svg"); */
@@ -30,11 +19,12 @@
 }
 
 .search-form {
-  width: 100vw;
+  /* width: 100vw; */
   height: 576px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 .SearchFormComponent__container-header_1 {
   color: #fff;
@@ -48,8 +38,9 @@
   color: #fff;
   width: 608px;
   height: 128px;
-  font-weight: 400px;
+  font-weight: 400;
   font-size: 60px;
+  font-family: "Roboto Slab", sans-serif;
 }
 
 .SearchFormComponent__container-header_2 {
@@ -111,4 +102,97 @@
   border-radius: 100px;
   border-color: none;
   cursor: pointer;
+}
+
+.search-form__button:active {
+  background-color: #2a65cc;
+
+  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+}
+
+@media (max-width: 768px) {
+  .search-form__bar {
+    width: 452px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 425px) {
+  .search-form__header {
+    width: 425px;
+    font-size: 32px;
+  }
+
+  .search-form__subtext {
+    width: 390px;
+  }
+
+  .search-form__bar {
+    width: 288px;
+    height: 128px;
+  }
+
+  .search-form__button {
+    bottom: 10px;
+    top: unset;
+    width: 288px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 375px) {
+  .search-form__header {
+    width: 370px;
+    font-size: 32px;
+  }
+
+  .search-form__subtext {
+    width: 340px;
+  }
+
+  .search-form__bar {
+    width: 288px;
+    height: 128px;
+  }
+
+  .search-form__button {
+    bottom: 10px;
+    top: unset;
+    width: 288px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 320px) {
+  .search-form__header {
+    width: 285px;
+    height: 80px;
+  }
+
+  .search-form__subtext {
+    width: 288px;
+    height: 72px;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .search-form__bar {
+    width: 288px;
+    height: 128px;
+  }
+  .search-form__button {
+    bottom: 10px;
+    top: unset;
+    width: 288px;
+    height: 56px;
+  }
+
+  .search-form__header {
+    width: 285px;
+    height: 80px;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 40px;
+  }
 }

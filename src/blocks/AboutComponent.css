@@ -1,6 +1,6 @@
 .AboutComponent__container {
   /* width: 100vw; */
-  max-width: 100%;
+  max-width: 1440px;
   height: auto;
   background-color: #fff;
   display: flex;
@@ -43,4 +43,66 @@
 .AboutComponent__paragraph {
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .AboutComponent__container {
+    max-width: 768px;
+    padding: 0;
+  }
+
+  .AboutComponent__HeadersWrapper {
+    max-width: 768px;
+  }
+
+  .AboutComponent__paragraph-container {
+    max-width: 424px;
+  }
+}
+
+@media (max-width: 425px) {
+  .AboutComponent__image {
+    width: 272px;
+    height: 272px;
+  }
+  .AboutComponent__Header1 {
+    width: 393px;
+    height: 45px;
+  }
+  .AboutComponent__paragraph-container {
+    width: 288px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 375px) {
+  .AboutComponent__image {
+    width: 272px;
+    height: 272px;
+  }
+  .AboutComponent__Header1 {
+    width: 343px;
+    height: 42px;
+  }
+  .AboutComponent__paragraph-container {
+    width: 288px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 320px) {
+  .AboutComponent__image {
+    width: 272px;
+    height: 272px;
+  }
+
+  .AboutComponent__Header1 {
+    width: 288px;
+    height: 40px;
+  }
+
+  .AboutComponent__paragraph-container {
+    width: 288px;
+    height: 240px;
+  }
 }

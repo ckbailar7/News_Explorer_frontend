@@ -9,7 +9,7 @@ const NewsCardComponent = ({
   onBookmarkClick,
   onDeleteClick,
 }) => {
-  const { title, description, image, Date, source } = cardData;
+  const { title, description, image, Date, source, keyword } = cardData;
   const location = useLocation();
   const isProfilePage = location.pathname === "/saved-news";
 
@@ -39,6 +39,11 @@ const NewsCardComponent = ({
           onBookmarkClick={onBookmarkClick}
           onDeleteClick={onDeleteClick}
         ></NewsCardButton>
+        {isProfilePage && (
+          <div className="news-card__button--keyword_label">
+            <p className="news-card__button--keyword_label--text">{keyword}</p>
+          </div>
+        )}
       </figure>
       <div className="news-card__details">
         <time className="news-card__date" dateTime={Date}>

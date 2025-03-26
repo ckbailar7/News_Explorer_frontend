@@ -7,6 +7,7 @@ const defaultCards = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper a lacus vestibulum sed. Scelerisque eleifend donec pretium vulputate sapien.  ",
     image: "/src/assets/image_06.svg",
     source: "TreeHugger",
+    keyword: "Doggos",
   },
   {
     id: "2",
@@ -16,6 +17,7 @@ const defaultCards = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper a lacus vestibulum sed. Scelerisque eleifend donec pretium vulputate sapien.  ",
     image: "/src/assets/image_01.svg",
     source: "TreeHugger",
+    keyword: "Long Text >>> . . . . . .. ",
   },
   {
     id: "3",
@@ -25,6 +27,7 @@ const defaultCards = [
       '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper a lacus vestibulum sed. Scelerisque eleifend donec pretium vulputate sapien.  ',
     image: "/src/assets/moose.svg",
     source: "TreeHugger",
+    keyword: "Moose",
   },
   {
     id: "4",
@@ -34,6 +37,7 @@ const defaultCards = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper a lacus vestibulum sed. Scelerisque eleifend donec pretium vulputate sapien.  ",
     image: "/src/assets/springs.svg",
     source: "TreeHugger",
+    keyword: "YellowStone",
   },
   {
     id: "5",
@@ -43,6 +47,7 @@ const defaultCards = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper a lacus vestibulum sed. Scelerisque eleifend donec pretium vulputate sapien.  ",
     image: "/src/assets/stars.svg",
     source: "TreeHugger",
+    keyword: "Photography",
   },
 ];
 

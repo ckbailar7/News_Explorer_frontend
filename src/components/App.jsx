@@ -35,7 +35,12 @@ function App() {
   const [defaultCardArray, setDefaultCardArray] = useState([]);
   // Setting isLoggedIn default value to false
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+
+  // useState to control preloader
+  const [loading, setLoading] = useState(false);
+
+  // simulate the api response
+  const [articles, setArticles] = useState([]);
 
   // creating useLocationCall as a variable for getting the current route
   const location = useLocation();
@@ -56,12 +61,23 @@ function App() {
     console.log("Helllo from onDeleteClick");
   };
 
+  const handleSearch = (query) => {
+    setLoading(true);
+
+    console.log("Searching for : ", query);
+
+    setTimeout(() => {
+      setArticles([defaultCards]);
+      setLoading(false);
+    }, 2000);
+  };
+
   useEffect(() => {
     setCards(defaultCards);
   }, []);
 
   useEffect(() => {
-    setIsLoggedIn(true);
+    setIsLoggedIn(false);
   }, []);
 
   const closeModal = () => setActiveModal("");
@@ -90,7 +106,6 @@ function App() {
     >
       {/* creating CurrentUser Provider with value of currentUser */}
       <currentUserContext.Provider value={currentUser}>
-        {isLoading && <Preloader />}
         <Header
           onCreateLoginModal={handleLoginModal}
           isLoggedIn={isLoggedIn}
@@ -101,10 +116,13 @@ function App() {
             path="/"
             element={
               <Main
+                defaultCards={defaultCards}
                 defaultCardArray={defaultCardArray}
                 isLoggedIn={isLoggedIn}
                 onBookmarkClick={onBookmarkClick}
                 onDeleteClick={onDeleteClick}
+                loading={loading} // Passing loading state to main
+                handleSearch={handleSearch} // Passing handleSearch functionality to main
               />
             }
           ></Route>
