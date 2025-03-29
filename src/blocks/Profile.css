@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("../vendor/fonts/Roboto/RobotoSlab-VariableFont_wght.ttf");
+}
+
 .profile__newsCard-container {
   display: flex;
   /* width: 1440px; */
@@ -10,20 +20,55 @@
   background-color: #f5f6f7;
 }
 
+.profile__header1 {
+}
+
 .profile__header1-text {
   width: 712px;
   height: 24px;
   margin-left: 104px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
 }
 
 .profile__header-greeting-text {
   width: 530px;
   height: 92px;
   margin-left: 104px;
+  font-family: "Roboto Slab";
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  letter-spacing: 0px;
+  color: #1a1b22;
 }
 
 .profile__header-greeting-byKeyword {
   width: 712px;
   height: 24px;
-  margin-left: 104px;
+  /* margin-left: 104px; */
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.profile__header-greeting-text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.profile__header-greeting-keywords {
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
 }

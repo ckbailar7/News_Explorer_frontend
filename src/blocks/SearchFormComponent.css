@@ -37,7 +37,8 @@
 .search-form__header {
   color: #fff;
   width: 608px;
-  height: 128px;
+  height: auto;
+  line-height: 1; /* to match with 60px font-size */
   font-weight: 400;
   font-size: 60px;
   font-family: "Roboto Slab", sans-serif;
@@ -55,6 +56,7 @@
   width: 608px;
   height: 24px;
   font-family: "Roboto";
+  font-weight: 400;
 }
 
 .SearchFormComponent__Search-Bar__container {
@@ -121,10 +123,13 @@
   .search-form__header {
     width: 425px;
     font-size: 32px;
+    /* padding-left: 10vw; */
+    height: 50px;
   }
 
   .search-form__subtext {
     width: 390px;
+    /* padding: 5vw; */
   }
 
   .search-form__bar {
@@ -144,10 +149,13 @@
   .search-form__header {
     width: 370px;
     font-size: 32px;
+    /* padding-left: 10vw; */
+    height: 45px;
   }
 
   .search-form__subtext {
     width: 340px;
+    /* padding: 5vw; */
   }
 
   .search-form__bar {
@@ -167,6 +175,8 @@
   .search-form__header {
     width: 285px;
     height: 80px;
+    /* padding: 10vw; */
+    height: 40px;
   }
 
   .search-form__subtext {
@@ -175,6 +185,7 @@
     font-family: "Roboto";
     font-size: 18px;
     font-weight: 400;
+    /* padding: 5vw; */
   }
 
   .search-form__bar {

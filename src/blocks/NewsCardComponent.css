@@ -154,6 +154,8 @@
   margin: 20px 24px 0 24px;
   font-family: "Source Sans Pro";
   font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
 }
 
 .news-card__title {
@@ -164,6 +166,8 @@
   overflow: visible;
   font-family: "Roboto Slab";
   font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0px;
 }
 
 .news-card__description {
@@ -173,6 +177,8 @@
   max-height: 110px;
   font-family: "Roboto";
   font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
 }
 
 .news-card__source {
@@ -205,6 +211,11 @@
 
 .news-card__button--tooltip--text {
   color: #333;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
 }
 
 .news-card__bookmark-button--container:hover + .news-card__button--tooltip {

@@ -156,14 +156,25 @@
 /* After fixing BEM methodology standards ====> */
 
 .header {
+  position: relative;
   width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
   max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 104px;
   height: 80px;
   box-sizing: border-box;
   border-bottom: 0.5px solid #d1d2d6;
 }
+
+/* .header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 0.5px;
+  background-color: #d1d2d6;
+} */
 
 .header__top-bar {
   display: flex;
@@ -269,7 +280,7 @@
 
 .header__nav-link {
   position: relative;
-  margin-right: 76px;
+  margin-right: 42px;
   width: 49px;
   height: 24px;
   color: #fff;
@@ -354,7 +365,7 @@
   align-items: center;
   justify-content: center;
   opacity: 1;
-  margin-right: 48px;
+  /* margin-right: 48px; */
   /* border-bottom: 2px solid transparent; */
   transition: border-bottom 0.3s ease, opacity 0.3s ease;
 
