@@ -72,3 +72,17 @@
   line-height: 24px;
   letter-spacing: 0px;
 }
+
+@media (max-width: 768px) {
+  .profile__header1-text {
+    width: 712px;
+    height: 24px;
+    margin: 0;
+  }
+
+  .profile__header-greeting-text {
+    width: 336px;
+    height: 68px;
+    margin: 0;
+  }
+}

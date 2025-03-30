@@ -16,61 +16,6 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
     ? "/src/assets/NewsExplorerNewsExplorerHeaderDark.svg"
     : "/src/assets/headerLogoWhite.svg";
 
-  // const headerProfileLogoutButtonChange = isProfilePage
-  //   ? "header__logoutButton--profilePage"
-  //   : "header__logoutButton";
-
-  // const headerHomeButtonChange = headerUniversalButtonClassName(
-  //   "header__homeButton",
-  //   isProfilePage
-  // );
-
-  // const headerSavedArticlesButtonChange = headerUniversalButtonClassName(
-  //   "header__savedArticlesButton",
-  //   isProfilePage
-  // );
-
-  // const headerProfileNameChange = headerUniversalButtonClassName(
-  //   "header__profileNameButton",
-  //   isProfilePage
-  // );
-
-  // const navigation = isLoggedIn ? (
-  //   <nav className="header__navigation header__navigation--logged-in">
-  //     <div className="header__homeButton--container">
-  //       <NavLink to="/">
-  //         <button className={headerHomeButtonChange}>Home</button>
-  //       </NavLink>
-  //     </div>
-  //     <div className="header__savedArticlesButton--container">
-  //       <NavLink to="/saved-news">
-  //         <button className={headerSavedArticlesButtonChange}>
-  //           Saved Articles
-  //         </button>
-  //       </NavLink>
-  //     </div>
-  //     <div className="header__profileButton--container">
-  //       <NavLink to="/saved-news">
-  //         <button className={headerProfileNameChange}>
-  //           {currentUser?.name || "Prof"}
-  //         </button>
-  //       </NavLink>
-  //       <button className={headerProfileLogoutButtonChange}></button>
-  //     </div>
-  //   </nav>
-  // ) : (
-  //   <nav className="header__navigation">
-  //     <div className="header__loginButton--container">
-  //       <button onClick={onCreateLoginModal} className="header__loginButton">
-  //         Sign in
-  //       </button>
-  //     </div>
-  //     <NavLink to="/">
-  //       <button className={headerHomeButtonChange}>Home</button>
-  //     </NavLink>
-  //   </nav>
-  // );
-
   return (
     <header className="header">
       <div className="header__top-bar">
@@ -90,7 +35,7 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
               <NavLink
                 to="/"
                 className={`header__nav-link ${
-                  isProfilePage ? "header__nav-link--profilePage" : ""
+                  isProfilePage ? "header__nav-link_page_profile" : ""
                 }`}
               >
                 Home
@@ -98,7 +43,7 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
             </li>
             {isLoggedIn && (
               <>
-                <li>
+                <li className="header__nav-link--savedArticles-container">
                   <NavLink
                     to="/saved-news"
                     className={`header__nav-link--homePage_nonActive ${
@@ -113,14 +58,6 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
                     isProfilePage ? "header__profile--profilePage" : ""
                   }`}
                 >
-                  {/* <NavLink
-                    to="/saved-news"
-                    className={`header__nav-link ${
-                      isProfilePage ? "header__nav-link--profilePage" : ""
-                    }`}
-                  >
-                    {currentUser?.name || "Profile"}
-                  </NavLink> */}
                   <button
                     className={`header__nav-link--userButton ${
                       isProfilePage

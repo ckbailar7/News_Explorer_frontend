@@ -115,7 +115,7 @@
 @media (max-width: 768px) {
   .search-form__bar {
     width: 452px;
-    height: 56px;
+    height: 100px;
   }
 }
 
