@@ -4,14 +4,14 @@ import GithubImage from "../assets/github.svg";
 import FBimage from "../assets/fb.svg";
 const Footer = ({}) => {
   return (
-    <footer className="footer__container">
+    <footer className="footer">
       <p className="footer__copyright">© 2020 Supersite, Powered by News API</p>
-      <div className="footer__buttons_container">
-        <div className="footer__buttons_noIcon_container">
-          <button className="footer__homebutton">Home</button>
-          <button className="footer__tripletenlinkbutton">TripleTen</button>
+      <div className="footer__buttons-container">
+        <div className="footer__buttons-no-icon">
+          <button className="footer__home-button">Home</button>
+          <button className="footer__tripleten-button">TripleTen</button>
         </div>
-        <div className="footer__buttons_withIcon_container">
+        <div className="footer__buttons-with-icon">
           <button className="footer__github-button">
             <img src={GithubImage} alt="Github Icon" />
           </button>

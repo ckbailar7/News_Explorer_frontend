@@ -1,22 +1,21 @@
 .footer {
-  color: #b6bcbf;
-}
-
-.footer__container {
   display: flex;
-  /* width: 1440px; */
   height: 80px;
   border-bottom: solid 1px #fff;
   align-items: center;
   justify-content: space-between;
+  color: #b6bcbf;
 }
 
-.footer__buttons_container {
+.footer__buttons-container {
   margin-right: 104px;
   display: inline-flex;
 }
 
-.footer__container button {
+.footer__home-button,
+.footer__tripleten-button,
+.footer__github-button,
+.footer__facebook-button {
   background: none;
   border: none;
   padding: 0 20px;
@@ -24,11 +23,15 @@
   height: 24px;
 }
 
-.footer__container button:hover {
+.footer__home-button:hover,
+.footer__tripleten-button:hover,
+.footer__github-button:hover,
+.footer__facebook-button:hover {
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.footer__buttons_noIcon_container {
+.footer__buttons-no-icon {
   margin-right: 40px;
   display: flex;
   justify-content: space-between;
@@ -37,12 +40,12 @@
   margin: 30px 40px 26px 0;
 }
 
-.footer__buttons_withIcon_container {
+.footer__buttons-with-icon {
   margin: 28px 0 28px 40px;
 }
 
 @media (max-width: 320px) {
-  .footer__container {
+  .footer {
     flex-wrap: wrap;
   }
 }
