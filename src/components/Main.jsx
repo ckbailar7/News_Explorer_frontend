@@ -28,8 +28,8 @@ const Main = ({
         <Preloader />
       ) : (
         <section className="news-section">
-          <h1 className="news-card__header">Search results</h1>
-          <div className="news-cards-wrapper">
+          <h1 className="news-section__header">Search results</h1>
+          <div className="news-section__card-wrapper">
             {cards.map((card) => (
               <NewsCardComponent
                 key={card.id}
@@ -40,11 +40,11 @@ const Main = ({
               />
             ))}
           </div>
-          <button className="news-cards__showMore-button">Show more</button>
+          <button className="news-section__show-more-button">Show more</button>
         </section>
       )}
 
-      <section className="about-section">
+      <section className="main__about-section">
         <AboutComponent />
       </section>
     </main>
