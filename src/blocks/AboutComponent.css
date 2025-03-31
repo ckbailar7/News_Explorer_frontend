@@ -8,7 +8,7 @@
   src: url("../vendor/fonts/Roboto/RobotoSlab-VariableFont_wght.ttf");
 }
 
-.AboutComponent__container {
+.about-component__container {
   /* width: 100vw; */
   max-width: 1440px;
   height: auto;
@@ -22,23 +22,23 @@
   box-sizing: border-box;
 }
 
-.AboutComponent__image_wrapper {
+.about-component__image-wrapper {
 }
 
-.AboutComponent__image {
+.about-component__image {
   width: 100%;
   max-width: 464px;
   height: 464px;
   border-radius: 1000px;
 }
 
-.AboutComponent__HeadersWrapper {
+.about-component__headers-wrapper {
   width: 100%;
   max-width: 600px;
   margin: 20px 0;
 }
 
-.AboutComponent__Header1 {
+.about-component__header {
   width: 600px;
   height: 46px;
   line-height: 46px;
@@ -49,7 +49,7 @@
   letter-spacing: 0px;
 }
 
-.AboutComponent__paragraph-container {
+.about-component__paragraph-container {
   width: 600px;
   height: 120px;
   display: flex;
@@ -60,68 +60,68 @@
   letter-spacing: 0px;
 }
 
-.AboutComponent__paragraph {
+.about-component__paragraph {
   display: flex;
   align-items: center;
 }
 
 @media (max-width: 768px) {
-  .AboutComponent__container {
+  .about-component__container {
     max-width: 768px;
     padding: 0;
   }
 
-  .AboutComponent__HeadersWrapper {
+  .about-component__headers-wrapper {
     max-width: 768px;
   }
 
-  .AboutComponent__paragraph-container {
+  .about-component__paragraph-container {
     max-width: 424px;
   }
 }
 
 @media (max-width: 425px) {
-  .AboutComponent__image {
+  .about-component__image {
     width: 272px;
     height: 272px;
   }
-  .AboutComponent__Header1 {
+  .about-component__header {
     width: 393px;
     height: 45px;
   }
-  .AboutComponent__paragraph-container {
+  .about-component__paragraph-container {
     width: 288px;
     height: 240px;
   }
 }
 
 @media (max-width: 375px) {
-  .AboutComponent__image {
+  .about-component__image {
     width: 272px;
     height: 272px;
   }
-  .AboutComponent__Header1 {
+  .about-component__header {
     width: 343px;
     height: 42px;
   }
-  .AboutComponent__paragraph-container {
+  .about-component__paragraph-container {
     width: 288px;
     height: 240px;
   }
 }
 
 @media (max-width: 320px) {
-  .AboutComponent__image {
+  .about-component__image {
     width: 272px;
     height: 272px;
   }
 
-  .AboutComponent__Header1 {
+  .about-component__header {
     width: 288px;
     height: 40px;
   }
 
-  .AboutComponent__paragraph-container {
+  .about-component__paragraph-container {
     width: 288px;
     height: 240px;
   }

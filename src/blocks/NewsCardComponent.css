@@ -57,7 +57,7 @@
   cursor: pointer;
 }
 
-.news-card__button--keyword_label {
+.news-card__keyword {
   min-width: 80px;
   height: 40px;
   background-color: #fff;
@@ -70,7 +70,7 @@
   align-items: center;
 }
 
-.news-card__button--keyword_label--text {
+.news-card__keyword-text {
   padding: 0 15px 0 15px;
 }
 
@@ -117,7 +117,7 @@
   height: 19px;
 }
 
-.news-card__bookmark-button__hoverState {
+/* .news-card__bookmark-button__hoverState {
   background-image: url("../assets/test1bookmarkhover.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -126,7 +126,7 @@
   width: 14px;
   height: 19px;
   border: none;
-}
+} */
 
 .news-card__bookmark-button:hover {
   background-image: url("../assets/test1bookmarkhover.svg");
@@ -227,12 +227,3 @@
   visibility: visible;
   opacity: 1;
 }
-
-/* @media (max-width: 320px) {
-  .news-card__header {
-    width: 288px;
-    height: 34px;
-    margin-left: 0;
-    font-size: 30px;
-  }
-} */

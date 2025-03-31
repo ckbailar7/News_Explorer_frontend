@@ -40,8 +40,8 @@ const NewsCardComponent = ({
           onDeleteClick={onDeleteClick}
         ></NewsCardButton>
         {isProfilePage && (
-          <div className="news-card__button--keyword_label">
-            <p className="news-card__button--keyword_label--text">{keyword}</p>
+          <div className="news-card__keyword">
+            <p className="news-card__keyword-text">{keyword}</p>
           </div>
         )}
       </figure>

@@ -20,7 +20,7 @@ const SearchFormComponent = ({ handleSearch, loading }) => {
         <input
           type="text"
           id="search-input"
-          className="search-form__input "
+          className="search-form__input"
           placeholder="Enter topic"
           name="search"
         />

@@ -1,16 +1,16 @@
 import "../blocks/AboutComponent.css";
 import AboutPhoto from "../assets/tripleTenFinalProjPhoto.jpeg";
 
-const AboutComponent = ({}) => {
+const AboutComponent = () => {
   return (
-    <div className="AboutComponent__container">
-      <div className="AboutComponent__image_wrapper">
-        <img className="AboutComponent__image" src={AboutPhoto} alt="" />
+    <div className="about-component__container">
+      <div className="about-component__image-wrapper">
+        <img className="about-component__image" src={AboutPhoto} alt="" />
       </div>
-      <div className="AboutComponent__HeadersWrapper">
-        <h1 className="AboutComponent__Header1">About the author</h1>
-        <div className="AboutComponent__paragraph-container">
-          <p className="AboutComponent__paragraph">
+      <div className="about-component__headers-wrapper">
+        <h1 className="about-component__header">About the author</h1>
+        <div className="about-component__paragraph-container">
+          <p className="about-component__paragraph">
             This block describes the project author. Here you should indicate
             your name, what you do, and which development technologies you know.
             You can also talk about your experience with TripleTen, what you
