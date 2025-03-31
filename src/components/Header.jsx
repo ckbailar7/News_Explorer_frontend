@@ -12,14 +12,27 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
   // const headerUniversalButtonClassName = (baseClass, isProfilePage) =>
   //   isProfilePage ? `${baseClass}--profilePage` : baseClass;
 
+  // <<<<<<< >>>>>>>> //
+  // <<<<<<< >>>>>>>> //
+  // --profilePage (good modifier)
+
+  // <<<<<<< >>>>>>>> //
+  // <<<<<<< >>>>>>>> //
+
+  // <<<<<<< >>>>>>>> //
+  // <<<<<<< >>>>>>>> //
+
+  // <<<<<<< >>>>>>>> //
+  // <<<<<<< >>>>>>>> //
+
   const headerLogoChange = isProfilePage
     ? "/src/assets/NewsExplorerNewsExplorerHeaderDark.svg"
     : "/src/assets/headerLogoWhite.svg";
 
   return (
     <header className="header">
-      <div className="header__top-bar">
-        <div className="header__logo ">
+      <div className="header__topBar">
+        <div className="header__logo">
           <NavLink to="/">
             <img
               src={headerLogoChange}
@@ -35,7 +48,7 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
               <NavLink
                 to="/"
                 className={`header__nav-link ${
-                  isProfilePage ? "header__nav-link_page_profile" : ""
+                  isProfilePage ? "header__nav-link--profilePage" : ""
                 }`}
               >
                 Home
@@ -43,11 +56,13 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
             </li>
             {isLoggedIn && (
               <>
-                <li className="header__nav-link--savedArticles-container">
+                <li className="header__savedArticles-container">
                   <NavLink
                     to="/saved-news"
-                    className={`header__nav-link--homePage_nonActive ${
-                      isProfilePage ? "header__nav-link--profilePage" : ""
+                    className={`header__nav-link ${
+                      isProfilePage
+                        ? "header__nav-link--profilePage"
+                        : "header__nav-link--homePage-nonActive"
                     }`}
                   >
                     Saved Articles
@@ -59,18 +74,17 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
                   }`}
                 >
                   <button
-                    className={`header__nav-link--userButton ${
-                      isProfilePage
-                        ? "header__nav-link--userButton--profilePage"
-                        : ""
+                    className={`header__userButton ${
+                      isProfilePage ? "header__userButton--profilePage" : ""
                     }`}
                   >
                     {currentUser?.name || "Profile"}
                   </button>
                   <button
-                    className={`header__logout-button ${
-                      isProfilePage ? "header__logout-button--profilePage" : ""
+                    className={`header__logoutButton ${
+                      isProfilePage ? "header__logoutButton--profilePage" : ""
                     }`}
+                    aria-label="Logout"
                   ></button>
                 </li>
               </>
@@ -79,7 +93,7 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
               <li>
                 <button
                   onClick={onCreateLoginModal}
-                  className="header__login-button"
+                  className="header__loginButton"
                 >
                   Sign In
                 </button>
