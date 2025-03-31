@@ -101,7 +101,7 @@ function App() {
     <div
       id="content__container"
       className={`content__container ${
-        location.pathname === "/saved-news" ? "content__container_profile" : ""
+        location.pathname === "/saved-news" ? "content__container--profile" : ""
       }`}
     >
       {/* creating CurrentUser Provider with value of currentUser */}

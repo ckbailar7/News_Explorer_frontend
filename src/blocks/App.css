@@ -19,14 +19,14 @@
   font-family: "Roboto", sans-serif;
 }
 
-.content__container_profile {
+.content__container--profile {
   background-image: none;
   background-color: #fff;
 }
 
-* {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 *,
 *::before,
@@ -35,24 +35,6 @@
 }
 
 @media (max-width: 768px) {
-  .content__container {
-    width: 100%;
-  }
-}
-
-@media (max-width: 375px) {
-  .content__container {
-    width: 100%;
-  }
-}
-
-@media (max-width: 425px) {
-  .content__container {
-    width: 100%;
-  }
-}
-
-@media (max-width: 320px) {
   .content__container {
     width: 100%;
   }
