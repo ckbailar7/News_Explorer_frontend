@@ -31,7 +31,7 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
 
   return (
     <header className="header">
-      <div className="header__topBar">
+      <div className="header__top-bar">
         <div className="header__logo">
           <NavLink to="/">
             <img
@@ -44,11 +44,11 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
         {/* {navigation} */}
         <nav className="header__navigation">
           <ul className="header__nav-list">
-            <li>
+            <li className="header__nav-item">
               <NavLink
                 to="/"
                 className={`header__nav-link ${
-                  isProfilePage ? "header__nav-link--profilePage" : ""
+                  isProfilePage ? "header__nav-link--profile-page" : ""
                 }`}
               >
                 Home
@@ -56,13 +56,13 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
             </li>
             {isLoggedIn && (
               <>
-                <li className="header__savedArticles-container">
+                <li className="header__saved-articles">
                   <NavLink
                     to="/saved-news"
                     className={`header__nav-link ${
                       isProfilePage
-                        ? "header__nav-link--profilePage"
-                        : "header__nav-link--homePage-nonActive"
+                        ? "header__nav-link--profile-page--saved-articles"
+                        : "header__nav-link--home-page-inactive--saved-articles"
                     }`}
                   >
                     Saved Articles
@@ -70,19 +70,19 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
                 </li>
                 <li
                   className={`header__profile ${
-                    isProfilePage ? "header__profile--profilePage" : ""
+                    isProfilePage ? "header__profile--profile-page" : ""
                   }`}
                 >
                   <button
-                    className={`header__userButton ${
-                      isProfilePage ? "header__userButton--profilePage" : ""
+                    className={`header__user-button ${
+                      isProfilePage ? "header__user-button--profile-page" : ""
                     }`}
                   >
                     {currentUser?.name || "Profile"}
                   </button>
                   <button
-                    className={`header__logoutButton ${
-                      isProfilePage ? "header__logoutButton--profilePage" : ""
+                    className={`header__logout-button ${
+                      isProfilePage ? "header__logout-button--profile-page" : ""
                     }`}
                     aria-label="Logout"
                   ></button>
@@ -90,10 +90,10 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
               </>
             )}
             {!isLoggedIn && (
-              <li>
+              <li className="header__login">
                 <button
                   onClick={onCreateLoginModal}
-                  className="header__loginButton"
+                  className="header__login-button"
                 >
                   Sign In
                 </button>

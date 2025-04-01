@@ -161,17 +161,13 @@
   border-bottom: 0.5px solid #d1d2d6;
 }
 
-.header__topBar {
+.header__top-bar {
   display: flex;
   width: 100%;
   height: 80px;
 
   align-items: center;
   justify-content: space-between;
-}
-
-.header__logo-white {
-  line-height: 24px;
 }
 
 .header__logo-image {
@@ -270,7 +266,7 @@
   /* transition: 0.3s ease; */
 }
 
-.header__nav-link--homePage-nonActive {
+.header__nav-link--home-page-inactive {
   position: relative;
   margin-right: 76px;
   width: 49px;
@@ -294,7 +290,7 @@
   background-color: #fff;
 }
 
-.header__userButton {
+.header__user-button {
   position: relative;
   margin-right: 15px;
   width: 49px;
@@ -311,7 +307,7 @@
   letter-spacing: 0px;
 }
 
-.header__userButton--profilePage {
+.header__user-button--profile-page {
   position: relative;
   /* margin-right: 15px; */
   width: 49px;
@@ -328,7 +324,7 @@
   letter-spacing: 0px;
 }
 
-.header__loginButton {
+.header__login-button {
   border: 1px solid #fff;
   border-radius: 100px;
   width: 152px;
@@ -352,7 +348,8 @@
   font-weight: 400;
 }
 
-.header__nav-link--profilePage {
+.header__nav-link--profile-page,
+.header__nav-link--profile-page--saved-articles {
   margin-right: 76px;
   width: 49px;
   height: 24px;
@@ -362,7 +359,7 @@
   font-size: 18px;
 }
 
-.header__nav-link--profilePage.active::after {
+.header__nav-link--profile-page.active::after {
   content: "";
   position: absolute;
   bottom: -5px;
@@ -372,6 +369,11 @@
   background-color: #000;
 }
 
+/* .header__nav-link--profile-page--saved-articles,
+.header__nav-link--home-page-inactive--saved-articles {
+  width: 114px;
+} */
+
 .header__profile {
   display: flex;
   border: 1px solid #fff;
@@ -379,7 +381,7 @@
   padding: 12px;
 }
 
-.header__profile--profilePage {
+.header__profile--profile-page {
   display: flex;
   border: 1px solid #1a1b22;
   border-radius: 100px;
@@ -405,7 +407,7 @@
   font-size: 18px;
 }
 
-.header__logoutButton {
+.header__logout-button {
   width: 30px;
   height: 24px;
   background-color: transparent;
@@ -415,7 +417,7 @@
   list-style-type: none;
 }
 
-.header__logoutButton--profilePage {
+.header__logout-button--profile-page {
   width: 30px;
   height: 24px;
   background-color: transparent;
@@ -449,7 +451,6 @@
 }
 
 .header__profileNameButton {
-  /* width: 112px; */
   height: 48px;
   background-color: transparent;
   border: none;
@@ -458,7 +459,6 @@
 }
 
 .header__profileNameButton--profilePage {
-  /* width: 112px; */
   height: 48px;
   background-color: transparent;
   border: none;
@@ -467,11 +467,11 @@
 }
 
 @media screen and (min-width: 769px) and (max-width: 854px) {
-  .header__nav-link--homePage-nonActive {
+  .header__nav-link--home-page-inactive {
     margin: 0;
   }
 
-  .header__nav-link--profilePage {
+  .header__nav-link--profile-page {
     margin: 0;
   }
 }
@@ -483,12 +483,12 @@
     padding: 0 40px;
   }
 
-  .header__savedArticles-container {
+  .header__saved-articles {
     width: 160px;
     height: 24px;
   }
 
-  .header__nav-link--homePage-nonActive {
+  .header__nav-link--home-page-inactive {
     margin: 0;
   }
 }
@@ -499,7 +499,7 @@
     width: 100%;
   }
 
-  .header__topBar {
+  .header__top-bar {
     max-width: 425px;
   }
 
@@ -514,7 +514,7 @@
     width: 100%;
   }
 
-  .header__topBar {
+  .header__top-bar {
     max-width: 375px;
   }
 
@@ -530,7 +530,7 @@
     width: 100%;
   }
 
-  .header__topBar {
+  .header__top-bar {
     max-width: 320px;
   }
 
