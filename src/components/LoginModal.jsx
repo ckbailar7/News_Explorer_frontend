@@ -3,43 +3,41 @@ import ModalWithForm from "./ModalWithForm";
 const LoginModal = ({ onClose, handleSignUpModal }) => {
   return (
     <ModalWithForm onClose={onClose} title="Sign in">
-      <div className="modalWithForm">
-        <label className="modalWithForm__name">
-          Email
-          <input
-            className="modalWithForm__name-input"
-            name="email"
-            id="email"
-            type="email"
-            minLength="1"
-            maxLength="300"
-            placeholder="Enter email"
-          />
-        </label>
-        <label className="modalWithForm__name">
-          Password
-          <input
-            className="modalWithForm__name-input"
-            id="password"
-            type="password"
-            minLength="1"
-            maxLength="300"
-            placeholder="Enter password"
-          />
-        </label>
-        <button className="modalWithForm__name-signInButton">
-          <p className="modalWithForm__name-signInButton_text">Sign in</p>
-        </button>
-        <p>
-          Or{" "}
-          <a
-            className="modalWithForm__name-signUpTransfer"
-            onClick={handleSignUpModal}
-          >
-            Signup
-          </a>
-        </p>
-      </div>
+      <label className="modalWithForm__label">
+        Email
+        <input
+          className="modalWithForm__input"
+          name="email"
+          id="email"
+          type="email"
+          minLength="1"
+          maxLength="300"
+          placeholder="Enter email"
+        />
+      </label>
+      <label className="modalWithForm__label">
+        Password
+        <input
+          className="modalWithForm__input"
+          id="password"
+          type="password"
+          minLength="1"
+          maxLength="300"
+          placeholder="Enter password"
+        />
+      </label>
+      <button className="modalWithForm__signInButton">
+        <p className="modalWithForm__signInButtonText">Sign in</p>
+      </button>
+      <p>
+        Or{" "}
+        <a
+          className="modalWithForm__switchToSignup"
+          onClick={handleSignUpModal}
+        >
+          Signup
+        </a>
+      </p>
     </ModalWithForm>
   );
 };

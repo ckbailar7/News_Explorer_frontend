@@ -77,7 +77,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    setIsLoggedIn(true);
+    setIsLoggedIn(false);
   }, []);
 
   const closeModal = () => setActiveModal("");

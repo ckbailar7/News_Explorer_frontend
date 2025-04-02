@@ -19,15 +19,15 @@ const ModalWithForm = ({ name, title, children, onClose }) => {
     };
   }, [onClose]);
   return (
-    <div className={`modal modal_type_${name}`}>
-      <div className="modal__content-modalWithForm" ref={modalRef}>
+    <div className={`modalWithForm modalWithForm--${name}`}>
+      <div className="modalWithForm__content" ref={modalRef}>
         <button
-          className="modal__content-button"
+          className="modalWithForm__close-button"
           type="button"
           onClick={onClose}
         ></button>
-        <h3 className="modal__content-title">{title}</h3>
-        <form className="modal__content-form">{children}</form>
+        <h3 className="modalWithForm__title">{title}</h3>
+        <form className="modalWithForm__form">{children}</form>
       </div>
     </div>
   );
