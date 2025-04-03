@@ -227,3 +227,30 @@
   visibility: visible;
   opacity: 1;
 }
+
+@media screen and (max-width: 768px) {
+  .news-card {
+    width: 224px;
+    height: 420px;
+  }
+  .news-card__image {
+    width: 224px;
+    height: 150px;
+  }
+  .news-card__date {
+    width: 147px;
+    height: 24px;
+  }
+  .news-card__title {
+    width: 192px;
+    height: 72px;
+  }
+  .news-card__description {
+    width: 192px;
+    height: 88px;
+  }
+  .news-card__source {
+    width: 192px;
+    height: 20px;
+  }
+}

@@ -28,7 +28,7 @@
   height: auto;
   flex-wrap: wrap;
   align-content: center;
-  /* justify-content: center; */
+  justify-content: center;
 }
 
 .news-section__header {

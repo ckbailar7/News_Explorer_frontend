@@ -361,7 +361,7 @@
 .header__nav-link--profile-page.active::after {
   content: "";
   position: absolute;
-  bottom: -5px;
+  bottom: -10px;
   left: 0;
   width: 100%;
   height: 3px;

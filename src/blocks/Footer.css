@@ -29,6 +29,10 @@
   height: 24px;
 }
 
+.footer__github-button {
+  padding-right: 24px;
+}
+
 .footer__home-button:hover,
 .footer__tripleten-button:hover,
 .footer__github-button:hover,
