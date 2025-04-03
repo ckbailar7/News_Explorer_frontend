@@ -1,5 +1,5 @@
 .root {
-  /* max-width: 1400px; */
+  --input-border-color: rgba(0, 0, 0, 0.2);
 }
 
 body {

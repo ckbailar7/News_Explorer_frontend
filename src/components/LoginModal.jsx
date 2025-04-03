@@ -32,7 +32,7 @@ const LoginModal = ({ onClose, handleSignUpModal }) => {
       <p>
         Or{" "}
         <a
-          className="modalWithForm__switchToSignup"
+          className="modalWithForm__signUpTransfer"
           onClick={handleSignUpModal}
         >
           Signup

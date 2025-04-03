@@ -25,6 +25,9 @@
   align-items: center;
   align-self: flex-start;
   max-width: 496px;
+  align-self: flex-start;
+  width: 100%;
+  margin-bottom: 30px;
 }
 /* .modalWithForm {
   display: flex;
@@ -92,7 +95,6 @@
   border-bottom: 1px solid black;
   font-size: 14px;
   color: #000000;
-  /* opacity: 20%; */
 }
 
 .modalWithForm__SelectText {
