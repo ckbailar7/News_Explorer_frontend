@@ -45,7 +45,7 @@
   cursor: pointer;
 }
 
-.header__buttons_signin-button {
+/* .header__buttons_signin-button {
   border: 2px solid #fff;
   border-radius: 100px;
   display: flex;
@@ -57,9 +57,9 @@
   color: #fff;
   cursor: pointer;
   margin-right: 104px;
-}
+} */
 
-.header__buttons_signin-button button {
+/* .header__buttons_signin-button button {
   opacity: 1;
   transition: opacity 0.3s ease;
   background: none;
@@ -68,7 +68,7 @@
   width: 152px;
   border-radius: 0%;
   outline: none;
-}
+} */
 
 .header__buttons_signin-button:hover {
   color: #fff;
@@ -350,7 +350,6 @@
 
 .header__nav-link--profile-page,
 .header__nav-link--profile-page--saved-articles {
-  margin-right: 76px;
   width: 49px;
   height: 24px;
   color: #000;
@@ -369,10 +368,20 @@
   background-color: #000;
 }
 
-/* .header__nav-link--profile-page--saved-articles,
+.header__nav-link--profile-page--saved-articles.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+}
+
+.header__nav-link--profile-page--saved-articles,
 .header__nav-link--home-page-inactive--saved-articles {
   width: 114px;
-} */
+}
 
 .header__profile {
   display: flex;
