@@ -551,4 +551,8 @@
   .header__nav-list {
     display: none;
   }
+
+  .header__logo {
+    max-width: 117px;
+  }
 }

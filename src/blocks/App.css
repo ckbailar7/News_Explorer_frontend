@@ -24,9 +24,9 @@
   background-color: #fff;
 }
 
-/* * {
+* {
   outline: 1px solid red;
-} */
+}
 
 *,
 *::before,
@@ -37,5 +37,14 @@
 @media (max-width: 768px) {
   .content__container {
     width: 100%;
+    background-repeat: no-repeat;
+    background-color: #f5f6f7;
+    max-width: 768px;
+    margin: 0 auto;
+    background-image: url("../assets/newTabletBackgroundCorrect.svg"); /* Accidentally included footer along with background image from figma download make sure you only download the individual image not the other groups added automatically*/
+  }
+  .content__container--profile {
+    background-image: none;
+    background-color: #fff;
   }
 }
