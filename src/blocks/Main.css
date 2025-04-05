@@ -83,6 +83,8 @@
 
   .news-section__header {
     max-width: 336px;
+    line-height: 34px;
+    font-size: 30px;
   }
 
   .main__about-section {

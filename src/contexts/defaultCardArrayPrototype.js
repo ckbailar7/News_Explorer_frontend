@@ -4,7 +4,7 @@ const defaultCards = [
     title: "Lorem ipsum dolor sit ametagna",
     Date: "November 4, 2020",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper a lacus vestibulum sed. Scelerisque eleifend donec pretium vulputate sapien.  ",
+      "Ever since I read Richard Louv's influential book, Last Child in the Woods, the idea of having a special sit spot has stuck with me. This advice, which Louv attributes to nature educator Jon Young, is for both adults and children to find",
     image: "/src/assets/image_06.svg",
     source: "TreeHugger",
     keyword: "Doggos",
@@ -13,18 +13,17 @@ const defaultCards = [
     id: "2",
     title: "card 2",
     Date: 1991,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper a lacus vestibulum sed. Scelerisque eleifend donec pretium vulputate sapien.  ",
+    description: "We all know how good nature can make ",
     image: "/src/assets/image_01.svg",
     source: "TreeHugger",
-    keyword: "Long Text >>> . . . . . .. ",
+    keyword: "Long Text >>>",
   },
   {
     id: "3",
     title: "card 3",
     Date: 1991,
     description:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper a lacus vestibulum sed. Scelerisque eleifend donec pretium vulputate sapien.  ',
+      '"“The linking together of the Cascade and Death Canyon trails, at their heads, took place on October 1, 1933, and marked the first step in the realization of a plan whereby the hiker will be  ',
     image: "/src/assets/moose.svg",
     source: "TreeHugger",
     keyword: "Moose",
