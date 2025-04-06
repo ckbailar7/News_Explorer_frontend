@@ -14,7 +14,7 @@
   min-height: 100vh;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 10px;
+  /* padding: 10px; */
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
@@ -46,5 +46,15 @@
   .content__container--profile {
     background-image: none;
     background-color: #fff;
+  }
+}
+
+@media (max-width: 320px) {
+  .content__container {
+    background-image: url("../assets/mobileBackground.svg");
+    background-color: #f5f6f7;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
   }
 }

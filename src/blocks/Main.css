@@ -135,4 +135,9 @@
     font-size: 30px;
     margin-left: unset;
   }
+
+  .main__about-section {
+    width: 320px;
+    height: 752px;
+  }
 }

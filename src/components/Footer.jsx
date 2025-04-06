@@ -12,12 +12,8 @@ const Footer = ({}) => {
           <button className="footer__tripleten-button">TripleTen</button>
         </div>
         <div className="footer__buttons-with-icon">
-          <button className="footer__github-button">
-            <img src={GithubImage} alt="Github Icon" />
-          </button>
-          <button className="footer__facebook-button">
-            <img src={FBimage} alt="Facebook Icon" />
-          </button>
+          <button className="footer__github-button"></button>
+          <button className="footer__facebook-button"></button>
         </div>
       </div>
     </footer>

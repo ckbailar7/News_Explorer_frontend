@@ -13,7 +13,8 @@ const defaultCards = [
     id: "2",
     title: "card 2",
     Date: 1991,
-    description: "We all know how good nature can make ",
+    description:
+      "We all know how good nature can make  adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper a lacus vestibulum sed. Scelerisque eleifend donec pretium vulputate sa ",
     image: "/src/assets/image_01.svg",
     source: "TreeHugger",
     keyword: "Long Text >>>",

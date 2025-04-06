@@ -111,6 +111,10 @@
 }
 
 @media (max-width: 320px) {
+  .about-component__container {
+    height: 752px;
+  }
+
   .about-component__image {
     width: 272px;
     height: 272px;
@@ -119,10 +123,33 @@
   .about-component__header {
     width: 288px;
     height: 40px;
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    display: block;
+    margin: 0 16px 0 16px;
+  }
+
+  .about-component__headers-wrapper {
+    display: block;
+    margin: 0;
   }
 
   .about-component__paragraph-container {
     width: 288px;
     height: 240px;
+    display: block;
+    margin: 16px 16px 128px 16px;
+  }
+
+  .about-component__paragraph {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    width: 288px;
+    height: 240px;
+    /* margin: 0 16px 128px 16px; */
+    display: block;
+    margin: 0;
   }
 }
