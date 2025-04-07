@@ -73,6 +73,7 @@
 @media (max-width: 768px) {
   .main {
     max-width: 768px;
+    gap: unset;
   }
 
   .news-section {
@@ -106,6 +107,10 @@
     font-size: 30px;
     margin-left: unset;
   }
+  .main__about-section {
+    width: 320px;
+    height: 752px;
+  }
 }
 
 @media (max-width: 375px) {
@@ -120,6 +125,11 @@
     height: 34px;
     font-size: 30px;
     margin-left: unset;
+  }
+
+  .main__about-section {
+    width: 320px;
+    height: 752px;
   }
 }
 

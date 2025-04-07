@@ -49,6 +49,28 @@
   }
 }
 
+@media (max-width: 425px) {
+  .content__container {
+    background-image: url("../assets/mobileBackground.svg");
+    background-color: #f5f6f7;
+    background-size: contain;
+    width: 100%;
+    max-width: 425px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 375px) {
+  .content__container {
+    background-image: url("../assets/mobileBackground.svg");
+    background-color: #f5f6f7;
+    background-size: contain;
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 320px) {
   .content__container {
     background-image: url("../assets/mobileBackground.svg");
