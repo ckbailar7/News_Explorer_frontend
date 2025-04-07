@@ -23,7 +23,7 @@
   font-family: "Roboto";
   font-weight: 400;
   font-size: 18px;
-  line-height: 48px;
+  line-height: 24px;
   letter-spacing: 0px;
   background: none;
   border: none;
@@ -35,7 +35,7 @@
   font-family: "Roboto";
   font-weight: 400;
   font-size: 18px;
-  line-height: 48px;
+  line-height: 24px;
   letter-spacing: 0px;
   background: none;
   border: none;
@@ -84,7 +84,6 @@
 }
 
 .footer__buttons-no-icon {
-  margin-right: 40px;
   display: flex;
   justify-content: space-between;
   width: 163px;

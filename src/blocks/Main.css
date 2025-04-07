@@ -20,7 +20,7 @@
 .news-section {
   position: relative;
   box-sizing: border-box;
-  padding-left: 104px;
+  /* padding-left: 104px; */
 }
 
 .news-section__card-wrapper {
@@ -34,7 +34,7 @@
 .news-section__header {
   max-width: 712px;
   height: 46px;
-  /* margin-left: 104px; */
+  margin-left: 104px;
   font-family: "Roboto Slab", sans-serif;
   font-weight: 400;
   font-size: 40px;

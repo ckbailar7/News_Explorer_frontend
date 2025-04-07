@@ -16,8 +16,14 @@
   align-content: center;
   justify-content: center;
   /* Margin ammount found by halving the projected margin on the brief to take into account the overal width at 1440px, right of 106px and left of 106px, as a result of flexbox, justify and align content  */
-  margin: 0 53px 0 51px;
+  /* margin: 0 53px 0 51px; */
   background-color: #f5f6f7;
+
+  /* display: flex;
+  height: auto;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center; */
 }
 
 .profile__header1 {
@@ -37,7 +43,7 @@
 .profile__header-greeting-text {
   width: 530px;
   height: 92px;
-  margin-left: 104px;
+  margin: 28px 0 30px 104px;
   font-family: "Roboto Slab";
   font-weight: 400;
   font-size: 40px;
@@ -47,17 +53,16 @@
 }
 
 .profile__header-greeting-byKeyword {
-  width: 712px;
-  height: 24px;
-  /* margin-left: 104px; */
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: 0px;
 }
 
-.profile__header-greeting-text {
+.profile__header-greeting-by-keyword_container {
+  display: block;
+}
+
+.profile__header-greeting-text-by-keyword {
+  width: 712px;
+  height: 24px;
+  margin-left: 104px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 18px;
