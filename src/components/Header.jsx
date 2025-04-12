@@ -30,7 +30,7 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
     : "/src/assets/headerLogoWhite.svg";
 
   return (
-    <header className="header">
+    <header className={`header ${isProfilePage ? "header-profile-page" : ""}`}>
       <div className="header__top-bar">
         <div className="header__logo">
           <NavLink to="/">
@@ -51,7 +51,7 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
                   isProfilePage ? "header__nav-link--profile-page" : ""
                 }`}
               >
-                Home
+                <span className="header__nav-text">Home</span>
               </NavLink>
             </li>
             {isLoggedIn && (
@@ -65,7 +65,9 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
                         : "header__nav-link--home-page-inactive--saved-articles"
                     }`}
                   >
-                    Saved Articles
+                    <span className="header__saved-articles-text">
+                      Saved Articles
+                    </span>
                   </NavLink>
                 </li>
                 <li
