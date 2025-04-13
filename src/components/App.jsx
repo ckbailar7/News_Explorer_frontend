@@ -81,11 +81,7 @@ function App() {
   }, []);
 
   const closeModal = () => setActiveModal("");
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   const timer = setTimeout(() => setIsLoading(false), 3000); // setting preloader response time as 3000 miliseconds or 3 seconds
-  //   return () => clearTimeout(timer); // cleanup after use
-  // }, []);
+
   useEffect(() => {
     const closeByEscape = (e) => {
       if (e.key === "Escape") {

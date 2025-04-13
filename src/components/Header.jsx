@@ -33,7 +33,7 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
     <header className={`header ${isProfilePage ? "header-profile-page" : ""}`}>
       <div className="header__top-bar">
         <div className="header__logo">
-          <NavLink to="/">
+          <NavLink className="header__logo-link" to="/">
             <img
               src={headerLogoChange}
               alt="header logo"

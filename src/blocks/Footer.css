@@ -12,6 +12,10 @@
   color: #b6bcbf;
 }
 
+.footer__copyright {
+  margin-left: 104px;
+}
+
 .footer__buttons-container {
   margin-right: 104px;
   display: inline-flex;
@@ -150,6 +154,7 @@
   .footer__copyright {
     text-align: center;
     margin-bottom: 20px;
+    margin-left: unset;
   }
 
   .footer__buttons-container {
@@ -200,6 +205,7 @@
   .footer__copyright {
     text-align: center;
     margin-bottom: 20px;
+    margin-left: unset;
   }
 
   .footer__buttons-container {
@@ -250,6 +256,7 @@
   .footer__copyright {
     text-align: center;
     margin-bottom: 20px;
+    margin-left: unset;
   }
 
   .footer__buttons-container {
