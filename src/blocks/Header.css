@@ -298,6 +298,11 @@
   display: inline-block;
   width: 49px;
   height: 24px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
 }
 
 .header__saved-articles {
@@ -347,7 +352,7 @@
 .header__user-button {
   position: relative;
   margin-right: 15px;
-  width: 49px;
+  max-width: 75px;
   height: 24px;
   color: #b6bcbf;
   background: none;
@@ -364,7 +369,7 @@
 .header__user-button--profile-page {
   position: relative;
   /* margin-right: 15px; */
-  width: 49px;
+  max-width: 75px;
   height: 24px;
   color: #000;
   background: none;
