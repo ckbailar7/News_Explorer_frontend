@@ -74,6 +74,13 @@
   .about-component__container {
     max-width: 768px;
     padding: 0;
+    height: 354px;
+  }
+
+  .about-component__image-wrapper {
+    width: 232px;
+    height: 232px;
+    margin: 0;
   }
 
   .about-component__image {
@@ -87,6 +94,8 @@
     letter-spacing: 0px;
     max-width: 424px;
     margin: 0;
+    width: 424px;
+    height: 34px;
   }
 
   .about-component__headers-wrapper {
@@ -94,10 +103,14 @@
     margin: 0;
     margin-top: 40px;
     margin-bottom: 96px;
+    height: 202px;
   }
 
   .about-component__paragraph-container {
     max-width: 424px;
+    margin: 0;
+    height: 168px;
+    width: 424px;
   }
 }
 

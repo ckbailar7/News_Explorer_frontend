@@ -82,7 +82,11 @@
   .news-section {
     max-width: 768px;
     /* padding: 10px; */
-    padding-left: 40px;
+    /* padding-left: 40px; */
+  }
+
+  .news-section__card-wrapper {
+    width: 768px;
   }
 
   .news-section__header {
@@ -93,6 +97,7 @@
 
   .main__about-section {
     max-width: 768px;
+    height: 354px;
   }
 }
 
@@ -109,6 +114,9 @@
     height: 34px;
     font-size: 30px;
     margin-left: unset;
+  }
+  .news-section__card-wrapper {
+    width: 425px;
   }
   .main__about-section {
     width: 320px;
@@ -128,6 +136,10 @@
     height: 34px;
     font-size: 30px;
     margin-left: unset;
+  }
+
+  .news-section__card-wrapper {
+    width: 375px;
   }
 
   .main__about-section {
