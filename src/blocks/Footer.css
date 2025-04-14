@@ -13,7 +13,10 @@
 }
 
 .footer__copyright {
-  margin-left: 104px;
+  /* margin-left: 104px; */
+  width: 433px;
+  height: 22px;
+  margin: 32px auto 26px 104px;
 }
 
 .footer__buttons-container {
