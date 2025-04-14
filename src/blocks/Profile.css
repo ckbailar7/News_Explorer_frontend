@@ -18,6 +18,7 @@
   /* Margin ammount found by halving the projected margin on the brief to take into account the overal width at 1440px, right of 106px and left of 106px, as a result of flexbox, justify and align content  */
   /* margin: 0 53px 0 51px; */
   background-color: #f5f6f7;
+  margin: 62px 106px 62px 102px;
 
   /* display: flex;
   height: auto;
@@ -44,7 +45,7 @@
 .profile__header-greeting-text {
   width: 530px;
   height: 92px;
-  margin: 28px 0 30px 104px;
+  margin: 0 0 30px 104px;
   font-family: "Roboto Slab";
   font-weight: 400;
   font-size: 40px;
@@ -58,12 +59,14 @@
 
 .profile__header-greeting-by-keyword_container {
   display: block;
+  margin: 0 0 56px 0;
 }
 
 .profile__header-greeting-text-by-keyword {
   width: 712px;
   height: 24px;
-  margin-left: 104px;
+  /* margin-left: 104px; */
+  margin: 0 0 56px 104px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 18px;

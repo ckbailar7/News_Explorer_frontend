@@ -35,10 +35,10 @@ const Profile = ({
         <h1 className="profile__header-greeting-text">{`${name}, you have ${numberOfSavedArticles} saved articles `}</h1>
         <h3 className="profile__header-greeting-by-keyword_container">
           <span className="profile__header-greeting-text-by-keyword">
-            By Keywords
+            By Keywords:
           </span>
           <span className="profile__header-greeting-keywords">
-            ${savedArticlesKeywords}
+            {savedArticlesKeywords}
           </span>
           {/* {`By keywords: ${savedArticlesKeywords}`} */}
         </h3>
