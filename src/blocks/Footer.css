@@ -192,7 +192,7 @@
     height: 74px;
     width: 200px;
     justify-content: space-between;
-    margin: unset;
+    margin: 0 0 0 16px;
   }
 
   .footer__home-button,
@@ -208,8 +208,9 @@
     flex-wrap: nowrap;
     align-self: flex-start;
     gap: 10px;
-    width: 50px;
-    margin-right: 16px;
+    width: 210px;
+    justify-content: flex-end;
+    margin: 0 16px 132px 0;
   }
 }
 
@@ -244,6 +245,7 @@
     width: 200px;
     justify-content: space-between;
     margin: unset;
+    margin: 0 0 0 16px;
   }
 
   .footer__home-button,
@@ -257,10 +259,10 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    align-self: flex-start;
     gap: 10px;
-    width: 50px;
-    margin-right: 16px;
+    width: 150px;
+    margin: 0 16px 132px 0;
+    justify-content: flex-end;
   }
 }
 
@@ -297,7 +299,7 @@
     height: 74px;
     width: 200px;
     justify-content: space-between;
-    margin: unset;
+    margin: 0 0 0 16px;
   }
 
   .footer__home-button,

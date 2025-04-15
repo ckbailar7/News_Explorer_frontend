@@ -129,11 +129,19 @@
   .profile__newsCard-container {
     width: 425px;
   }
+
+  .profile__header1-text {
+    width: 288px;
+  }
 }
 
 @media (max-width: 375px) {
   .profile__newsCard-container {
     width: 375px;
+  }
+
+  .profile__header1-text {
+    width: 288px;
   }
 }
 
