@@ -513,7 +513,7 @@
   font-size: 18px;
 }
 
-@media screen and (min-width: 769px) and (max-width: 854px) {
+/* @media screen and (min-width: 769px) and (max-width: 854px) {
   .header__nav-link--home-page-inactive {
     margin: 0;
   }
@@ -521,7 +521,7 @@
   .header__nav-link--profile-page {
     margin: 0;
   }
-}
+} */
 
 @media (max-width: 768px) {
   .header {
@@ -657,25 +657,11 @@
 }
 
 @media (max-width: 375px) {
-  /* .header {
-    max-width: 375px;
-    width: 100%;
-  }
-
-  .header__top-bar {
-    max-width: 375px;
-  }
-
-  .header__nav-list {
-    display: none;
-  } */
-
   .header {
     max-width: 375px;
     padding: 0;
     width: 100%;
     height: 56px;
-    /* padding: 16px 0 16px 0; */
   }
 
   .header__top-bar {
@@ -687,7 +673,7 @@
   .header__logo-image {
     max-width: 117px;
     height: 24px;
-    margin: 16px 0 16px 16px;
+    margin: 0;
   }
 
   .header__nav-list {
@@ -696,6 +682,8 @@
 
   .header__logo {
     max-width: 117px;
+    /* margin: 16px 147px 16px 16px; */
+    margin: 0px;
   }
 
   .header__logo a {
@@ -711,7 +699,6 @@
     padding: 0;
     width: 100%;
     height: 56px;
-    /* padding: 16px 0 16px 0; */
   }
 
   .header__top-bar {

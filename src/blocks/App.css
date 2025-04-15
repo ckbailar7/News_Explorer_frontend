@@ -58,6 +58,11 @@
     max-width: 425px;
     margin: 0 auto;
   }
+
+  .content__container--profile {
+    background-image: none;
+    background-color: #fff;
+  }
 }
 
 @media (max-width: 375px) {
@@ -69,6 +74,11 @@
     max-width: 375px;
     margin: 0 auto;
   }
+
+  .content__container--profile {
+    background-image: none;
+    background-color: #fff;
+  }
 }
 
 @media (max-width: 320px) {
@@ -78,5 +88,10 @@
     width: 100%;
     max-width: 320px;
     margin: 0 auto;
+  }
+
+  .content__container--profile {
+    background-image: none;
+    background-color: #fff;
   }
 }

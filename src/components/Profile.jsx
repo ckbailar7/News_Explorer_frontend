@@ -28,21 +28,24 @@ const Profile = ({
 
   return (
     <div className="profile__container">
-      <div className="profile__header1">
-        <h3 className="profile__header1-text">Saved Articles</h3>
+      <div className="profile__header-container">
+        <div className="profile__header1">
+          <h3 className="profile__header1-text">Saved Articles</h3>
+        </div>
+        <div className="profile__header-greeting">
+          <h1 className="profile__header-greeting-text">{`${name}, you have ${numberOfSavedArticles} saved articles `}</h1>
+          <h3 className="profile__header-greeting-by-keyword_container">
+            <span className="profile__header-greeting-text-by-keyword">
+              By Keywords:
+            </span>
+            <span className="profile__header-greeting-keywords">
+              {savedArticlesKeywords}
+            </span>
+            {/* {`By keywords: ${savedArticlesKeywords}`} */}
+          </h3>
+        </div>
       </div>
-      <div className="profile__header-greeting">
-        <h1 className="profile__header-greeting-text">{`${name}, you have ${numberOfSavedArticles} saved articles `}</h1>
-        <h3 className="profile__header-greeting-by-keyword_container">
-          <span className="profile__header-greeting-text-by-keyword">
-            By Keywords:
-          </span>
-          <span className="profile__header-greeting-keywords">
-            {savedArticlesKeywords}
-          </span>
-          {/* {`By keywords: ${savedArticlesKeywords}`} */}
-        </h3>
-      </div>
+
       <div className="profile__newsCard-container">
         {cards.map((card) => (
           <NewsCardComponent key={card.id} cardData={card} />

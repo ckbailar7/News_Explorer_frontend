@@ -115,6 +115,7 @@
 @media (max-width: 425px) {
   .about-component__container {
     height: 752px;
+    width: 425px;
   }
 
   .about-component__image {
@@ -129,7 +130,7 @@
     line-height: 40px;
     letter-spacing: 0px;
     display: block;
-    margin: 0 16px 0 16px;
+    margin: 0;
   }
 
   .about-component__headers-wrapper {
@@ -159,6 +160,7 @@
 @media (max-width: 375px) {
   .about-component__container {
     height: 752px;
+    width: 375px;
   }
 
   .about-component__image {

@@ -124,3 +124,62 @@
     margin: 0;
   }
 }
+
+@media (max-width: 425px) {
+  .profile__newsCard-container {
+    width: 425px;
+  }
+}
+
+@media (max-width: 375px) {
+  .profile__newsCard-container {
+    width: 375px;
+  }
+}
+
+@media (max-width: 320px) {
+  .profile__header-container {
+    height: 246px;
+  }
+  .profile__header1 {
+    width: 288px;
+    height: 24px;
+    margin: 8px 16px 0 16px;
+  }
+
+  .profile__header1-text {
+    width: 288px;
+    height: 24px;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0px;
+  }
+
+  .profile__header-greeting {
+    width: 288px;
+    height: 68px;
+    margin: 16px 16px 0 16px;
+  }
+
+  .profile__header-greeting-text {
+    width: 288px;
+    height: 68px;
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 34px;
+    letter-spacing: 0px;
+  }
+
+  .profile__header-greeting-by-keyword_container {
+    width: 288px;
+    height: 48px;
+    margin: 50px 17px 32px 0;
+  }
+  .profile__newsCard-container {
+    width: 320px;
+  }
+}
