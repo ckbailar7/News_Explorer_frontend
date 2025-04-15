@@ -70,6 +70,67 @@
   margin: 0;
 }
 
+@media (max-width: 1366px) {
+  .about-component__container {
+    max-width: 1366px;
+  }
+
+  .about-component__image-wrapper {
+    width: 232px;
+    height: 232px;
+  }
+}
+@media (max-width: 1280px) {
+  .about-component__container {
+    max-width: 1280px;
+  }
+
+  .about-component__image-wrapper {
+    width: 232px;
+    height: 232px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .about-component__container {
+    max-width: 1100px;
+  }
+
+  .about-component__image-wrapper {
+    width: 232px;
+    height: 232px;
+  }
+
+  .about-component__image {
+    width: 232px;
+    height: 232px;
+  }
+
+  .about-component__headers-wrapper {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-component__container {
+    max-width: 1024px;
+  }
+
+  .about-component__image-wrapper {
+    width: 232px;
+    height: 232px;
+  }
+
+  .about-component__image {
+    width: 232px;
+    height: 232px;
+  }
+
+  .about-component__headers-wrapper {
+    margin: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .about-component__container {
     max-width: 768px;

@@ -85,6 +85,33 @@
   letter-spacing: 0px;
 }
 
+@media (max-width: 1366px) {
+  .profile__newsCard-container {
+    max-width: 1366px;
+  }
+}
+@media (max-width: 1280px) {
+  .profile__newsCard-container {
+    max-width: 1280px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .profile__newsCard-container {
+    max-width: 1100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .profile__newsCard-container {
+    max-width: 1024px;
+  }
+
+  .profile__header {
+    max-width: 1100px;
+  }
+}
+
 @media (max-width: 768px) {
   .profile__header1 {
     margin: 24px 16px 16px 40px;
