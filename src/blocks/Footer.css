@@ -271,7 +271,8 @@
   .footer {
     flex-direction: column-reverse;
     align-items: center;
-    padding: 20px 0;
+    /* padding: 20px 0; */
+    padding: 0;
     flex-wrap: wrap;
     height: 176px;
   }
@@ -280,6 +281,7 @@
     text-align: center;
     margin-bottom: 20px;
     margin-left: unset;
+    margin: 0;
   }
 
   .footer__buttons-container {
@@ -287,6 +289,7 @@
 
     width: 100%;
     margin-right: 0;
+    margin: 20px 0 0 0;
   }
 
   .footer__buttons-no-icon {
@@ -308,9 +311,17 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    align-self: flex-start;
+
     gap: 10px;
-    width: 50px;
-    margin-right: 16px;
+    width: 150px;
+    /* margin-right: 16px; */
+    justify-content: flex-end;
+    margin: 0 16px 132px 0;
+  }
+
+  .footer__github-button,
+  .footer__facebook-button {
+    width: 24px;
+    height: 24px;
   }
 }

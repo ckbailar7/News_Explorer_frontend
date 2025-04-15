@@ -161,6 +161,7 @@
   .news-section {
     max-width: 320px;
     position: relative;
+    padding: 0;
   }
 
   .news-section__header {
@@ -169,10 +170,25 @@
     font-size: 30px;
     margin-left: unset;
     margin-bottom: 42px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    margin: 32px 16px 58px 16px;
   }
 
   .main__about-section {
     width: 320px;
     height: 752px;
+  }
+
+  .news-section__card-wrapper {
+    width: 320px;
+  }
+
+  .news-section__show-more-button {
+    width: 288px;
+    height: 56px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0px;
   }
 }

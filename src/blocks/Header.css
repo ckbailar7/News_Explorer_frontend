@@ -723,7 +723,7 @@
   .header__logo-image {
     max-width: 117px;
     height: 24px;
-    margin: 16px 0 16px 16px;
+    margin: 0;
   }
 
   .header__nav-list {
@@ -732,6 +732,7 @@
 
   .header__logo {
     max-width: 117px;
+    margin: 16px 147px 16px 16px;
   }
 
   .header__logo a {
