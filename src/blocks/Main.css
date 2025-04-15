@@ -52,7 +52,7 @@
   height: 64px;
   border-radius: 60px;
   background-color: #fff;
-  color: #1a1b22;
+  color: rgba(26, 27, 34, 1);
   padding: 10px 20px;
   border-color: transparent;
   font-family: "Roboto", sans-serif;
@@ -93,6 +93,15 @@
     max-width: 336px;
     line-height: 34px;
     font-size: 30px;
+    line-height: 34px;
+    letter-spacing: 0px;
+    margin: 40px auto 32px 40px;
+  }
+
+  .news-section__show-more-button {
+    width: 240px;
+    height: 56px;
+    margin: 32px auto 40px auto;
   }
 
   .main__about-section {

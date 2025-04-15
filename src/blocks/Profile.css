@@ -86,15 +86,41 @@
 }
 
 @media (max-width: 768px) {
+  .profile__header1 {
+    margin: 24px 16px 16px 40px;
+  }
   .profile__header1-text {
     width: 712px;
     height: 24px;
     margin: 0;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0px;
+  }
+
+  .profile__header-greeting {
+    margin: 0 0 0 40px;
   }
 
   .profile__header-greeting-text {
     width: 336px;
     height: 68px;
+    margin: 0;
+    font-size: 30px;
+    line-height: 34px;
+    letter-spacing: 0px;
+  }
+
+  .profile__header-greeting-by-keyword_container {
+    margin: 16px 16px 32px 0;
+  }
+
+  .profile__newsCard-container {
+    width: 768px;
+    padding: 32px 0 0 0;
+  }
+
+  .profile__header-greeting-text-by-keyword {
     margin: 0;
   }
 }

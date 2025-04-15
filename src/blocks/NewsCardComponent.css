@@ -238,6 +238,7 @@
     height: 420px;
     /* display: flex;
     justify-content: space-between; */
+    margin: 0 8px 8px 8px;
   }
   .news-card__image {
     width: 224px;
@@ -251,6 +252,9 @@
     height: 24px;
     margin: 16px 62px 0 15px;
     display: block;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0px;
   }
   .news-card__title {
     width: 192px;
