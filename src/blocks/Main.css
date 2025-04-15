@@ -83,6 +83,7 @@
     max-width: 768px;
     /* padding: 10px; */
     /* padding-left: 40px; */
+    padding: 0;
   }
 
   .news-section__card-wrapper {
@@ -114,6 +115,7 @@
   .news-section {
     max-width: 425px;
     position: relative;
+    padding: 0;
     /* padding: 10px; */
     /* padding-left: 16px; */
   }
@@ -138,7 +140,8 @@
   .news-section {
     max-width: 375px;
     position: relative;
-    padding: 10px;
+    /* padding: 10px; */
+    padding: 0;
   }
 
   .news-section__header {
@@ -153,7 +156,7 @@
   }
 
   .main__about-section {
-    width: 320px;
+    width: 375px;
     height: 752px;
   }
 }
