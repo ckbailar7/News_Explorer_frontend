@@ -5,6 +5,12 @@
   src: url("../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
 }
 
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 .content__container {
   background-image: url("../assets/headerBackground.svg");
   background-repeat: no-repeat;

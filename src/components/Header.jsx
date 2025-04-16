@@ -4,14 +4,27 @@ import { currentUserContext } from "../contexts/currentUserContext";
 import { NavLink } from "react-router-dom";
 import "../blocks/Header.css";
 
-const Header = ({ isLoggedIn, onCreateLoginModal, isMenuOpen, toggleMenu }) => {
+const Header = ({
+  isLoggedIn,
+  onCreateLoginModal,
+  isMenuOpen,
+  toggleMenu,
+  setIsMenuOpen,
+}) => {
   const currentUser = useContext(currentUserContext);
   const location = useLocation();
   const isProfilePage = location.pathname === "/saved-news";
 
-  const headerLogoChange = isProfilePage
-    ? "/src/assets/NewsExplorerNewsExplorerHeaderDark.svg"
-    : "/src/assets/headerLogoWhite.svg";
+  const handleLinkClick = () => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  const headerLogoChange =
+    isProfilePage && !isMenuOpen
+      ? "/src/assets/NewsExplorerNewsExplorerHeaderDark.svg"
+      : "/src/assets/headerLogoWhite.svg";
 
   return (
     <header className={`header ${isProfilePage ? "header-profile-page" : ""}`}>
@@ -22,17 +35,25 @@ const Header = ({ isLoggedIn, onCreateLoginModal, isMenuOpen, toggleMenu }) => {
               src={headerLogoChange}
               alt="header logo"
               className="header__logo-image"
+              onClick={handleLinkClick}
             />
           </NavLink>
         </div>
 
         {/* Mobile Dropdown Hamburger icon */}
         <button
-          className={`header__hamburger ${isMenuOpen ? "active" : ""}`}
+          className={`header__hamburger ${isMenuOpen ? "open" : ""} ${
+            isProfilePage
+              ? isMenuOpen
+                ? "header__hamburger--white"
+                : "header__hamburger--black"
+              : "header__hamburger--white"
+          }`}
           onClick={toggleMenu}
           aria-label="Toggle Navigation"
         >
           <div className="header__hamburger-bar"></div>
+
           <div className="header__hamburger-bar"></div>
         </button>
         {isMenuOpen && (
@@ -44,7 +65,11 @@ const Header = ({ isLoggedIn, onCreateLoginModal, isMenuOpen, toggleMenu }) => {
             <nav className="header__hamburger__dropdown-menu">
               <ul className="header__hamburger__dropdown-menu-items">
                 <li>
-                  <NavLink className="header__hamburger__home-link" to="/">
+                  <NavLink
+                    className="header__hamburger__home-link"
+                    to="/"
+                    onClick={handleLinkClick}
+                  >
                     Home
                   </NavLink>
                 </li>
@@ -54,6 +79,7 @@ const Header = ({ isLoggedIn, onCreateLoginModal, isMenuOpen, toggleMenu }) => {
                       <NavLink
                         className="header__hamburger__saved-articles_link"
                         to="/saved-news"
+                        onClick={handleLinkClick}
                       >
                         Saved Articles
                       </NavLink>

@@ -22,23 +22,32 @@ import Preloader from "./Preloader";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // creating useLocationCall as a variable for getting the current route
+  const location = useLocation();
+
+  // close menu when changing routes
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  }, [location]);
 
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState);
   };
 
-  useEffect(
-    (isMenuOpen) => {
-      if (isMenuOpen) {
-        document.body.classList.add("no-scroll");
-      } else {
-        document.body.classList.remove("no-scroll");
-      }
+  console.log(`isMenuOpen >> logging ...${isMenuOpen}`);
 
-      return () => document.body.classList.remove("no-scroll");
-    },
-    [isMenuOpen]
-  );
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+
+    return () => document.body.classList.remove("no-scroll");
+  }, [isMenuOpen]);
 
   const MobileDropdown = ({ isMenuOpen }) => {
     // useEffect(() => {
@@ -117,9 +126,6 @@ function App() {
 
   // simulate the api response
   const [articles, setArticles] = useState([]);
-
-  // creating useLocationCall as a variable for getting the current route
-  const location = useLocation();
 
   const handleLoginModal = () => {
     setActiveModal("login");
