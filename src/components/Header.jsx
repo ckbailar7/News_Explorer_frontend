@@ -52,9 +52,9 @@ const Header = ({
           onClick={toggleMenu}
           aria-label="Toggle Navigation"
         >
-          <div className="header__hamburger-bar"></div>
+          <div className="header__hamburger-bar header__hamburger-bar_top-bar"></div>
 
-          <div className="header__hamburger-bar"></div>
+          <div className="header__hamburger-bar header__hamburger-bar_bottom-bar"></div>
         </button>
         {isMenuOpen && (
           <div
