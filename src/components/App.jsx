@@ -21,6 +21,82 @@ import "../blocks/App.css";
 import Preloader from "./Preloader";
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prevState) => !prevState);
+  };
+
+  useEffect(
+    (isMenuOpen) => {
+      if (isMenuOpen) {
+        document.body.classList.add("no-scroll");
+      } else {
+        document.body.classList.remove("no-scroll");
+      }
+
+      return () => document.body.classList.remove("no-scroll");
+    },
+    [isMenuOpen]
+  );
+
+  const MobileDropdown = ({ isMenuOpen }) => {
+    // useEffect(() => {
+    //   if (isOpen) {
+    //     document.body.classList.add("no-scroll");
+    //   } else {
+    //     document.body.classList.remove("no-scroll");
+    //   }
+    //   return () => document.body.classList.remove("no-scroll");
+    // }, [isMenuOpen]);
+    // return isMenuOpen ? (
+    //   <div
+    //     className={`header__hamburger__dropdown-menu__container ${
+    //       isMenuOpen ? "open" : ""
+    //     }`}
+    //   >
+    //     <nav className="header__hamburger__dropdown-menu">
+    //       <ul className="header__hamburger__dropdown-menu-items">
+    //         <li>
+    //           <NavLink className="header__hamburger__home-link" to="/">
+    //             Home
+    //           </NavLink>
+    //         </li>
+    //         {isLoggedIn && (
+    //           <>
+    //             <li>
+    //               <NavLink
+    //                 className="header__hamburger__saved-articles_link"
+    //                 to="/saved-news"
+    //               >
+    //                 Saved Articles
+    //               </NavLink>
+    //             </li>
+    //             <div className="header__hamburger_user-button-outer_container">
+    //               <li className="header__hamburger_user-button-container">
+    //                 <span className="header__hamburger_user-button">
+    //                   {currentUser?.name || "Profile"}
+    //                 </span>
+    //               </li>
+    //             </div>
+    //           </>
+    //         )}
+    //         {!isLoggedIn && (
+    //           <li className="header__hamburger_sign-in-button__container">
+    //             <button
+    //               className="header__hamburger_sign-in-button"
+    //               onClick={onCreateLoginModal}
+    //             >
+    //               Sign In
+    //             </button>
+    //           </li>
+    //         )}
+    //       </ul>
+    //     </nav>
+    //   </div>
+    // ) : null;
+  };
+
   const [currentUser, setCurrentUser] = useState({
     username: "",
     email: "",
@@ -106,6 +182,9 @@ function App() {
           onCreateLoginModal={handleLoginModal}
           isLoggedIn={isLoggedIn}
           closeModal={closeModal}
+          isMenuOpen={isMenuOpen}
+          toggleMenu={toggleMenu}
+          setIsMenuOpen={setIsMenuOpen}
         />
         <Routes>
           <Route

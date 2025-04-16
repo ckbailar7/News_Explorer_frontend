@@ -4,26 +4,10 @@ import { currentUserContext } from "../contexts/currentUserContext";
 import { NavLink } from "react-router-dom";
 import "../blocks/Header.css";
 
-const Header = ({ isLoggedIn, onCreateLoginModal }) => {
+const Header = ({ isLoggedIn, onCreateLoginModal, isMenuOpen, toggleMenu }) => {
   const currentUser = useContext(currentUserContext);
   const location = useLocation();
   const isProfilePage = location.pathname === "/saved-news";
-
-  // const headerUniversalButtonClassName = (baseClass, isProfilePage) =>
-  //   isProfilePage ? `${baseClass}--profilePage` : baseClass;
-
-  // <<<<<<< >>>>>>>> //
-  // <<<<<<< >>>>>>>> //
-  // --profilePage (good modifier)
-
-  // <<<<<<< >>>>>>>> //
-  // <<<<<<< >>>>>>>> //
-
-  // <<<<<<< >>>>>>>> //
-  // <<<<<<< >>>>>>>> //
-
-  // <<<<<<< >>>>>>>> //
-  // <<<<<<< >>>>>>>> //
 
   const headerLogoChange = isProfilePage
     ? "/src/assets/NewsExplorerNewsExplorerHeaderDark.svg"
@@ -41,6 +25,64 @@ const Header = ({ isLoggedIn, onCreateLoginModal }) => {
             />
           </NavLink>
         </div>
+
+        {/* Mobile Dropdown Hamburger icon */}
+        <button
+          className={`header__hamburger ${isMenuOpen ? "active" : ""}`}
+          onClick={toggleMenu}
+          aria-label="Toggle Navigation"
+        >
+          <div className="header__hamburger-bar"></div>
+          <div className="header__hamburger-bar"></div>
+        </button>
+        {isMenuOpen && (
+          <div
+            className={`header__hamburger__dropdown-menu__container ${
+              isMenuOpen ? "open" : ""
+            }`}
+          >
+            <nav className="header__hamburger__dropdown-menu">
+              <ul className="header__hamburger__dropdown-menu-items">
+                <li>
+                  <NavLink className="header__hamburger__home-link" to="/">
+                    Home
+                  </NavLink>
+                </li>
+                {isLoggedIn && (
+                  <>
+                    <li>
+                      <NavLink
+                        className="header__hamburger__saved-articles_link"
+                        to="/saved-news"
+                      >
+                        Saved Articles
+                      </NavLink>
+                    </li>
+                    <div className="header__hamburger_user-button-outer_container">
+                      <li className="header__hamburger_user-button-container">
+                        <span className="header__hamburger_user-button">
+                          {currentUser?.name || "Profile"}
+                        </span>
+                      </li>
+                    </div>
+                  </>
+                )}
+                {!isLoggedIn && (
+                  <li className="header__hamburger_sign-in-button__container">
+                    <button
+                      className="header__hamburger_sign-in-button"
+                      onClick={onCreateLoginModal}
+                    >
+                      Sign In
+                    </button>
+                  </li>
+                )}
+              </ul>
+            </nav>
+          </div>
+        )}
+        {/* Mobile Dropdown Hamburger Menu */}
+
         {/* {navigation} */}
         <nav className="header__navigation">
           <ul className="header__nav-list">
