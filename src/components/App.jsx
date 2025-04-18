@@ -34,10 +34,19 @@ function App() {
   }, [location]);
 
   const toggleMenu = () => {
-    setIsMenuOpen((prevState) => !prevState);
-  };
+    setIsMenuOpen((prevState) =>  {
+      console.log("Toggling menu:", !prevState);
+      return !prevState;
+  });;
+}
 
-  console.log(`isMenuOpen >> logging ...${isMenuOpen}`);
+
+
+  useEffect(() => {
+    console.log(`isMenuOpen >> ${isMenuOpen}`)
+  }, [isMenuOpen])
+
+  // console.log(`isMenuOpen >> logging ...${isMenuOpen}`);
 
   useEffect(() => {
     if (isMenuOpen) {

@@ -56,10 +56,10 @@ const Header = ({
 
           <div className="header__hamburger-bar header__hamburger-bar_bottom-bar"></div>
         </button>
-        {isMenuOpen && (
+        
           <div
             className={`header__hamburger__dropdown-menu__container ${
-              isMenuOpen ? "open" : ""
+              isMenuOpen ? "header__hamburger__dropdown-menu__container--open" : ""
             }`}
           >
             <nav className="header__hamburger__dropdown-menu">
@@ -106,7 +106,7 @@ const Header = ({
               </ul>
             </nav>
           </div>
-        )}
+        
         {/* Mobile Dropdown Hamburger Menu */}
 
         {/* {navigation} */}

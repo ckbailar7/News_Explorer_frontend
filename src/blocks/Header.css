@@ -92,20 +92,27 @@
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  /* opacity: 50%; */
   color: white;
   flex-direction: column;
   z-index: 1000;
-  width: 320px;
-  height: 100vh;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: translateY(-100%);
+  width:100%;
+  transform: scaleY(0);
+  transform-origin: top;
   opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  
 }
-
+.header__hamburger__dropdown-menu__container--open {
+  transform: scaleY(1);
+  opacity: 1;
+  pointer-events: auto;
+  /* height: 100vh; */
+  /* transition: height 0.4s ease; */
+}
 .header__hamburger__dropdown-menu {
-  text-decoration: none;
-  list-style: none;
+  
   height: fit-content;
   background-color: rgba(26, 27, 34, 1);
   z-index: 1000;
@@ -117,12 +124,7 @@
   padding: 0;
 }
 
-.header__hamburger__dropdown-menu__container.open {
-  display: flex;
-  transform: translateY(0);
-  opacity: 1;
-  gap: 0;
-}
+
 
 .header__hamburger__dropdown-menu li {
   text-decoration: none;
@@ -902,7 +904,7 @@
 
   .header__hamburger__dropdown-menu__container {
     max-width: 425px;
-    width: 425px;
+    width: 100%;
   }
 }
 
@@ -951,7 +953,7 @@
 
   .header__hamburger__dropdown-menu__container {
     max-width: 375px;
-    width: 375px;
+    width: 100%;
   }
 }
 
@@ -1000,6 +1002,6 @@
 
   .header__hamburger__dropdown-menu__container {
     max-width: 320px;
-    width: 320pz;
+    width: 100%;
   }
 }
