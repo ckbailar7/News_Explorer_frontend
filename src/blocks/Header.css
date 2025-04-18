@@ -874,6 +874,11 @@
     align-items: unset;
   }
 
+
+  .header__navigation {
+    display: none;
+  }
+
   .header__logo-image {
     max-width: 117px;
     height: 24px;
@@ -910,6 +915,10 @@
     padding: 0;
     width: 100%;
     height: 56px;
+  }
+
+  .header__navigation {
+    display: none;
   }
 
   .header__top-bar {
@@ -956,6 +965,10 @@
     padding: 0;
     width: 100%;
     height: 56px;
+  }
+
+  .header__navigation {
+    display: none;
   }
 
   .header__top-bar {
