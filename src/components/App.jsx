@@ -17,11 +17,79 @@ import SignUpModal from "./SignUpModal";
 import Profile from "./Profile";
 import defaultCards from "../contexts/defaultCardArrayPrototype";
 
+
 import "../blocks/App.css";
 import Preloader from "./Preloader";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const API_KEY = import.meta.env.VITE_API_KEY;
+  console.log(typeof setSearchQuery);
+  const formatDate = (date) => date.toISOString().split("T")[0];
+
+  const handleSearch = async (query) => {
+    setLoading(true);
+    setErrorMessage("");
+
+    const today = new Date();
+    const weekAgo = new Date();
+    weekAgo.setDate(today.getDate() - 7);
+
+    // const formatDate = (date) => date.toISOString().split("T")[0];
+
+    const from = formatDate(weekAgo);
+    const to = formatDate(today);
+
+    const apiKey = import.meta.env.VITE_API_KEY;
+    const base_Url = import.meta.env.VITE_BASE_URL;
+    
+    
+    const url = `${base_Url}?q=${query}&from=${from}&to=${to}&sortBy=popularity&apiKey=${apiKey}`;
+
+    if(!query.trim()) {
+      setErrorMessage("Search cannot be empty");
+      setCards([]);
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const res = await fetch(url);
+      if (!res.ok) {
+        throw new Error("Network response ERROR");
+      };
+
+      const data = await res.json();
+
+      if(data.articles.length === 0) {
+        setCards([]);
+        setErrorMessage("No articles found");
+      } else {
+        const cards = data.articles.map((articles, i) => ({
+          id:i,
+          title: articles.title,
+          description: articles.description,
+          image: articles.urlToImage,
+          date: articles.publishedAt,
+          source: articles.source.name,
+          url: articles.url,
+        }));
+
+        setCards(cards)
+      }
+ 
+    } catch (error) {
+      setErrorMessage("An error occurred while fetching data");
+      console.error("Search Failed:", error);
+    } finally {
+      setLoading(false);
+    }
+
+
+  };
   // creating useLocationCall as a variable for getting the current route
   const location = useLocation();
 
@@ -37,7 +105,7 @@ function App() {
     setIsMenuOpen((prevState) =>  {
       console.log("Toggling menu:", !prevState);
       return !prevState;
-  });;
+  });
 }
 
 
@@ -58,62 +126,9 @@ function App() {
     return () => document.body.classList.remove("no-scroll");
   }, [isMenuOpen]);
 
-  const MobileDropdown = ({ isMenuOpen }) => {
-    // useEffect(() => {
-    //   if (isOpen) {
-    //     document.body.classList.add("no-scroll");
-    //   } else {
-    //     document.body.classList.remove("no-scroll");
-    //   }
-    //   return () => document.body.classList.remove("no-scroll");
-    // }, [isMenuOpen]);
-    // return isMenuOpen ? (
-    //   <div
-    //     className={`header__hamburger__dropdown-menu__container ${
-    //       isMenuOpen ? "open" : ""
-    //     }`}
-    //   >
-    //     <nav className="header__hamburger__dropdown-menu">
-    //       <ul className="header__hamburger__dropdown-menu-items">
-    //         <li>
-    //           <NavLink className="header__hamburger__home-link" to="/">
-    //             Home
-    //           </NavLink>
-    //         </li>
-    //         {isLoggedIn && (
-    //           <>
-    //             <li>
-    //               <NavLink
-    //                 className="header__hamburger__saved-articles_link"
-    //                 to="/saved-news"
-    //               >
-    //                 Saved Articles
-    //               </NavLink>
-    //             </li>
-    //             <div className="header__hamburger_user-button-outer_container">
-    //               <li className="header__hamburger_user-button-container">
-    //                 <span className="header__hamburger_user-button">
-    //                   {currentUser?.name || "Profile"}
-    //                 </span>
-    //               </li>
-    //             </div>
-    //           </>
-    //         )}
-    //         {!isLoggedIn && (
-    //           <li className="header__hamburger_sign-in-button__container">
-    //             <button
-    //               className="header__hamburger_sign-in-button"
-    //               onClick={onCreateLoginModal}
-    //             >
-    //               Sign In
-    //             </button>
-    //           </li>
-    //         )}
-    //       </ul>
-    //     </nav>
-    //   </div>
-    // ) : null;
-  };
+  // const MobileDropdown = ({ isMenuOpen }) => {
+    
+  // };
 
   const [currentUser, setCurrentUser] = useState({
     username: "",
@@ -135,7 +150,6 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   // simulate the api response
-  const [articles, setArticles] = useState([]);
 
   const handleLoginModal = () => {
     setActiveModal("login");
@@ -153,16 +167,16 @@ function App() {
     console.log("Helllo from onDeleteClick");
   };
 
-  const handleSearch = (query) => {
-    setLoading(true);
+  // const handleSearch = (query) => {
+  //   setLoading(true);
 
-    console.log("Searching for : ", query);
+  //   console.log("Searching for : ", query);
 
-    setTimeout(() => {
-      setArticles([defaultCards]);
-      setLoading(false);
-    }, 2000);
-  };
+  //   setTimeout(() => {
+  //     setArticles([defaultCards]);
+  //     setLoading(false);
+  //   }, 2000);
+  // };
 
   useEffect(() => {
     setCards(defaultCards);
@@ -209,12 +223,17 @@ function App() {
             element={
               <Main
                 defaultCards={defaultCards}
+                cards={cards}
                 defaultCardArray={defaultCardArray}
                 isLoggedIn={isLoggedIn}
                 onBookmarkClick={onBookmarkClick}
                 onDeleteClick={onDeleteClick}
                 loading={loading} // Passing loading state to main
                 handleSearch={handleSearch} // Passing handleSearch functionality to main
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+                errorMessage={errorMessage}
+                setErrorMessage={setErrorMessage}
               />
             }
           ></Route>

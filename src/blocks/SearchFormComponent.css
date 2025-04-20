@@ -106,6 +106,13 @@
 
   box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
 }
+
+.search-form__error {
+  color: red;
+  position:absolute;
+  padding: 16px 0 0 20px;
+  font-size: 14px;
+}
 @media (max-width: 1366px) {
   .search-form {
     max-width: 1366px;

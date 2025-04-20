@@ -14,15 +14,19 @@ const Main = ({
   loading,
   handleSearch,
   defaultCards,
+  searchQuery,
+  setSearchQuery,
+  errorMessage,
+  setErrorMessage,
+  cards
 }) => {
-  const [cards, setCards] = useState([]);
+  
   // simulate fetching data from database
-  useEffect(() => {
-    setCards(defaultCards);
-  }, []);
+  
+  console.log(typeof setSearchQuery)
   return (
     <main className="main">
-      <SearchFormComponent handleSearch={handleSearch} loading={loading} />
+      <SearchFormComponent handleSearch={handleSearch} loading={loading} searchQuery={searchQuery} setSearchQuery={setSearchQuery} errorMessage={errorMessage} setErrorMessage={setErrorMessage} />
 
       {loading ? (
         <Preloader />

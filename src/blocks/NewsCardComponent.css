@@ -172,6 +172,12 @@
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0px;
+  
+  display: -webkit-box;
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .news-card__description {

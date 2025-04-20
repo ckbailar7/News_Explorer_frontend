@@ -1,14 +1,21 @@
 import "../blocks/SearchFormComponent.css";
 
-const SearchFormComponent = ({ handleSearch, loading }) => {
+const SearchFormComponent = ({ handleSearch, loading, searchQuery, setSearchQuery, errorMessage, setErrorMessage }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    //The trim() method in JavaScript is used to remove any whitespace characters from the beginning and the end of a string.
-    const searchQuery = e.target.elements.search.value.trim();
-    if (searchQuery) {
-      handleSearch(searchQuery);
-    }
+    const trimmedQuery = e.target.elements.search.value.trim();
+    if (!trimmedQuery) {
+      setErrorMessage("Please enter a Keyword");
+      return;
+    } 
+
+    setErrorMessage("");
+    handleSearch(trimmedQuery);
+    
+    
   };
+
+  console.log(typeof setSearchQuery)
 
   return (
     <section className="search-form">
@@ -23,7 +30,11 @@ const SearchFormComponent = ({ handleSearch, loading }) => {
           className="search-form__input"
           placeholder="Enter topic"
           name="search"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          
         />
+        {errorMessage ? (<p className="search-form__error">{errorMessage}</p>): ""} 
         <button
           type="submit"
           className="search-form__button"
@@ -32,6 +43,7 @@ const SearchFormComponent = ({ handleSearch, loading }) => {
           {loading ? "Searching ..." : "Search"}
         </button>
       </form>
+      {/* {errorMessage && <p className="search-form__error">{errorMessage}</p>} */}
     </section>
   );
 };

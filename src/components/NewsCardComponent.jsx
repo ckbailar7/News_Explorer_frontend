@@ -9,26 +9,18 @@ const NewsCardComponent = ({
   onBookmarkClick,
   onDeleteClick,
 }) => {
-  const { title, description, image, Date, source, keyword } = cardData;
+  const { title, description, image, date, source, keyword } = cardData;
   const location = useLocation();
   const isProfilePage = location.pathname === "/saved-news";
 
-  // const renderActionButton = () => {
-  //   if (isProfilePage) {
-  //     return (
-  //       <button
-  //         className="news-card__delete-button"
-  //         aria-label="Delete this article"
-  //       ></button>
-  //     );
-  //   }
-  //   return (
-  //     <button
-  //       className="news-card__bookmark-button"
-  //       aria-label="Bookmark this article"
-  //     ></button>
-  //   );
-  // };
+  console.log("Raw date value:", date)
+
+  const formattedDate = new Date(date);
+
+  if(isNaN(formattedDate)) {
+    console.error("Invalid date format:", date);
+    return <div>Error: Invalid Date Format</div>
+  }
 
   return (
     <article className="news-card">
@@ -46,8 +38,13 @@ const NewsCardComponent = ({
         )}
       </figure>
       <div className="news-card__details">
-        <time className="news-card__date" dateTime={Date}>
-          {Date}
+        <time className="news-card__date" dateTime={date}>
+          {new Date(date).toLocaleDateString(undefined, {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })
+          }
         </time>
         <h3 className="news-card__title">{title}</h3>
         <p className="news-card__description">{description}</p>
