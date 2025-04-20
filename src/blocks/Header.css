@@ -766,11 +766,11 @@
   .header {
     max-width: 768px;
     width: 100%;
-    padding: 0;
+    padding: 0 18px;
   }
 
   .header__top-bar {
-    justify-content: unset;
+    justify-content: space-between;
   }
 
   .header__logo {
@@ -778,7 +778,7 @@
   }
 
   .header__navigation {
-    width: 355px;
+    /* width: 355px; */
   }
 
   .header__nav-list {

@@ -18,8 +18,13 @@ const ModalWithForm = ({ name, title, children, onClose }) => {
       document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, [onClose]);
+
+
+
   return (
     <div className={`modalWithForm modalWithForm--${name}`}>
+      {/* Moved button from inside form to outside for mobile dev */}
+      
       <div className="modalWithForm__content" ref={modalRef}>
         <button
           className="modalWithForm__close-button"

@@ -10,6 +10,7 @@ const Header = ({
   isMenuOpen,
   toggleMenu,
   setIsMenuOpen,
+  activeModal,
 }) => {
   const currentUser = useContext(currentUserContext);
   const location = useLocation();
@@ -48,9 +49,10 @@ const Header = ({
                 ? "header__hamburger--white"
                 : "header__hamburger--black"
               : "header__hamburger--white"
-          }`}
+          } `}
           onClick={toggleMenu}
           aria-label="Toggle Navigation"
+          style={{ className: activeModal ? "none" : "header__hamburger.open" }}
         >
           <div className="header__hamburger-bar header__hamburger-bar_top-bar"></div>
 
@@ -61,6 +63,7 @@ const Header = ({
             className={`header__hamburger__dropdown-menu__container ${
               isMenuOpen ? "header__hamburger__dropdown-menu__container--open" : ""
             }`}
+            style={{ display: activeModal ? "none" : "block" }}
           >
             <nav className="header__hamburger__dropdown-menu">
               <ul className="header__hamburger__dropdown-menu-items">
@@ -97,7 +100,13 @@ const Header = ({
                   <li className="header__hamburger_sign-in-button__container">
                     <button
                       className="header__hamburger_sign-in-button"
-                      onClick={onCreateLoginModal}
+                      onClick={() => {
+                        onCreateLoginModal();
+                        handleLinkClick();
+                        toggleMenu();
+                      }
+                        
+                        }
                     >
                       Sign In
                     </button>

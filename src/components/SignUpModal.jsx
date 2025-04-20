@@ -39,7 +39,7 @@ const SignUpModal = ({ onClose, handleLoginModal }) => {
       <button className="modalWithForm__signInButton">
         <p className="modalWithForm__signInButtonText">Sign up</p>
       </button>
-      <p>
+      <p className="modalWithForm__signUpTransfer-container">
         Or{" "}
         <a className="modalWithForm__signUpTransfer" onClick={handleLoginModal}>
           Sign in

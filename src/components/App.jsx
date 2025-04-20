@@ -124,6 +124,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   //
   //
+  console.log("activeModal", activeModal);
   const [cards, setCards] = useState([]);
 
   const [defaultCardArray, setDefaultCardArray] = useState([]);
@@ -168,7 +169,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    setIsLoggedIn(true);
+    setIsLoggedIn(false);
   }, []);
 
   const closeModal = () => setActiveModal("");
@@ -200,6 +201,7 @@ function App() {
           isMenuOpen={isMenuOpen}
           toggleMenu={toggleMenu}
           setIsMenuOpen={setIsMenuOpen}
+          activeModal={activeModal}
         />
         <Routes>
           <Route
