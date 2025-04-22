@@ -3,7 +3,6 @@ export const MainApi = {
     login: ({email, password}) => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-
                 // Simulate Successfulll login
                 if(email && password) {
                     const fakeToken = "fake-token-1234";
@@ -12,11 +11,11 @@ export const MainApi = {
                 } else {
                     reject(new Error('Invalid email or password'));
                 }
-            }, 1000);
+            }, 1000)
         });
     },
 
-    // Stimulate token check
+    // Simulate token check and checks if its in local storage FAKE CHECK
     checkToken:() => {
         return new Promise((resolve) => {
             const token = localStorage.getItem('jwt');
@@ -24,7 +23,7 @@ export const MainApi = {
         });
     },
 
-    //Stimulate saving an article to saved-news page
+    //Simulate saving an article to saved-news page
     saveArticle: (article) => {
         return new Promise((resolve) => {
             // Get existing articles or init empty array
@@ -42,10 +41,47 @@ export const MainApi = {
             resolve({success: true});
 
         })
-    } 
+    },
+    
+    // Simulate removing an article from saved-news page by its ID 
+    removeCard: () => {
+        return new Promise((resolve) => {
+            const savedArticles = JSON.parse(localStorage.getItem('savedArticles')) || [];
+            const updatedArticles = savedArticles.filter((article) => article._id !== articleId);
 
+            localStorage.setItem('savedArticles', JSON.stringify(updatedArticles));
+            resolve({success: true});
+        });
+    },
 
+    // Get the saved articles from local storasge
+    getSavedArticles: () => {
+        return new Promise((resolve) => {
+            const savedArticles = JSON.parse(localStorage.getItem('savedArticles')) || [];
+            resolve(savedArticles); // Resolving with the saved Artticles
+        });
+    },
 
+    // Simulate Loggin Out
+    logout: () => {
+        return new promise((resolve) => {
+            localStorage.removeItem('jwt'); // Remove the token from local storagee
+            resolve({success: true});
+        }
+   )},
+    
+        // Simulate getting the current user data
+        getCurrentUser: () => {
+            return new Promise((resolve) => {
+                const token = localStorage.getItem('jwt');
+                if(token) {
+                    resolve({email: 'lll', name: 'John Doe'}); // Simulate user data    
+                }   
+                else {
+                    resolve(null); 
+                }
+            });
+        },
 
 
 

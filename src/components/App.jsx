@@ -1,38 +1,38 @@
-import { useState, useEffect } from "react";
-import { currentUserContext } from "../contexts/currentUserContext";
-import reactLogo from "../assets/react.svg";
+import { useState, useEffect } from 'react';
+import { currentUserContext } from '../contexts/currentUserContext';
+import reactLogo from '../assets/react.svg';
 import {
   Router,
   Route,
   Routes,
   useNavigate,
   useLocation,
-} from "react-router-dom";
-import viteLogo from "/vite.svg";
-import Header from "./Header";
-import Main from "./Main.jsx";
-import Footer from "./Footer.jsx";
-import LoginModal from "./LoginModal";
-import SignUpModal from "./SignUpModal";
-import Profile from "./Profile";
-import defaultCards from "../contexts/defaultCardArrayPrototype";
+} from 'react-router-dom';
+import viteLogo from '/vite.svg';
+import Header from './Header';
+import Main from './Main.jsx';
+import Footer from './Footer.jsx';
+import LoginModal from './LoginModal';
+import SignUpModal from './SignUpModal';
+import Profile from './Profile';
+import defaultCards from '../contexts/defaultCardArrayPrototype';
 
-
-import "../blocks/App.css";
-import Preloader from "./Preloader";
+import '../blocks/App.css';
+import Preloader from './Preloader';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-
+  const [searchQuery, setSearchQuery] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const API_KEY = import.meta.env.VITE_API_KEY;
   console.log(typeof setSearchQuery);
-  const formatDate = (date) => date.toISOString().split("T")[0];
+  const formatDate = (date) => date.toISOString().split('T')[0];
 
   const handleSearch = async (query) => {
     setLoading(true);
-    setErrorMessage("");
+    setErrorMessage('');
 
     const today = new Date();
     const weekAgo = new Date();
@@ -45,12 +45,11 @@ function App() {
 
     const apiKey = import.meta.env.VITE_API_KEY;
     const base_Url = import.meta.env.VITE_BASE_URL;
-    
-    
+
     const url = `${base_Url}?q=${query}&from=${from}&to=${to}&sortBy=popularity&apiKey=${apiKey}`;
 
-    if(!query.trim()) {
-      setErrorMessage("Search cannot be empty");
+    if (!query.trim()) {
+      setErrorMessage('Search cannot be empty');
       setCards([]);
       setLoading(false);
       return;
@@ -59,17 +58,17 @@ function App() {
     try {
       const res = await fetch(url);
       if (!res.ok) {
-        throw new Error("Network response ERROR");
-      };
+        throw new Error('Network response ERROR');
+      }
 
       const data = await res.json();
 
-      if(data.articles.length === 0) {
+      if (data.articles.length === 0) {
         setCards([]);
-        setErrorMessage("No articles found");
+        setErrorMessage('No articles found');
       } else {
         const cards = data.articles.map((articles, i) => ({
-          id:i,
+          id: i,
           title: articles.title,
           description: articles.description,
           image: articles.urlToImage,
@@ -78,17 +77,14 @@ function App() {
           url: articles.url,
         }));
 
-        setCards(cards)
+        setCards(cards);
       }
- 
     } catch (error) {
-      setErrorMessage("An error occurred while fetching data");
-      console.error("Search Failed:", error);
+      setErrorMessage('An error occurred while fetching data');
+      console.error('Search Failed:', error);
     } finally {
       setLoading(false);
     }
-
-
   };
   // creating useLocationCall as a variable for getting the current route
   const location = useLocation();
@@ -102,44 +98,42 @@ function App() {
   }, [location]);
 
   const toggleMenu = () => {
-    setIsMenuOpen((prevState) =>  {
-      console.log("Toggling menu:", !prevState);
+    setIsMenuOpen((prevState) => {
+      console.log('Toggling menu:', !prevState);
       return !prevState;
-  });
-}
-
-
+    });
+  };
 
   useEffect(() => {
-    console.log(`isMenuOpen >> ${isMenuOpen}`)
-  }, [isMenuOpen])
+    console.log(`isMenuOpen >> ${isMenuOpen}`);
+  }, [isMenuOpen]);
 
   // console.log(`isMenuOpen >> logging ...${isMenuOpen}`);
 
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.classList.add("no-scroll");
+      document.body.classList.add('no-scroll');
     } else {
-      document.body.classList.remove("no-scroll");
+      document.body.classList.remove('no-scroll');
     }
 
-    return () => document.body.classList.remove("no-scroll");
+    return () => document.body.classList.remove('no-scroll');
   }, [isMenuOpen]);
 
   // const MobileDropdown = ({ isMenuOpen }) => {
-    
+
   // };
 
   const [currentUser, setCurrentUser] = useState({
-    username: "",
-    email: "",
-    name: "",
+    username: '',
+    email: '',
+    name: '',
   });
   // Modal set
-  const [activeModal, setActiveModal] = useState("");
+  const [activeModal, setActiveModal] = useState('');
   //
   //
-  console.log("activeModal", activeModal);
+  console.log('activeModal', activeModal);
   const [cards, setCards] = useState([]);
 
   const [defaultCardArray, setDefaultCardArray] = useState([]);
@@ -152,19 +146,19 @@ function App() {
   // simulate the api response
 
   const handleLoginModal = () => {
-    setActiveModal("login");
+    setActiveModal('login');
   };
 
   const handleSignUpModal = () => {
-    setActiveModal("signup");
+    setActiveModal('signup');
   };
 
   const onBookmarkClick = () => {
-    console.log("Hello from onBookmarkClick");
+    console.log('Hello from onBookmarkClick');
   };
 
   const onDeleteClick = () => {
-    console.log("Helllo from onDeleteClick");
+    console.log('Helllo from onDeleteClick');
   };
 
   // const handleSearch = (query) => {
@@ -186,24 +180,24 @@ function App() {
     setIsLoggedIn(false);
   }, []);
 
-  const closeModal = () => setActiveModal("");
+  const closeModal = () => setActiveModal('');
 
   useEffect(() => {
     const closeByEscape = (e) => {
-      if (e.key === "Escape") {
+      if (e.key === 'Escape') {
         closeModal();
       }
     };
-    document.addEventListener("keydown", closeByEscape);
+    document.addEventListener('keydown', closeByEscape);
     return () => {
-      document.removeEventListener("keydown", closeByEscape);
+      document.removeEventListener('keydown', closeByEscape);
     };
   }, []);
   return (
     <div
       id="content__container"
       className={`content__container ${
-        location.pathname === "/saved-news" ? "content__container--profile" : ""
+        location.pathname === '/saved-news' ? 'content__container--profile' : ''
       }`}
     >
       {/* creating CurrentUser Provider with value of currentUser */}
@@ -241,23 +235,29 @@ function App() {
             path="/saved-news"
             element={
               <Profile
-                name={"user1"}
+                name={'user1'}
                 numberOfSavedArticles={5}
                 cards={cards}
-                savedArticlesKeywords={"Keyword1, Keyword2, Keyword3"}
+                savedArticlesKeywords={'Keyword1, Keyword2, Keyword3'}
               />
             }
           ></Route>
         </Routes>
         <Footer />
 
-        {activeModal === "login" && (
+        {activeModal === 'login' && (
           <LoginModal
             onClose={closeModal}
             handleSignUpModal={handleSignUpModal}
+            email={email}
+            password={password}
+            setEmail={setEmail}
+            setPassword={setPassword}
+            errorMessage={errorMessage}
+            setErrorMessage={setErrorMessage}
           />
         )}
-        {activeModal === "signup" && (
+        {activeModal === 'signup' && (
           <SignUpModal
             onClose={closeModal}
             handleLoginModal={handleLoginModal}

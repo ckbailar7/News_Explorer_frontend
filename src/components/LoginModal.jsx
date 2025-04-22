@@ -1,6 +1,28 @@
-import ModalWithForm from "./ModalWithForm";
+import ModalWithForm from './ModalWithForm';
+import { MainApi } from '../utils/MainApi';
 
-const LoginModal = ({ onClose, handleSignUpModal }) => {
+const LoginModal = ({
+  onClose,
+  handleSignUpModal,
+  email,
+  password,
+  setEmail,
+  setPassword,
+  errorMessage,
+  setErrorMessage,
+}) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = awaitMainApi.login({ email, password });
+      console.log('Login successful:', res);
+      setErrorMessage(''); // Clear any previous error message
+      onClose();
+    } catch (error) {
+      console.error('Login failed', error);
+      setErrorMessage('Incorrect email or password', error.message);
+    }
+  };
   return (
     <ModalWithForm onClose={onClose} title="Sign in">
       <label className="modalWithForm__label">
