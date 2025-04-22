@@ -30,6 +30,43 @@ function App() {
   console.log(typeof setSearchQuery);
   const formatDate = (date) => date.toISOString().split('T')[0];
 
+  // simulate removing an article from saved-news
+  const handleRemoveNewsArticle = async (article) => {
+    try {
+      const res = await MainApi.removeArticle(article);
+      console.log('Article removed successfully:', res);
+      setCards((prevCards) =>
+        prevCards.filter((card) => card.id !== article.id),
+      );
+    } catch (error) {
+      console.error('Error removing article:', error);
+    }
+  };
+
+  // simulate saving news articles to saved-news
+  const handleSaveNewsArticle = async (article) => {
+    try {
+      const res = await MainApi.saveArticle(article);
+      console.log('Article saved successfully:', res);
+      setCards((prevCards) =>
+        prevCards.filter((card) => card.id !== article.id),
+      );
+    } catch (error) {
+      console.error('Error saving article:', error);
+    }
+  };
+
+  // Handle Mock Logout Functionality
+  const handleLogout = async () => {
+    try {
+      await MainApi.logout();
+      console.log('Logged out successfully');
+      setIsLoggedIn(false); // simulating logout through "Stub api"
+    } catch (error) {
+      console.error('Error Logging out', error);
+    }
+  };
+
   const handleSearch = async (query) => {
     setLoading(true);
     setErrorMessage('');

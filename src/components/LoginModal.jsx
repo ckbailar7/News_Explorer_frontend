@@ -11,6 +11,7 @@ const LoginModal = ({
   errorMessage,
   setErrorMessage,
 }) => {
+  // uses MainApi.jsx.login to stimulate login
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -48,7 +49,7 @@ const LoginModal = ({
           placeholder="Enter password"
         />
       </label>
-      <button className="modalWithForm__signInButton">
+      <button onClick={handleSubmit} className="modalWithForm__signInButton">
         <p className="modalWithForm__signInButtonText">Sign in</p>
       </button>
       <p className="modalWithForm__signUpTransfer-container">
