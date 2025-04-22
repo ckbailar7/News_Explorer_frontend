@@ -15,7 +15,7 @@ const LoginModal = ({
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = awaitMainApi.login({ email, password });
+      const res = await MainApi.login({ email, password });
       console.log('Login successful:', res);
       setErrorMessage(''); // Clear any previous error message
       onClose();
