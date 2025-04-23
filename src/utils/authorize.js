@@ -98,7 +98,7 @@
 
 export const authorize = (email, password) => {
     // Simulate fetch request that send back a token
-    return new Promise((resolveConfig, reject) => {
+    return new Promise((resolve, reject) => {
         resolve({token: "fake token 123"});
     });
 

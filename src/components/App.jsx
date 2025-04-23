@@ -59,9 +59,8 @@ function App() {
   // Handle Mock Logout Functionality
   const handleLogout = async () => {
     try {
-      await MainApi.logout();
+      setIsLoggedIn(false);
       console.log('Logged out successfully');
-      setIsLoggedIn(false); // simulating logout through "Stub api"
     } catch (error) {
       console.error('Error Logging out', error);
     }
@@ -242,11 +241,13 @@ function App() {
         <Header
           onCreateLoginModal={handleLoginModal}
           isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
           closeModal={closeModal}
           isMenuOpen={isMenuOpen}
           toggleMenu={toggleMenu}
           setIsMenuOpen={setIsMenuOpen}
           activeModal={activeModal}
+          handleLogout={handleLogout}
         />
         <Routes>
           <Route
@@ -292,6 +293,9 @@ function App() {
             setPassword={setPassword}
             errorMessage={errorMessage}
             setErrorMessage={setErrorMessage}
+            isLoggedIn={isLoggedIn}
+            setIsLoggedIn={setIsLoggedIn}
+            setIsMenuOpen={setIsMenuOpen}
           />
         )}
         {activeModal === 'signup' && (

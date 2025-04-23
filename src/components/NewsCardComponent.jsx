@@ -1,7 +1,7 @@
-import NewsCardButton from "../components/NewsCardButton";
-import "../blocks/NewsCardComponent.css";
-import imagePlaceholder from "../assets/news-card_image-placeholder.svg";
-import { useLocation } from "react-router-dom";
+import NewsCardButton from '../components/NewsCardButton';
+import '../blocks/NewsCardComponent.css';
+import imagePlaceholder from '../assets/news-card_image-placeholder.svg';
+import { useLocation } from 'react-router-dom';
 
 const NewsCardComponent = ({
   cardData,
@@ -11,15 +11,15 @@ const NewsCardComponent = ({
 }) => {
   const { title, description, image, date, source, keyword } = cardData;
   const location = useLocation();
-  const isProfilePage = location.pathname === "/saved-news";
+  const isProfilePage = location.pathname === '/saved-news';
 
-  console.log("Raw date value:", date)
+  console.log('Raw date value:', date);
 
-  const formattedDate = new Date(date);
+  const formattedDate = date ? new Date(date) : new Date();
 
-  if(isNaN(formattedDate)) {
-    console.error("Invalid date format:", date);
-    return <div>Error: Invalid Date Format</div>
+  if (!date && isNaN(formattedDate)) {
+    console.error('Invalid date format:', date);
+    return <div>Error: Invalid Date Format</div>;
   }
 
   return (
@@ -40,11 +40,10 @@ const NewsCardComponent = ({
       <div className="news-card__details">
         <time className="news-card__date" dateTime={date}>
           {new Date(date).toLocaleDateString(undefined, {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-          })
-          }
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          })}
         </time>
         <h3 className="news-card__title">{title}</h3>
         <p className="news-card__description">{description}</p>

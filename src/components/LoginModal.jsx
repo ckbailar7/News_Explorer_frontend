@@ -1,6 +1,5 @@
 import ModalWithForm from './ModalWithForm';
-import { MainApi } from '../utils/MainApi';
-
+import { authorize, checkToken } from '../utils/authorize';
 const LoginModal = ({
   onClose,
   handleSignUpModal,
@@ -10,15 +9,20 @@ const LoginModal = ({
   setPassword,
   errorMessage,
   setErrorMessage,
+  isLoggedIn,
+  setIsLoggedIn,
+  setIsMenuOpen,
 }) => {
-  // uses MainApi.jsx.login to stimulate login
+  // uses authorize to stimulate login
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await MainApi.login({ email, password });
+      const res = await authorize({ email, password });
       console.log('Login successful:', res);
+      setIsLoggedIn(true); // Set the logged-in state to true
+      onClose(); // Close the modal
+      setIsMenuOpen(false); // Close the menu if it's open
       setErrorMessage(''); // Clear any previous error message
-      onClose();
     } catch (error) {
       console.error('Login failed', error);
       setErrorMessage('Incorrect email or password', error.message);
