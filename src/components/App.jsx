@@ -21,6 +21,7 @@ import '../blocks/App.css';
 import Preloader from './Preloader';
 
 function App() {
+  const [savedArticles, setSavedArticles] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -31,38 +32,39 @@ function App() {
   const formatDate = (date) => date.toISOString().split('T')[0];
   const [hasSearched, setHasSearched] = useState(false);
   const [cards, setCards] = useState([]);
-
-  // simulate removing an article from saved-news
-  const handleRemoveNewsArticle = async (article) => {
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 500));
-
-      setCards((prevCards) =>
-        prevCards.map((card) =>
-          card.id === article.id ? { ...card, isSaved: false } : card,
-        ),
-      );
-      console.log('Article removed successfully:', article);
-    } catch (error) {
-      console.error('Error removing article:', error);
-    }
-  };
+  const [visibleCount, setVisibleCount] = useState(3);
 
   // simulate saving news articles to saved-news
-  const handleSaveNewsArticle = async (article) => {
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate network delay
-
-      setCards((prevCards) =>
-        prevCards.map((card) =>
-          card.id === article.id ? { ...card, isSaved: true } : card,
-        ),
+  const handleSaveNewsArticle = (article) => {
+    setSavedArticles((prevSavedArticles) => {
+      const isAlreadySaved = prevSavedArticles.some(
+        (saved) => saved.url === article.url,
       );
+      if (isAlreadySaved) return prevSavedArticles; // Do nothing if the article is already saved
 
-      console.log('Article saved successfully:', article);
-    } catch (error) {
-      console.error('Error saving article:', error);
-    }
+      return [...prevSavedArticles, { ...article, isSaved: true }];
+    });
+
+    setCards((prevCards) =>
+      prevCards.map((card) =>
+        card.url === article.url ? { ...card, isSaved: true } : card,
+      ),
+    );
+    console.log('Article saved successfully ', article);
+  };
+
+  // simulate removing an article from saved-news
+  const handleRemoveNewsArticle = (article) => {
+    setSavedArticles((prevSavedArticles) =>
+      prevSavedArticles.filter((saved) => saved.url !== article.url),
+    );
+
+    setCards((prevCards) =>
+      prevCards.map((card) =>
+        card.url === article.url ? { ...card, isSaved: false } : card,
+      ),
+    );
+    console.log('Article removed successfully:', article);
   };
 
   // Handle Mock Logout Functionality
@@ -113,16 +115,23 @@ function App() {
         setCards([]);
         setErrorMessage('No articles found');
       } else {
-        const cards = data.articles.map((articles, i) => ({
-          id: i,
-          title: articles.title,
-          description: articles.description,
-          image: articles.urlToImage,
-          date: articles.publishedAt,
-          source: articles.source.name,
-          url: articles.url,
-          isSaved: false,
-        }));
+        const cards = data.articles.map((article, i) => {
+          const isSaved = savedArticles.some(
+            (saved) => saved.url === article.url,
+          );
+
+          return {
+            id: i,
+            title: article.title,
+            description: article.description,
+            image: article.urlToImage,
+            date: article.publishedAt,
+            source: article.source.name,
+            url: article.url,
+            isSaved,
+            keyword: query,
+          };
+        });
 
         setCards(cards);
       }
@@ -280,6 +289,8 @@ function App() {
                 handleRemoveNewsArticle={handleRemoveNewsArticle}
                 hasSearched={hasSearched}
                 setHasSearched={setHasSearched}
+                visibleCount={visibleCount}
+                setVisibleCount={setVisibleCount}
               />
             }
           ></Route>
@@ -290,7 +301,7 @@ function App() {
                 name={'user1'}
                 numberOfSavedArticles={5}
                 // cards={cards}
-                cards={cards.filter((card) => card.isSaved)}
+                cards={savedArticles}
                 savedArticlesKeywords={'Keyword1, Keyword2, Keyword3'}
                 isLoggedIn={isLoggedIn}
                 handleRemoveNewsArticle={handleRemoveNewsArticle}

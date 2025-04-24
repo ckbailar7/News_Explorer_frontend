@@ -29,18 +29,21 @@ const NewsCardButton = ({
           ></button>
         </div>
       ) : (
-        <div
-          className="news-card__bookmark-button--container"
-          onClick={handleBookmarkClick}
-        >
+        <div className="news-card__bookmark-button--container">
           <button
             className={`news-card__bookmark-button ${
               isSaved ? 'bookmarked' : ''
             }`}
             aria-label={
-              isSaved ? 'Bookmark this article' : 'Bookmark this article'
+              isLoggedIn
+                ? isSaved
+                  ? 'Remove Bookmark'
+                  : 'Bookmark this article'
+                : 'Sign in to save articles'
             }
-            onClick={isSaved ? onDeleteClick : onBookmarkClick}
+            onClick={
+              isLoggedIn ? (isSaved ? onDeleteClick : onBookmarkClick) : null
+            }
           ></button>
         </div>
       )}
@@ -50,11 +53,6 @@ const NewsCardButton = ({
           <p className="news-card__button--tooltip--text">
             Sign in to save articles
           </p>
-        </div>
-      )}
-      {isProfilePage && (
-        <div className="news-card__button--tooltip">
-          <p className="news-card__button--tooltip--text">Remove from saved</p>
         </div>
       )}
     </div>

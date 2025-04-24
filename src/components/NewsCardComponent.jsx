@@ -7,9 +7,10 @@ const NewsCardComponent = ({
   cardData,
   isLoggedIn,
   onBookmarkClick,
-  onDeleteClick,
+
   handleSaveNewsArticle,
-  handleRemoveSavedArticles,
+  handleRemoveNewsArticle,
+  onDeleteClick,
 }) => {
   const { title, description, image, date, source, keyword, isSaved } =
     cardData;
@@ -33,7 +34,7 @@ const NewsCardComponent = ({
           isSaved={cardData.isSaved} // Passing the isSaved property from cardData */
           isLoggedIn={isLoggedIn}
           onBookmarkClick={() => handleSaveNewsArticle(cardData)}
-          onDeleteClick={() => handleRemoveSavedArticles(cardData)}
+          onDeleteClick={onDeleteClick}
         ></NewsCardButton>
         {isProfilePage && (
           <div className="news-card__keyword">

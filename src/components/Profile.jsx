@@ -6,30 +6,22 @@ import NewsCardComponent from './NewsCardComponent';
 const Profile = ({
   name,
   numberOfSavedArticles,
-  cards,
+  cards, // Now contains only saved articles
   savedArticlesKeywords,
   isLoggedIn,
   handleRemoveNewsArticle,
   handleSaveNewsArticle,
 }) => {
-  // // function to extract top 3 most used keywords from cardData; articles.
-  // const getTopKeywords = (cards) => {
-  //   // Initialize an empty object
-  //   const keywordCount = {};
+  // Filter the saveed articles
 
-  //   // loops through cards and accounts for the occurence of each keyword
-  //   cards.forEach((keyword) => {
-  //     if (keyword) {
-  //       keywordCount[keyword] === (keywordCount[keyword] || 0) + 1;
-  //     }
-  //   });
+  //Extract the keywords from saved articles
+  const savedKeywords = [...new Set(cards.map((card) => card.keyword))];
 
-  //   //Sorting keywords by frequency (how often they appear when reading each card in the array)
-
-  //   const sortedKeywords = Object.entries(keywordCount).sort();
-  // };
-
-  // const savedArticles = cards.filter((card) => card.isSaved);
+  // Formating the keywords for saved-articles route
+  const formattedKeywords =
+    savedKeywords.length <= 3
+      ? savedKeywords.join(',')
+      : `${savedKeywords.slice(0, 3).join(',')} ...`;
 
   console.log('Saved Articles:', cards);
 
@@ -40,16 +32,21 @@ const Profile = ({
           <h3 className="profile__header1-text">Saved Articles</h3>
         </div>
         <div className="profile__header-greeting">
-          <h1 className="profile__header-greeting-text">{`${name}, you have ${cards.length} saved articles `}</h1>
-          <h3 className="profile__header-greeting-by-keyword_container">
-            <span className="profile__header-greeting-text-by-keyword">
-              By Keywords:
-            </span>
-            <span className="profile__header-greeting-keywords">
-              {savedArticlesKeywords}
-            </span>
-            {/* {`By keywords: ${savedArticlesKeywords}`} */}
-          </h3>
+          <h1 className="profile__header-greeting-text">
+            {name}, you have {cards.length}{' '}
+          </h1>
+
+          {savedKeywords.length > 0 && (
+            <h3 className="profile__header-greeting-by-keyword_container">
+              <span className="profile__header-greeting-text-by-keyword">
+                By Keywords:
+              </span>
+              <span className="profile__header-greeting-keywords">
+                {formattedKeywords}
+              </span>
+              {/* {`By keywords: ${savedArticlesKeywords}`} */}
+            </h3>
+          )}
         </div>
       </div>
 
@@ -61,7 +58,7 @@ const Profile = ({
               cardData={card}
               isLoggedIn={isLoggedIn}
               onDeleteClick={() => handleRemoveNewsArticle(card)}
-              handleSaveNewsArticle={() => handleSaveNewsArticle(card)}
+              handleSaveNewsArticle={handleSaveNewsArticle}
             />
           ))
         ) : (

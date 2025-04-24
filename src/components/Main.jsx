@@ -23,10 +23,10 @@ const Main = ({
   handleRemoveNewsArticle,
   hasSearched,
   setHasSearched,
+  visibleCount,
+  setVisibleCount,
 }) => {
   // simulate fetching data from database
-
-  const [visibleCount, setVisibleCount] = useState([3]);
 
   const visibleCards = cards.slice(0, visibleCount);
 
