@@ -1,18 +1,22 @@
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
-import "../blocks/NewsCardComponent.css";
+import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import '../blocks/NewsCardComponent.css';
 
-const NewsCardButton = ({ isLoggedIn, onBookmarkClick, onDeleteClick }) => {
+const NewsCardButton = ({
+  isLoggedIn,
+  onBookmarkClick,
+  onDeleteClick,
+  isSaved,
+}) => {
   // const [hover, setHover] = useState(false);
-  const [isBookmarked, setIsBookmarked] = useState(false);
   const location = useLocation();
-  const isProfilePage = location.pathname === "/saved-news";
+  const isProfilePage = location.pathname === '/saved-news';
 
-  const handleBookmarkClick = () => {
-    if (!isLoggedIn) return;
-    setIsBookmarked((prevState) => !prevState);
-    onBookmarkClick();
-  };
+  // const handleBookmarkClick = () => {
+  //   if (!isLoggedIn) return;
+  //   setIsBookmarked((prevState) => !prevState);
+  //   onBookmarkClick();
+  // };
 
   return (
     <div>
@@ -31,9 +35,12 @@ const NewsCardButton = ({ isLoggedIn, onBookmarkClick, onDeleteClick }) => {
         >
           <button
             className={`news-card__bookmark-button ${
-              isBookmarked ? "bookmarked" : ""
+              isSaved ? 'bookmarked' : ''
             }`}
-            aria-label="Bookmark this article"
+            aria-label={
+              isSaved ? 'Bookmark this article' : 'Bookmark this article'
+            }
+            onClick={isSaved ? onDeleteClick : onBookmarkClick}
           ></button>
         </div>
       )}

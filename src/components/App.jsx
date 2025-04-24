@@ -29,15 +29,20 @@ function App() {
   const API_KEY = import.meta.env.VITE_API_KEY;
   console.log(typeof setSearchQuery);
   const formatDate = (date) => date.toISOString().split('T')[0];
+  const [hasSearched, setHasSearched] = useState(false);
+  const [cards, setCards] = useState([]);
 
   // simulate removing an article from saved-news
   const handleRemoveNewsArticle = async (article) => {
     try {
-      const res = await MainApi.removeArticle(article);
-      console.log('Article removed successfully:', res);
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
       setCards((prevCards) =>
-        prevCards.filter((card) => card.id !== article.id),
+        prevCards.map((card) =>
+          card.id === article.id ? { ...card, isSaved: false } : card,
+        ),
       );
+      console.log('Article removed successfully:', article);
     } catch (error) {
       console.error('Error removing article:', error);
     }
@@ -46,11 +51,15 @@ function App() {
   // simulate saving news articles to saved-news
   const handleSaveNewsArticle = async (article) => {
     try {
-      const res = await MainApi.saveArticle(article);
-      console.log('Article saved successfully:', res);
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate network delay
+
       setCards((prevCards) =>
-        prevCards.filter((card) => card.id !== article.id),
+        prevCards.map((card) =>
+          card.id === article.id ? { ...card, isSaved: true } : card,
+        ),
       );
+
+      console.log('Article saved successfully:', article);
     } catch (error) {
       console.error('Error saving article:', error);
     }
@@ -69,6 +78,7 @@ function App() {
   const handleSearch = async (query) => {
     setLoading(true);
     setErrorMessage('');
+    setHasSearched(true);
 
     const today = new Date();
     const weekAgo = new Date();
@@ -111,6 +121,7 @@ function App() {
           date: articles.publishedAt,
           source: articles.source.name,
           url: articles.url,
+          isSaved: false,
         }));
 
         setCards(cards);
@@ -144,7 +155,7 @@ function App() {
     console.log(`isMenuOpen >> ${isMenuOpen}`);
   }, [isMenuOpen]);
 
-  // console.log(`isMenuOpen >> logging ...${isMenuOpen}`);
+  console.log('updated cards:', cards);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -170,7 +181,6 @@ function App() {
   //
   //
   console.log('activeModal', activeModal);
-  const [cards, setCards] = useState([]);
 
   const [defaultCardArray, setDefaultCardArray] = useState([]);
   // Setting isLoggedIn default value to false
@@ -266,6 +276,10 @@ function App() {
                 setSearchQuery={setSearchQuery}
                 errorMessage={errorMessage}
                 setErrorMessage={setErrorMessage}
+                handleSaveNewsArticle={handleSaveNewsArticle}
+                handleRemoveNewsArticle={handleRemoveNewsArticle}
+                hasSearched={hasSearched}
+                setHasSearched={setHasSearched}
               />
             }
           ></Route>
@@ -275,8 +289,12 @@ function App() {
               <Profile
                 name={'user1'}
                 numberOfSavedArticles={5}
-                cards={cards}
+                // cards={cards}
+                cards={cards.filter((card) => card.isSaved)}
                 savedArticlesKeywords={'Keyword1, Keyword2, Keyword3'}
+                isLoggedIn={isLoggedIn}
+                handleRemoveNewsArticle={handleRemoveNewsArticle}
+                handleSaveNewsArticle={handleSaveNewsArticle}
               />
             }
           ></Route>

@@ -8,8 +8,11 @@ const NewsCardComponent = ({
   isLoggedIn,
   onBookmarkClick,
   onDeleteClick,
+  handleSaveNewsArticle,
+  handleRemoveSavedArticles,
 }) => {
-  const { title, description, image, date, source, keyword } = cardData;
+  const { title, description, image, date, source, keyword, isSaved } =
+    cardData;
   const location = useLocation();
   const isProfilePage = location.pathname === '/saved-news';
 
@@ -27,9 +30,10 @@ const NewsCardComponent = ({
       <figure className="news-card__image-container">
         <img className="news-card__image" src={image} alt={title} />
         <NewsCardButton
+          isSaved={cardData.isSaved} // Passing the isSaved property from cardData */
           isLoggedIn={isLoggedIn}
-          onBookmarkClick={onBookmarkClick}
-          onDeleteClick={onDeleteClick}
+          onBookmarkClick={() => handleSaveNewsArticle(cardData)}
+          onDeleteClick={() => handleRemoveSavedArticles(cardData)}
         ></NewsCardButton>
         {isProfilePage && (
           <div className="news-card__keyword">
@@ -38,12 +42,17 @@ const NewsCardComponent = ({
         )}
       </figure>
       <div className="news-card__details">
-        <time className="news-card__date" dateTime={date}>
-          {new Date(date).toLocaleDateString(undefined, {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-          })}
+        <time
+          className="news-card__date"
+          dateTime={date || new Date().toISOString()}
+        >
+          {date
+            ? new Date(date).toLocaleDateString(undefined, {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              })
+            : 'No Data Available'}
         </time>
         <h3 className="news-card__title">{title}</h3>
         <p className="news-card__description">{description}</p>
