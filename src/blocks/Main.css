@@ -17,10 +17,55 @@
   width: 100%;
 }
 
+.nothing-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F5F6F7;
+  margin: 80px auto;
+  max-width: 356px;
+  max-height: 30px;
+  text-align: center;
+}
+
+.nothing-found__image {
+  max-width: 82.5px;
+  max-height: 82.5px;
+  margin: 0 auto;
+}
+
+.nothing-found__header {
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  letter-spacing: 0px;
+  margin: 31.5px auto 16px auto;
+  color:#1A1B22 ;
+
+}
+
+.nothing-found__text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color:#B6BCBF ;
+  
+  max-width: 356px;
+  max-height: 48px;
+  margin: 0 auto 80px auto;
+
+  
+}
+
 .news-section {
   position: relative;
   box-sizing: border-box;
   /* padding-left: 104px; */
+  margin: 80px auto;
 }
 
 .news-section__card-wrapper {
