@@ -216,17 +216,6 @@ function App() {
     console.log('Helllo from onDeleteClick');
   };
 
-  // const handleSearch = (query) => {
-  //   setLoading(true);
-
-  //   console.log("Searching for : ", query);
-
-  //   setTimeout(() => {
-  //     setArticles([defaultCards]);
-  //     setLoading(false);
-  //   }, 2000);
-  // };
-
   useEffect(() => {
     setCards(defaultCards);
   }, []);

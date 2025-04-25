@@ -1,6 +1,6 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect } from 'react';
 
-import "../blocks/ModalWithForm.css";
+import '../blocks/ModalWithForm.css';
 
 const ModalWithForm = ({ name, title, children, onClose }) => {
   const modalRef = useRef(null);
@@ -13,26 +13,24 @@ const ModalWithForm = ({ name, title, children, onClose }) => {
       }
     };
 
-    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener('mousedown', handleOutsideClick);
     return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener('mousedown', handleOutsideClick);
     };
   }, [onClose]);
 
-
-
   return (
-    <div className={`modalWithForm modalWithForm--${name}`}>
+    <div className={`modal-with-form modal-with-form--${name}`}>
       {/* Moved button from inside form to outside for mobile dev */}
-      
-      <div className="modalWithForm__content" ref={modalRef}>
+
+      <div className="modal-with-form__content" ref={modalRef}>
         <button
-          className="modalWithForm__close-button"
+          className="modal-with-form__close-button"
           type="button"
           onClick={onClose}
         ></button>
-        <h3 className="modalWithForm__title">{title}</h3>
-        <form className="modalWithForm__form">{children}</form>
+        <h3 className="modal-with-form__title">{title}</h3>
+        <form className="modal-with-form__form">{children}</form>
       </div>
     </div>
   );

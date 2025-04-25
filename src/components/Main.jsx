@@ -76,7 +76,9 @@ const Main = ({
                       />
                     ))
                   ) : (
-                    <p className="no-results-message">No results found</p>
+                    <p className="news-section__no-results-message">
+                      No results found
+                    </p>
                   )}
                 </div>
                 {hasSearched &&

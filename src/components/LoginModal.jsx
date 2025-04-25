@@ -30,10 +30,10 @@ const LoginModal = ({
   };
   return (
     <ModalWithForm onClose={onClose} title="Sign in">
-      <label className="modalWithForm__label">
+      <label className="modal-with-form__label">
         Email
         <input
-          className="modalWithForm__input"
+          className="modal-with-form__input"
           name="email"
           id="email"
           type="email"
@@ -42,10 +42,10 @@ const LoginModal = ({
           placeholder="Enter email"
         />
       </label>
-      <label className="modalWithForm__label">
+      <label className="modal-with-form__label">
         Password
         <input
-          className="modalWithForm__input"
+          className="modal-with-form__input"
           id="password"
           type="password"
           minLength="1"
@@ -53,13 +53,13 @@ const LoginModal = ({
           placeholder="Enter password"
         />
       </label>
-      <button onClick={handleSubmit} className="modalWithForm__signInButton">
-        <p className="modalWithForm__signInButtonText">Sign in</p>
+      <button onClick={handleSubmit} className="modal-with-form__signInButton">
+        <p className="modal-with-form__signInButtonText">Sign in</p>
       </button>
-      <p className="modalWithForm__signUpTransfer-container">
+      <p className="modal-with-form__signUpTransfer-container">
         Or
         <a
-          className="modalWithForm__signUpTransfer"
+          className="modal-with-form__signUpTransfer"
           onClick={handleSignUpModal}
         >
           Signup

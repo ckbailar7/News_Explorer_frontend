@@ -1,11 +1,12 @@
-import React from "react";
-import "../blocks/Footer.css";
-import GithubImage from "../assets/github.svg";
-import FBimage from "../assets/fb.svg";
+import React from 'react';
+import '../blocks/Footer.css';
+
 const Footer = ({}) => {
   return (
     <footer className="footer">
-      <p className="footer__copyright">© 2020 Supersite, Powered by News API</p>
+      <p className="footer__copyright">
+        © 2020 Supersite, Powered by News API
+      </p>
       <div className="footer__buttons-container">
         <div className="footer__buttons-no-icon">
           <button className="footer__home-button">Home</button>
