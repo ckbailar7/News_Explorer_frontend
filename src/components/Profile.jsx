@@ -33,7 +33,7 @@ const Profile = ({
         </div>
         <div className="profile__header-greeting">
           <h1 className="profile__header-greeting-text">
-            {name}, you have {cards.length}{' '}
+            {name}, you have {cards.length} articles{' '}
           </h1>
 
           {savedKeywords.length > 0 && (
@@ -50,7 +50,7 @@ const Profile = ({
         </div>
       </div>
 
-      <div className="profile__newsCard-container">
+      <div className="profile__news-card-container">
         {cards.length > 0 ? (
           cards.map((card) => (
             <NewsCardComponent

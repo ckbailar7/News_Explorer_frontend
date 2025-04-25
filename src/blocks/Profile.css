@@ -8,7 +8,7 @@
   src: url("../vendor/fonts/Roboto/RobotoSlab-VariableFont_wght.ttf");
 }
 
-.profile__newsCard-container {
+.profile__news-card-container {
   display: flex;
   /* width: 1440px; */
   height: auto;
@@ -86,24 +86,24 @@
 }
 
 @media (max-width: 1366px) {
-  .profile__newsCard-container {
+  .profile__news-card-container {
     max-width: 1366px;
   }
 }
 @media (max-width: 1280px) {
-  .profile__newsCard-container {
+  .profile__news-card-container {
     max-width: 1280px;
   }
 }
 
 @media (max-width: 1100px) {
-  .profile__newsCard-container {
+  .profile__news-card-container {
     max-width: 1100px;
   }
 }
 
 @media (max-width: 1024px) {
-  .profile__newsCard-container {
+  .profile__news-card-container {
     max-width: 1024px;
   }
 
@@ -142,7 +142,7 @@
     margin: 16px 16px 32px 0;
   }
 
-  .profile__newsCard-container {
+  .profile__news-card-container {
     width: 768px;
     padding: 32px 0 0 0;
   }
@@ -153,7 +153,7 @@
 }
 
 @media (max-width: 425px) {
-  .profile__newsCard-container {
+  .profile__news-card-container {
     width: 425px;
   }
 
@@ -163,7 +163,7 @@
 }
 
 @media (max-width: 375px) {
-  .profile__newsCard-container {
+  .profile__news-card-container {
     width: 375px;
   }
 
@@ -214,7 +214,7 @@
     height: 48px;
     margin: 50px 17px 32px 0;
   }
-  .profile__newsCard-container {
+  .profile__news-card-container {
     width: 320px;
   }
 }
