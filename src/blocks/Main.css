@@ -17,7 +17,7 @@
   width: 100%;
 }
 
-.nothing-found {
+.news-section-nothing-found {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,13 +29,13 @@
   text-align: center;
 }
 
-.nothing-found__image {
+.news-section-nothing-found__image {
   max-width: 82.5px;
   max-height: 82.5px;
   margin: 0 auto;
 }
 
-.nothing-found__header {
+.news-section-nothing-found__header {
   font-family: "Roboto Slab", sans-serif;
   font-weight: 400;
   font-size: 26px;
@@ -46,7 +46,7 @@
 
 }
 
-.nothing-found__text {
+.news-section-nothing-found__text {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 18px;

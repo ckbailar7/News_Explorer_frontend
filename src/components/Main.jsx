@@ -48,14 +48,16 @@ const Main = ({
         hasSearched && (
           <section className="news-section">
             {hasSearched && visibleCards.length === 0 ? (
-              <div className="nothing-found">
+              <div className="news-section-nothing-found">
                 <img
                   src={FrownyFaceImage}
                   alt="Frowny Face"
-                  className="nothing-found__image"
+                  className="news-section-nothing-found__image"
                 />
-                <h2 className="nothing-found__header">Nothing Found</h2>
-                <p className="nothing-found__text">
+                <h2 className="news-section-nothing-found__header">
+                  Nothing Found
+                </h2>
+                <p className="news-section-nothing-found__text">
                   Sorry, but nothing matched your search terms.
                 </p>
               </div>
