@@ -176,8 +176,9 @@
 
 @media (max-width: 425px) {
   .about-component__container {
+    padding: 0;
     height: 752px;
-    width: 425px;
+    max-width: 425px;
   }
 
   .about-component__image {

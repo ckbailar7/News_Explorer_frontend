@@ -6,4 +6,11 @@ body {
   margin: 0;
   /* width: 100%; */
   /* max-width: 100vw; */
+  outline: 1px solid red;
 }
+
+/* * {
+  outline: 1px solid red;
+} */
+
+

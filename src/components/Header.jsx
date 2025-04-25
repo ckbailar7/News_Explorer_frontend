@@ -49,7 +49,7 @@ const Header = ({
 
         {/* Mobile Dropdown Hamburger icon */}
         <button
-          className={`header__hamburger ${isMenuOpen ? 'open' : ''} ${
+          className={`header__hamburger ${isMenuOpen ? '-open' : ''} ${
             isProfilePage
               ? isMenuOpen
                 ? 'header__hamburger--white'
@@ -58,26 +58,24 @@ const Header = ({
           } `}
           onClick={toggleMenu}
           aria-label="Toggle Navigation"
-          style={{ className: activeModal ? 'none' : 'header__hamburger.open' }}
+          style={{ className: activeModal ? 'none' : 'header__hamburger-open' }}
         >
-          <div className="header__hamburger-bar header__hamburger-bar_top-bar"></div>
+          <div className="header__hamburger-bar header__hamburger-bar--top-bar"></div>
 
-          <div className="header__hamburger-bar header__hamburger-bar_bottom-bar"></div>
+          <div className="header__hamburger-bar header__hamburger-bar--bottom-bar"></div>
         </button>
 
         <div
-          className={`header__hamburger__dropdown-menu__container ${
-            isMenuOpen
-              ? 'header__hamburger__dropdown-menu__container--open'
-              : ''
+          className={`header__hamburger-dropdown-menu-container ${
+            isMenuOpen ? 'header__hamburger-dropdown-menu-container--open' : ''
           }`}
           style={{ display: activeModal ? 'none' : 'block' }}
         >
-          <nav className="header__hamburger__dropdown-menu">
-            <ul className="header__hamburger__dropdown-menu-items">
+          <nav className="header__hamburger-dropdown-menu">
+            <ul className="header__hamburger-dropdown-menu-items">
               <li>
                 <NavLink
-                  className="header__hamburger__home-link"
+                  className="header__hamburger-home-link"
                   to="/"
                   onClick={handleLinkClick}
                 >
@@ -88,16 +86,16 @@ const Header = ({
                 <>
                   <li>
                     <NavLink
-                      className="header__hamburger__saved-articles_link"
+                      className="header__hamburger-saved-articles-link"
                       to="/saved-news"
                       onClick={handleLinkClick}
                     >
                       Saved Articles
                     </NavLink>
                   </li>
-                  <div className="header__hamburger_user-button-outer_container">
-                    <li className="header__hamburger_user-button-container">
-                      <span className="header__hamburger_user-button">
+                  <div className="header__hamburger-user-button-outer-container">
+                    <li className="header__hamburger-user-button-container">
+                      <span className="header__hamburger-user-button">
                         {currentUser?.name || 'Profile'}
                       </span>
                     </li>
@@ -105,9 +103,9 @@ const Header = ({
                 </>
               )}
               {!isLoggedIn && (
-                <li className="header__hamburger_sign-in-button__container">
+                <li className="header__hamburger-sign-in-button-container">
                   <button
-                    className="header__hamburger_sign-in-button"
+                    className="header__hamburger-sign-in-button"
                     onClick={() => {
                       onCreateLoginModal();
                       handleLinkClick();
