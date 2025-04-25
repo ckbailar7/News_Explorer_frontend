@@ -192,6 +192,14 @@
   align-items: center;
 }
 
+.header__hamburger-user-button--logout {
+  width: 24px;
+  height: 24px;
+  background-image: url("../assets/logoutloaderWhite.svg");
+  background-color: transparent;
+  border: none;
+}
+
 .header__hamburger-sign-in-button {
   width: 288px;
   height: 56px;

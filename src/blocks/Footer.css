@@ -37,6 +37,11 @@
   border: none;
 }
 
+.footer__home-button-text {
+  text-decoration: none;
+  color: #1A1B22;
+}
+
 .footer__tripleten-button {
   width: 74px;
   height: 24px;

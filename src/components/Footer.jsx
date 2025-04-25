@@ -9,7 +9,11 @@ const Footer = ({}) => {
       </p>
       <div className="footer__buttons-container">
         <div className="footer__buttons-no-icon">
-          <button className="footer__home-button">Home</button>
+          <button className="footer__home-button">
+            <a className="footer__home-button-text" href="/">
+              Home
+            </a>
+          </button>
           <button className="footer__tripleten-button">TripleTen</button>
         </div>
         <div className="footer__buttons-with-icon">

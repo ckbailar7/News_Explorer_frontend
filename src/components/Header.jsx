@@ -98,6 +98,10 @@ const Header = ({
                       <span className="header__hamburger-user-button">
                         {currentUser?.name || 'Profile'}
                       </span>
+                      <button
+                        className="header__hamburger-user-button--logout"
+                        onClick={handleLogoutClick}
+                      ></button>
                     </li>
                   </div>
                 </>
