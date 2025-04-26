@@ -30,8 +30,8 @@ const Header = ({
 
   const headerLogoChange =
     isProfilePage && !isMenuOpen
-      ? '/src/assets/NewsExplorerNewsExplorerHeaderDark.svg'
-      : '/src/assets/headerLogoWhite.svg';
+      ? '/assets/NewsExplorerNewsExplorerHeaderDark.svg'
+      : '/assets/headerLogoWhite.svg';
 
   return (
     <header className={`header ${isProfilePage ? 'header-profile-page' : ''}`}>
