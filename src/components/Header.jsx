@@ -3,6 +3,8 @@ import { useContext } from 'react';
 import { currentUserContext } from '../contexts/currentUserContext';
 import { NavLink } from 'react-router-dom';
 import '../blocks/Header.css';
+import headerLogoDark from '../assets/NewsExplorerNewsExplorerHeaderDark.svg';
+import headerLogoWhite from '../assets/headerLogoWhite.svg';
 
 const Header = ({
   isLoggedIn,
@@ -29,9 +31,7 @@ const Header = ({
   };
 
   const headerLogoChange =
-    isProfilePage && !isMenuOpen
-      ? '/assets/NewsExplorerNewsExplorerHeaderDark.svg'
-      : '/assets/headerLogoWhite.svg';
+    isProfilePage && !isMenuOpen ? headerLogoDark : headerLogoWhite;
 
   return (
     <header className={`header ${isProfilePage ? 'header-profile-page' : ''}`}>
