@@ -68,7 +68,7 @@
   align-self: flex-start;
   margin: 0 0 20px 0;
   font-size: 24px;
-  font-family: "Roboto 900";
+  font-family: "Roboto", sans-serif;
   line-height: 100%;
   letter-spacing: 0;
 }
