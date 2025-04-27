@@ -212,6 +212,8 @@
   }
 }
 
+
+
 @media (max-width: 425px) {
   .news-section {
     max-width: 425px;
@@ -225,8 +227,7 @@
     width: 288px;
     height: 34px;
     font-size: 30px;
-    margin-left: unset;
-    margin-left: 16px;
+    margin: 32px 16px 58px 16px;
   }
   .news-section__card-wrapper {
     width: 425px;
@@ -250,6 +251,7 @@
     height: 34px;
     font-size: 30px;
     margin-left: unset;
+    margin: 32px 16px 58px 16px;
   }
 
   .news-section__card-wrapper {
@@ -257,10 +259,12 @@
   }
 
   .main__about-section {
-    width: 375px;
+    max-width: 375px;
     height: 752px;
   }
 }
+
+
 
 @media (max-width: 320px) {
   .news-section {

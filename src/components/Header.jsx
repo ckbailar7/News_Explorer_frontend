@@ -31,19 +31,22 @@ const Header = ({
   };
 
   const headerLogoChange =
-    isProfilePage && !isMenuOpen ? headerLogoDark : headerLogoWhite;
+    isProfilePage && !isMenuOpen
+      ? 'header__logo-text--profile-page'
+      : 'header__logo-text';
 
   return (
     <header className={`header ${isProfilePage ? 'header-profile-page' : ''}`}>
       <div className="header__top-bar">
         <div className="header__logo">
           <NavLink className="header__logo-link" to="/">
-            <img
-              src={headerLogoChange}
+            <div
+              className={headerLogoChange}
               alt="header logo"
-              className="header__logo-image"
               onClick={handleLinkClick}
-            />
+            >
+              NewsExplorer
+            </div>
           </NavLink>
         </div>
 

@@ -149,6 +149,8 @@
   }
 } */
 
+
+
 @media (max-width: 768px) {
   .footer {
     max-width: 768px;
@@ -270,6 +272,8 @@
     justify-content: flex-end;
   }
 }
+
+
 
 @media (max-width: 320px) {
   .footer__buttons-container {
