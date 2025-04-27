@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 
 import '../blocks/ModalWithForm.css';
 
-const ModalWithForm = ({ name, title, children, onClose }) => {
+const ModalWithForm = ({ name, title, children, onClose, activeModal }) => {
   const modalRef = useRef(null);
 
   // Detecting clicks
@@ -19,6 +19,11 @@ const ModalWithForm = ({ name, title, children, onClose }) => {
     };
   }, [onClose]);
 
+  const RegistrationTitleChange =
+    activeModal === 'success'
+      ? 'modal-with-form__title--success'
+      : 'modal-with-form__title';
+
   return (
     <div className={`modal-with-form modal-with-form--${name}`}>
       {/* Moved button from inside form to outside for mobile dev */}
@@ -29,7 +34,7 @@ const ModalWithForm = ({ name, title, children, onClose }) => {
           type="button"
           onClick={onClose}
         ></button>
-        <h3 className="modal-with-form__title">{title}</h3>
+        <h1 className={RegistrationTitleChange}>{title}</h1>
         <form className="modal-with-form__form">{children}</form>
       </div>
     </div>

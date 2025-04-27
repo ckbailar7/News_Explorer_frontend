@@ -15,6 +15,7 @@ import Footer from './Footer.jsx';
 import LoginModal from './LoginModal';
 import SignUpModal from './SignUpModal';
 import Profile from './Profile';
+import RegistrationSuccessModal from './RegistrationSuccessModal.jsx';
 import defaultCards from '../contexts/defaultCardArrayPrototype';
 
 import '../blocks/App.css';
@@ -208,6 +209,10 @@ function App() {
     setActiveModal('signup');
   };
 
+  const handleRegistrationSuccessModal = () => {
+    setActiveModal('success');
+  };
+
   const onBookmarkClick = () => {
     console.log('Hello from onBookmarkClick');
   };
@@ -320,6 +325,14 @@ function App() {
           <SignUpModal
             onClose={closeModal}
             handleLoginModal={handleLoginModal}
+            handleRegistrationSuccessModal={handleRegistrationSuccessModal}
+          />
+        )}
+        {activeModal === 'success' && (
+          <RegistrationSuccessModal
+            onClose={closeModal}
+            handleLoginModal={handleLoginModal}
+            activeModal={activeModal}
           />
         )}
       </currentUserContext.Provider>

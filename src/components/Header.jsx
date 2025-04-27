@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { currentUserContext } from '../contexts/currentUserContext';
 import { NavLink } from 'react-router-dom';
@@ -18,7 +18,7 @@ const Header = ({
   const currentUser = useContext(currentUserContext);
   const location = useLocation();
   const isProfilePage = location.pathname === '/saved-news';
-
+  const navigate = useNavigate();
   const handleLinkClick = () => {
     if (isMenuOpen) {
       setIsMenuOpen(false);
@@ -28,6 +28,7 @@ const Header = ({
   const handleLogoutClick = () => {
     handleLogout();
     setIsMenuOpen(false);
+    navigate('/');
   };
 
   const headerLogoChange =

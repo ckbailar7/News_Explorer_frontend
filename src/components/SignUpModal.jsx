@@ -1,6 +1,10 @@
 import ModalWithForm from './ModalWithForm';
 
-const SignUpModal = ({ onClose, handleLoginModal }) => {
+const SignUpModal = ({
+  onClose,
+  handleLoginModal,
+  handleRegistrationSuccessModal,
+}) => {
   return (
     <ModalWithForm onClose={onClose} title="Sign Up">
       <label className="modal-with-form__label">
@@ -37,7 +41,12 @@ const SignUpModal = ({ onClose, handleLoginModal }) => {
         />
       </label>
       <button className="modal-with-form__signInButton">
-        <p className="modal-with-form__signInButtonText">Sign up</p>
+        <p
+          className="modal-with-form__signInButtonText"
+          onClick={handleRegistrationSuccessModal}
+        >
+          Sign up
+        </p>
       </button>
       <p className="modal-with-form__signUpTransfer-container">
         Or{' '}
