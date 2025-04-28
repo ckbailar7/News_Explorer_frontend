@@ -792,7 +792,7 @@
   .header {
     max-width: 768px;
     width: 100%;
-    padding: 0 18px;
+    padding: 0;
   }
 
   .header__top-bar {
@@ -800,7 +800,7 @@
   }
 
   .header__logo {
-    margin: 22.73px 132px 18.47px 0;
+    margin: 22.73px auto 18.47px 0;
   }
 
   .header__navigation {
@@ -920,7 +920,7 @@
 
   .header__logo {
     /* max-width: 117px; */
-    margin: 16px 147px 16px 16px;
+    margin: 16px auto 16px 16px;
   }
 
   .header__logo a {
@@ -969,7 +969,7 @@
 
   .header__logo {
     /* max-width: 117px; */
-    margin: 16px 110px 16px 16px;
+    margin: 16px auto 16px 16px;
     /* margin: 0px; */
   }
 
@@ -982,6 +982,12 @@
   .header__hamburger-dropdown-menu-container {
     max-width: 375px;
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 374px) {
+  .header__logo {
+    
   }
 }
 

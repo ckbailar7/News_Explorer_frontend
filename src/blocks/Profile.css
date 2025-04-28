@@ -88,17 +88,20 @@
 @media (max-width: 1366px) {
   .profile__news-card-container {
     max-width: 1366px;
+    width: auto;
   }
 }
 @media (max-width: 1280px) {
   .profile__news-card-container {
     max-width: 1280px;
+    width: auto;
   }
 }
 
 @media (max-width: 1100px) {
   .profile__news-card-container {
     max-width: 1100px;
+    width: auto;
   }
 }
 
@@ -108,7 +111,11 @@
   }
 
   .profile__header {
-    max-width: 1100px;
+    max-width: 1024px;
+  }
+
+  .profile__header1-text {
+    width: auto;
   }
 }
 
@@ -143,12 +150,24 @@
   }
 
   .profile__news-card-container {
-    width: 768px;
+    max-width: 768px;
+    width: auto;
     padding: 32px 0 0 0;
   }
 
   .profile__header-greeting-text-by-keyword {
     margin: 0;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 767px) {
+  .profile__header1-text {
+    max-width: 712px;
+    width: auto;
+  }
+
+  .profile__news-card-container {
+    width: auto;
   }
 }
 

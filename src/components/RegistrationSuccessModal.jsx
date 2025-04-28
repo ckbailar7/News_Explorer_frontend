@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import ModalWithForm from './ModalWithForm';
 import '../blocks/ModalWithForm.css';
 
@@ -7,9 +8,25 @@ const RegistrationSuccessModal = ({
   activeModal,
   name,
 }) => {
+  const modalRef = useRef(null);
+
+  // Detecting clicks
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (modalRef.current && !modalRef.current.contains(e.target)) {
+        onClose();
+      }
+    };
+
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [onClose]);
+
   return (
     <div className={`modal-with-form modal-with-form--${name}`}>
-      <div className="modal-with-form__content--success">
+      <div className="modal-with-form__content--success" ref={modalRef}>
         <button
           className="modal-with-form__close-button"
           type="button"
