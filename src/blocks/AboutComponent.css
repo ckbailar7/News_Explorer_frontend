@@ -16,31 +16,32 @@
   height: 624px;
   background-color: #fff;
   
-  justify-content: space-around;
-  align-items: center; /* ///////////// Check if needed for smaller dimmensions */
+  
+  /*align-items: center;  ///////////// Check if needed for smaller dimmensions */
   flex-wrap: nowrap;
   box-sizing: border-box;
   margin: 0 auto;
 }
 
 .about-component__image-wrapper {
-  flex: 1 1 40%;
-  max-width: 464px;
-  height: auto;
-  /* margin: 80px 56px 80px 104px; */
-  margin: 0 ;
+  
+  width: 424px;
+  height: 424px;
+  flex: none;
+  
+  margin: 80px 56px 80px 104px ;
 }
 
 .about-component__image {
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 50%;
 }
 
 .about-component__headers-wrapper {
   flex: 1 1 40%;
   max-width: 600px;
-  margin: 0 ;
+  margin: 131px 216px 303px 56px ;
 }
 
 .about-component__header {
@@ -52,7 +53,8 @@
   font-size: 40px;
   line-height: 46px;
   letter-spacing: 0px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  /* margin: 0; */
 }
 
 .about-component__paragraph-container {
@@ -72,6 +74,29 @@
   display: flex;
   align-items: center;
   margin: 0;
+}
+
+@media (max-width: 1439px) and (min-width: 1366px) {
+  .about-component__container {
+    justify-content:unset;
+  }
+
+  .about-component__image-wrapper {
+    flex: 1 1 auto;
+    max-width: 464px;
+    height: auto;
+    margin: 0;
+  }
+
+  .about-component__image {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .about-component__headers-wrapper {
+    margin: 0;
+  }
 }
 
 @media (max-width: 1366px) {
@@ -141,16 +166,18 @@
 @media (max-width: 768px) and (min-width: 426px) {
   .about-component__container {
    flex-direction: row;
-   align-items: center;
+   align-items: unset;
    justify-content: space-between;
-   gap: 16px;
+   /* gap: 16px; */
    height: 325px;
+   justify-content: unset;
+
   }
 
   .about-component__image-wrapper {
     flex: 1 1 40%;
-    max-width:40%;
-    
+    max-width:232px;
+    margin: 61px 32px 61px 40px;
     
   }
 
@@ -173,6 +200,7 @@
   .about-component__headers-wrapper {
     flex: 1 1 50%;
     max-width: 50%;
+    margin: 40px 40px 96px 0
    
   }
 
@@ -190,7 +218,7 @@
 @media (max-width: 425px) {
   .about-component__container {
     padding: 0;
-    height: 752px;
+    height: 608px;
     max-width: 100%;
     flex-wrap: wrap;
     width: 100%;
