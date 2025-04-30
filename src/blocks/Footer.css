@@ -1,81 +1,18 @@
-@font-face {
-  font-family: "Roboto";
-  src: url("../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
-}
-
 .footer {
+  margin: 0;
+  height: 176px;
   display: flex;
-  height: 80px;
-  /* border-bottom: solid 1px #fff; */
-  align-items: center;
+  flex-direction: column-reverse;
+  box-sizing: border-box;
   justify-content: space-between;
-  color: #b6bcbf;
-}
-
-.footer__copyright {
-  /* margin-left: 104px; */
-  font-family: "Roboto", sans-serif;
-  width: 433px;
-  height: 22px;
-  margin: 32px auto 26px 104px;
+  
 }
 
 .footer__buttons-container {
-  margin-right: 104px;
   display: inline-flex;
-}
+  justify-content: space-between;
+  box-sizing: border-box;
 
-.footer__home-button {
-  width: 49px;
-  height: 24px;
-  font-family: "Roboto";
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: 0px;
-  background: none;
-  border: none;
-}
-
-.footer__home-button-text {
-  text-decoration: none;
-  color: #1A1B22;
-}
-
-.footer__tripleten-button {
-  width: 74px;
-  height: 24px;
-  font-family: "Roboto";
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: 0px;
-  background: none;
-  border: none;
-}
-
-/* .footer__home-button,
-.footer__tripleten-button {
-  background: none;
-  border: none;
-  padding: 0 20px;
-  width: 24px;
-  height: 24px;
-} */
-
-.footer__facebook-button {
-}
-
-.footer__github-button,
-.footer__facebook-button {
-  background: none;
-  border: none;
-  width: 24px;
-  height: 24px;
-  font-family: "Roboto";
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .footer__github-button {
@@ -88,215 +25,84 @@
   background-repeat: no-repeat;
 }
 
-.footer__home-button:hover,
-.footer__tripleten-button:hover,
-.footer__github-button:hover,
-.footer__facebook-button:hover {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
+.footer__github-button,
+  .footer__facebook-button {
+    
+    border: none;
+    width: 24px;
+    height: 24px;
+    font-family: "Roboto";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 .footer__buttons-no-icon {
   display: flex;
-  justify-content: space-between;
-  width: 163px;
+  background: none;
+  border: none;
+  flex-direction: column;
+  
+  box-sizing: border-box;
+  width: 200px;
+  height: 74px;
+
+}
+
+.footer__home-button {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 49px;
   height: 24px;
-  margin: 30px 40px 26px 0;
+  box-sizing: border-box;
+  
+  
+
+}
+
+.footer__home-button-text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 48px;
+  letter-spacing: 0px;
+  color: #1A1B22;
+  text-decoration: none;
+}
+
+.footer__tripleten-button {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 74px;
+  height: 24px;
+  box-sizing: border-box;
+}
+
+.footer__tripleten-button-text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 48px;
+  letter-spacing: 0px;
+  color: #1A1B22;
+  text-decoration: none;
 }
 
 .footer__buttons-with-icon {
-  margin: 28px 0 28px 0;
-  height: 24px;
-  gap: 16px;
-  display: flex;
+  display: inline-flex;
 }
 
-
-
-
-
-@media (max-width: 768px) {
-  .footer {
-    max-width: 768px;
-  }
-  .footer__copyright {
-    width: 300px;
-    height: 22px;
-    margin: 24px auto 24px 40px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
-    letter-spacing: 0px;
-  }
-
-  .footer__buttons-container {
-    margin: 0 40px 0 0;
-  }
-}
-@media (max-width: 425px) {
-  .footer__buttons-container {
-    height: 74px;
-  }
-  .footer {
-    flex-direction: column-reverse;
-    align-items: center;
-    padding: 20px 0;
-    flex-wrap: wrap;
-    height: 176px;
-  }
-
-  .footer__copyright {
-    text-align: center;
-
-    margin: 0;
-  }
-
-  .footer__buttons-container {
-    align-items: center;
-
-    width: 100%;
-    margin-right: 0;
-  }
-
-  .footer__buttons-no-icon {
-    flex-direction: column;
-    height: 74px;
-    width: 200px;
-    justify-content: space-between;
-    margin: 0 0 0 16px;
-  }
-
-  .footer__home-button,
-  .footer__tripleten-button {
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: 0px;
-  }
-
-  .footer__buttons-with-icon {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-self: flex-start;
-    gap: 10px;
-    width: 210px;
-    justify-content: flex-end;
-    margin: 0 16px 132px 0;
-  }
-}
-
-@media (max-width: 375px) {
-  .footer__buttons-container {
-    height: 74px;
-  }
-  .footer {
-    flex-direction: column-reverse;
-    align-items: center;
-    padding: 20px 0;
-    flex-wrap: wrap;
-    height: 176px;
-  }
-
-  .footer__copyright {
-    text-align: center;
-
-    margin: 0;
-  }
-
-  .footer__buttons-container {
-    align-items: center;
-
-    width: 100%;
-    margin-right: 0;
-  }
-
-  .footer__buttons-no-icon {
-    flex-direction: column;
-    height: 74px;
-    width: 200px;
-    justify-content: space-between;
-    margin: unset;
-    margin: 0 0 0 16px;
-  }
-
-  .footer__home-button,
-  .footer__tripleten-button {
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: 0px;
-  }
-
-  .footer__buttons-with-icon {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 10px;
-    width: 150px;
-    margin: 0 16px 132px 0;
-    justify-content: flex-end;
-  }
-}
-
-
-
-@media (max-width: 320px) {
-  .footer__buttons-container {
-    height: 74px;
-  }
-  .footer {
-    flex-direction: column-reverse;
-    align-items: center;
-    /* padding: 20px 0; */
-    padding: 0;
-    flex-wrap: wrap;
-    height: 176px;
-  }
-
-  .footer__copyright {
-    text-align: center;
-    margin-bottom: 20px;
-    margin-left: unset;
-    margin: 0;
-  }
-
-  .footer__buttons-container {
-    align-items: center;
-
-    width: 100%;
-    margin-right: 0;
-    margin: 20px 0 0 0;
-  }
-
-  .footer__buttons-no-icon {
-    flex-direction: column;
-    height: 74px;
-    width: 200px;
-    justify-content: space-between;
-    margin: 0 0 0 16px;
-  }
-
-  .footer__home-button,
-  .footer__tripleten-button {
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: 0px;
-  }
-
-  .footer__buttons-with-icon {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-
-    gap: 10px;
-    width: 150px;
-    /* margin-right: 16px; */
-    justify-content: flex-end;
-    margin: 0 16px 132px 0;
-  }
-
-  .footer__github-button,
-  .footer__facebook-button {
-    width: 24px;
-    height: 24px;
-  }
+.footer__copyright {
+  width: 288px ;
+  height: 22px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  color: #B6BCBF ;
+  margin: 0 auto;
+  text-align: center;
 }
