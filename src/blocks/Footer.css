@@ -1,10 +1,11 @@
 .footer {
   margin: 0;
-  height: 176px;
+  /* height: 176px; */
+  min-width: 320px;
   display: flex;
   flex-direction: column-reverse;
   box-sizing: border-box;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   
 }
 
@@ -12,6 +13,9 @@
   display: inline-flex;
   justify-content: space-between;
   box-sizing: border-box;
+  height: auto;
+  
+
 
 }
 
@@ -45,7 +49,9 @@
   
   box-sizing: border-box;
   width: 200px;
-  height: 74px;
+  height:74px;
+  justify-content: space-between;
+  margin: 20px 16px 38px 16px;
 
 }
 
@@ -53,45 +59,46 @@
   background: none;
   border: none;
   padding: 0;
-  width: 49px;
-  height: 24px;
+  /* width: 49px; */
+  /* height: auto; */
   box-sizing: border-box;
-  
-  
-
-}
-
-.footer__home-button-text {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height: 48px;
+  /* line-height: 48px; */
   letter-spacing: 0px;
-  color: #1A1B22;
+  color:#1A1B22 ;
   text-decoration: none;
+  
+  
+
 }
+
+
 
 .footer__tripleten-button {
   background: none;
   border: none;
   padding: 0;
-  width: 74px;
-  height: 24px;
+  /* width: 74px; */
+  /* height: auto; */
   box-sizing: border-box;
-}
-
-.footer__tripleten-button-text {
-  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height: 48px;
+  /* line-height: 48px; */
   letter-spacing: 0px;
   color: #1A1B22;
   text-decoration: none;
+  font-family: "Roboto", sans-serif;
 }
+
+
 
 .footer__buttons-with-icon {
   display: inline-flex;
+  margin:20px 16px 0 0;
+  height: min-content;
+  gap: 24px;
 }
 
 .footer__copyright {
@@ -103,6 +110,8 @@
   line-height: 22px;
   letter-spacing: 0px;
   color: #B6BCBF ;
-  margin: 0 auto;
+  margin: 0 auto ;
   text-align: center;
+  padding: 0;
+  white-space: nowrap;
 }
