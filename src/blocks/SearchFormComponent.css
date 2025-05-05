@@ -77,3 +77,126 @@
     color: #fff;
 
 }
+
+
+@media  screen and (min-width: 426px) and (max-width: 768px) {
+    .search-form {
+        height: 334px;
+        
+    }
+
+    .search-form__header {
+        margin: 0 auto;
+        width:385px;
+        height: 80px;
+        font-family: "Roboto Slab", sans-serif;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 40px;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+    }
+
+    .search-form__subtext {
+        margin: 0 auto;
+        /* min-width: 452px; */
+        width:452px;
+        height: 48px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0px;
+        color: #fff;
+        
+    }
+
+    .search-form__bar {
+        width: 452px;
+        height: 56px;
+        display: flex;
+        position: relative;
+        max-width: 600px;
+        margin-bottom: 80px;
+    }
+
+    .search-form__input {
+        width: 452px;
+        height: 64px;
+        padding: 0 0 0 20px;
+    }
+
+    .search-form__button {
+        width: 160px;
+        height: 56px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 20px;
+    }
+}
+
+/* @media screen and (min-width: 612px) and (max-width: 768px) {
+    .search-form__header {
+        margin: 0 auto;
+        width: calc(385px - 40px);
+    }
+
+    .search-form__subtext {
+        margin: 0 auto;
+        width: calc(100% - 40px);
+    }
+} */
+
+@media  screen and (min-width: 769px) and (max-width: 1440px) {
+    .search-form {
+        height: auto;
+    }
+
+    .search-form__header {
+        width: 608px;
+        height: 128px;
+        
+
+    }
+
+    .search-form__subtext {
+        width: 608px;
+    }
+
+    .search-form__bar {
+        width: 608px;
+        height: 64px;
+        display: flex;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .search-form__input {
+        width: 608px;
+    }
+
+    .search-form__button {
+        width: 160px;
+        height: 56px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 20px;
+    }
+}
+
+
+/* @media screen and (max-width: 450px) {
+    .search-form__header {
+        margin: 0 auto;
+        width: calc(100% - 40px);
+    }
+
+    .search-form__subtext {
+        margin: 0 auto;
+        width: calc(100% - 40px);
+    }
+
+    
+} */
