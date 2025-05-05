@@ -86,7 +86,7 @@
     }
 
     .search-form__header {
-        margin: 0 auto;
+        margin: 38px auto 0 auto;
         width:385px;
         height: 80px;
         font-family: "Roboto Slab", sans-serif;
@@ -98,7 +98,7 @@
     }
 
     .search-form__subtext {
-        margin: 0 auto;
+        margin: 16px auto 48px auto;
         /* min-width: 452px; */
         width:452px;
         height: 48px;
@@ -162,6 +162,7 @@
 
     .search-form__subtext {
         width: 608px;
+        margin: 0 auto 88px auto;
     }
 
     .search-form__bar {
