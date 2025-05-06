@@ -740,6 +740,10 @@ letter-spacing: 0px;
     box-shadow: inset 0px -1px 0px 0px rgba(209, 210, 214, 1);
     align-content: center;
       }
+
+      .header__top-bar {
+        height: 80px;
+      }
     
     .header__hamburger {
         display: none;
@@ -823,6 +827,7 @@ letter-spacing: 0px;
         list-style-type: none;
         display: flex;
         align-items: center;
+        
         
       }
       
