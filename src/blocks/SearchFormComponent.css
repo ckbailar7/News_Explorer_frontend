@@ -156,6 +156,12 @@
     .search-form__header {
         width: 608px;
         height: 128px;
+        font-family: Roboto Slab;
+        font-weight: 400;
+        font-size: 60px;
+        line-height: 64px;
+        letter-spacing: 0px;
+
         
 
     }
@@ -163,6 +169,12 @@
     .search-form__subtext {
         width: 608px;
         margin: 0 auto 88px auto;
+        font-family: Roboto;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0px;
+
     }
 
     .search-form__bar {
@@ -170,7 +182,7 @@
         height: 64px;
         display: flex;
         position: relative;
-        margin: 0 auto;
+        margin: 0 auto 80px auto;
     }
 
     .search-form__input {

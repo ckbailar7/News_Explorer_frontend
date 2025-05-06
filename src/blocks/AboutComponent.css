@@ -65,26 +65,75 @@
     letter-spacing: 0px;
 }
 
+@media screen and (min-width: 426px) and (max-width: 768px) {
+
+    .about-component__container {
+        flex-direction: row;
+        align-items: unset;
+        height: auto;
+        gap: 32px;
+}
+    .about-component__image-wrapper {
+        margin: 0;
+        width: 232px;
+        height: 232px;
+    }
+
+    .about-component__image {
+        width: 232px;
+        height: 232px;
+    }
+
+    .about-component__header {
+        width: 424px;
+        height: 34px;
+        font-family: "Roboto Slab";
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 40px;
+    letter-spacing: 0px;
+
+    }
+
+    .about-component__paragraph-container {
+        width: 428px;
+        height: 168px;
+    }
+    .about-component__paragraph {
+        width: 100%;
+        height: auto;
+        font-family: "Roboto";
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0px;
+
+
+    }
+}
+
 
 @media  screen and (min-width: 769px) and (max-width: 1440px) {
     .about-component__container {
         display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
+        align-items: unset;
+        justify-content: unset;
         height: 624px;
         max-width: 1440px;
         background-color: #fff;
         flex-wrap: nowrap;
         box-sizing: border-box;
         margin: 0 auto;
+        gap: 56px;
     }
 
     .about-component__image-wrapper {
         width: 424px;
         height: 424px;
         flex: none;
-        margin: 0;
+        margin: 80px 0 80px 104px;
+
     }
 
     .about-component__image {
@@ -95,16 +144,44 @@
 
     .about-component__headers-wrapper {
         max-width: 600px;
-        margin: 0;
+        margin: 131px 0 303px 0;
+        height: auto;
 
     }
 
     .about-component__paragraph-container {
-        max-width: 600px;
+        width: 600px;
         height: 120px;
         display: flex;
 
-        margin: 0;
+        
+        margin-top: 24px;
+    }
+
+    .about-component__header {
+        height: 46px;
+        width: 600px;
+        font-family: Roboto Slab;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 46px;
+        letter-spacing: 0px;
+        
+
+
+    }
+
+    .about-component__paragraph {
+        width: 600px;
+        height: 120px;
+        font-family: "Roboto";
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0px;
+       
+        
+
     }
 
     

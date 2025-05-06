@@ -36,6 +36,10 @@ const Header = ({
       ? 'header__logo-text--profile-page'
       : 'header__logo-text';
 
+  const headerHomeButtonClassChange = isLoggedIn
+    ? 'header__nav-item--logged-in'
+    : 'header__nav-item';
+
   return (
     <header className={`header ${isProfilePage ? 'header-profile-page' : ''}`}>
       <div className="header__top-bar">
@@ -133,7 +137,7 @@ const Header = ({
         {/* {navigation} */}
         <nav className="header__navigation">
           <ul className="header__nav-list">
-            <li className="header__nav-item">
+            <li className={headerHomeButtonClassChange}>
               <NavLink
                 to="/"
                 className={`header__nav-link ${

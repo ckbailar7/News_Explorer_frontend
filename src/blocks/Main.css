@@ -16,3 +16,9 @@
 .main__about-section {
     height: 752px;
 }
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    .main__about-section {
+        height: auto;
+    }
+}
