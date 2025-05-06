@@ -36,12 +36,20 @@ body {
     
   }
 
+  .content__container--profile {
+    background-image: none;
+    background-color: #fff;
+  }
+
   @media  screen and (min-width: 426px) and (max-width: 768px) {
 
     .content__container {
         background-image: url("../assets/newTabletBackgroundCorrect.svg");
     }
-    
+    .content__container--profile {
+      background-image: none;
+      background-color: #fff;
+    }
   }
 
 
@@ -49,6 +57,11 @@ body {
 
     .content__container {
         background-image: url("../assets/headerBackground.svg");
+    }
+
+    .content__container--profile {
+      background-image: none;
+      background-color: #fff;
     }
     
   }
@@ -59,5 +72,10 @@ body {
         background-size: contain;
         background-repeat: no-repeat;
         width: 1440px;
+    }
+
+    .content__container--profile {
+      background-image: none;
+      background-color: #fff;
     }
   }

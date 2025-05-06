@@ -68,6 +68,27 @@
     width: 16px;
 }
 
+
+.header__hamburger-open .header__hamburger-bar--top-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.header__hamburger-open .header__hamburger-bar--bottom-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.header__hamburger--white .header__hamburger-bar {
+  background-color: white;
+}
+
+.header__hamburger--black .header__hamburger-bar {
+  background-color: black;
+}
+
 .header__logo {
     min-width: 112px;
     width: 112px;
@@ -97,6 +118,18 @@
     color: #fff;
     z-index: 1001;
 
+}
+
+.header__logo-text--profile-page {
+  margin-right: 76px;
+  width: 49px;
+  height: 24px;
+  color: #000;
+  background: none;
+  border: none;
+  font-size: 18px;
+  list-style: none;
+  text-decoration: none;
 }
 
 .header__hamburger-dropdown-menu-container {
@@ -257,6 +290,9 @@
 
     .header {
         height: 66px;
+        box-sizing: border-box;
+    
+        box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.2);
     }
 
     .header__top-bar {
@@ -329,7 +365,7 @@
     border: none;
     font-size: 18px;
   }
-  .header__homeButton--profilePage {
+  .header__logo-text--profile-page {
     margin-right: 76px;
     width: 49px;
     height: 24px;
@@ -337,6 +373,8 @@
     background: none;
     border: none;
     font-size: 18px;
+    list-style: none;
+    text-decoration: none;
   }
   
   .header__nav-list {
@@ -699,7 +737,7 @@
       .header__nav-link {
         position: relative;
         /* margin-right: 42px; */
-        margin-right: 0;
+        margin-right: 16px;
         width: 49px;
         height: 24px;
         color: #fff;
@@ -815,7 +853,7 @@
         align-items: center;
         justify-content: center;
         opacity: 1;
-        /* margin-right: 48px; */
+        margin-right: 104px;
         /* border-bottom: 2px solid transparent; */
         transition: border-bottom 0.3s ease, opacity 0.3s ease;
       
