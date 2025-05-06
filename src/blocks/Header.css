@@ -15,7 +15,7 @@
     
     position: relative;
     margin: 0;
-    padding: 0;
+    padding: 0 104px 0 0;
     min-height: 56px;
     min-width: 320px;
     box-sizing: border-box;
@@ -90,8 +90,8 @@
 }
 
 .header__logo {
-    min-width: 112px;
-    width: 112px;
+    min-width: 117px;
+    width: 117px;
     min-height: 24px;
     height: 24px;
     margin: 16px 55px 16px 16px;
@@ -99,16 +99,16 @@
 }
 
 .header__logo-link {
-    min-width: 112px;
-    width: 112px;
+    min-width: 117px;
+    width: 117px;
     min-height: 24px;
 
 }
 
 .header__logo-text {
     position: relative;
-    min-width: 112px;
-    width: 112px;
+    min-width: 117px;
+    width: 117px;
     min-height: 24px;
     font-family: "Roboto Slab", sans-serif;
     font-weight: 700;
@@ -121,15 +121,33 @@
 }
 
 .header__logo-text--profile-page {
-  margin-right: 76px;
+  /* margin-right: 76px;
   width: 49px;
   height: 24px;
   color: #000;
   background: none;
   border: none;
-  font-size: 18px;
-  list-style: none;
-  text-decoration: none;
+
+  font-family: Roboto Slab;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+letter-spacing: 0px;
+vertical-align: middle; */
+position: relative;
+    min-width: 117px;
+    width: 117px;
+    min-height: 24px;
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #000;
+    z-index: 1001;
+  
+ 
+
 }
 
 .header__hamburger-dropdown-menu-container {
@@ -291,12 +309,15 @@
     .header {
         height: 66px;
         box-sizing: border-box;
-    
+        padding: 0 40px 0 0;
         box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.2);
     }
 
+    
+
     .header__top-bar {
         height: 66px;
+        box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.2);
     }
 
     
@@ -308,13 +329,25 @@
     width: 112px;
     height: 48px;
     background-color: transparent;
-  
+    padding: 0;
     color: #000;
     margin-right: 50px;
     border: 1px solid white;
     border-radius: 100px;
   }
   
+  .header-profile-page {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 ;
+    padding: 0 40px 0 0;
+
+    
+    height: 80px;
+    box-sizing: border-box;
+    box-shadow: inset 0px -1px 0px 0px rgba(209, 210, 214, 1);
+  }
   .header__buttons_home-button-profilePage button,
   .header__button_saved-articles button {
     background: none;
@@ -365,6 +398,30 @@
     border: none;
     font-size: 18px;
   }
+
+  .header__logo {
+    width: 200px;
+    height: 24.8px;
+    margin: 16px auto 16px 16px;
+  }
+
+  .header__logo-link {
+    width: 200px;
+    height: 24.8px;
+  }
+
+  .header__logo-text {
+    margin-right: 76px;
+    width: 200px;
+    height: 24.8px;
+    font-family: "Roboto Slab";
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+letter-spacing: 0px;
+
+
+  }
   .header__logo-text--profile-page {
     margin-right: 76px;
     width: 49px;
@@ -375,6 +432,13 @@
     font-size: 18px;
     list-style: none;
     text-decoration: none;
+    font-family: "Roboto Slab";
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+letter-spacing: 0px;
+
+
   }
   
   .header__nav-list {
@@ -997,6 +1061,18 @@
         border: none;
         color: #000;
         font-size: 18px;
+      }
+
+      .header-profile-page {
+        position: relative;
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 104px 0 0;
+        
+        height: 80px;
+        box-sizing: border-box;
+        box-shadow: inset 0px -1px 0px 0px rgba(209, 210, 214, 1);
       }
 
 }
