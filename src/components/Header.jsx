@@ -169,7 +169,7 @@ const Header = ({
                       isProfilePage ? 'header__user-button--profile-page' : ''
                     }`}
                   >
-                    {currentUser?.name || 'Profile'}
+                    {currentUser?.name || 'Elise'}
                   </button>
                   <button
                     className={`header__logout-button ${

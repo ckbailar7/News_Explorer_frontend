@@ -269,6 +269,7 @@ position: relative;
   height: 56px;
   align-items: center;
   border-radius: 100px;
+  gap: 13px;
 }
 
 .header__hamburger-user-button {
@@ -307,17 +308,22 @@ position: relative;
     }
 
     .header {
-        height: 66px;
-        box-sizing: border-box;
-        padding: 0 40px 0 0;
-        box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.2);
+      position: relative;
+      width: 100%;
+      max-width: 1440px;
+      margin: 0;
+      padding: 0 40px 0 0;
+      height: 80px;
+      box-sizing: border-box;
+      box-shadow: inset 0px -1px 0px 0px rgba(209, 210, 214, 1);
+      align-content: center;
     }
 
     
 
     .header__top-bar {
         height: 66px;
-        box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.2);
+        
     }
 
     
@@ -347,6 +353,7 @@ position: relative;
     height: 80px;
     box-sizing: border-box;
     box-shadow: inset 0px -1px 0px 0px rgba(209, 210, 214, 1);
+    align-content: center;
   }
   .header__buttons_home-button-profilePage button,
   .header__button_saved-articles button {
@@ -451,7 +458,7 @@ letter-spacing: 0px;
     position: relative;
     /* margin-right: 42px; */
     margin-right: 0;
-    width: 49px;
+    width: 64px;
     height: 24px;
     color: #fff;
     background: none;
@@ -469,7 +476,7 @@ letter-spacing: 0px;
   .header__nav-text {
     position: relative;
     display: inline-block;
-    width: 49px;
+    width: 64px;
     height: 24px;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
@@ -524,7 +531,7 @@ letter-spacing: 0px;
   
   .header__user-button {
     position: relative;
-    margin-right: 15px;
+    /* margin-right: 15px; */
     max-width: 75px;
     height: 24px;
     color: rgba(255, 255, 255, 1);
@@ -624,6 +631,7 @@ letter-spacing: 0px;
     border: 1px solid #fff;
     border-radius: 100px;
     padding: 12px;
+    gap: 13px;
   }
   
   .header__profile--profile-page {
@@ -711,9 +719,28 @@ letter-spacing: 0px;
     color: #000;
     font-size: 18px;
   }
+
+  .header__nav-item {
+    margin-right: 16px;
+  }
 }
 
 @media  screen and (min-width: 769px) and (max-width: 1440px) {
+
+     .header {
+    
+
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 104px 0 0;
+    height: 80px;
+    box-sizing: border-box;
+    box-shadow: inset 0px -1px 0px 0px rgba(209, 210, 214, 1);
+    align-content: center;
+      }
+    
     .header__hamburger {
         display: none;
     }
@@ -796,6 +823,7 @@ letter-spacing: 0px;
         list-style-type: none;
         display: flex;
         align-items: center;
+        
       }
       
       .header__nav-link {
@@ -827,6 +855,12 @@ letter-spacing: 0px;
         font-size: 18px;
         line-height: 24px;
         letter-spacing: 0px;
+      }
+
+      .header__nav-item {
+        width: 49px;
+        height: 24px;
+        margin-right: 16px;
       }
       
       .header__saved-articles {
@@ -875,7 +909,7 @@ letter-spacing: 0px;
       
       .header__user-button {
         position: relative;
-        margin-right: 15px;
+        
         max-width: 75px;
         height: 24px;
         color: rgba(255, 255, 255, 1);
@@ -888,6 +922,7 @@ letter-spacing: 0px;
         transition: color 0.3s ease;
         line-height: 24px;
         letter-spacing: 0px;
+        min-width: 35px
       }
       
       .header__user-button--profile-page {
@@ -975,6 +1010,7 @@ letter-spacing: 0px;
         border: 1px solid #fff;
         border-radius: 100px;
         padding: 12px;
+        gap: 15px;
       }
       
       .header__profile--profile-page {
@@ -1073,6 +1109,11 @@ letter-spacing: 0px;
         height: 80px;
         box-sizing: border-box;
         box-shadow: inset 0px -1px 0px 0px rgba(209, 210, 214, 1);
+        align-content: center;
+
+
+
+        
       }
 
 }
