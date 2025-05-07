@@ -16,9 +16,14 @@
     position: relative;
     margin: 0;
     padding: 0 104px 0 0;
-    min-height: 56px;
+    min-height: 536px;
     min-width: 320px;
     box-sizing: border-box;
+    width:425px;
+    background-image: url("../assets/mobileBackground.svg");
+    background-size: 100%;
+    width: clamp(320px, 10vw, 536px);
+    background-repeat: no-repeat;
 
 }
 
@@ -299,6 +304,15 @@ position: relative;
   border: none;
 }
 
+.header-profile-page {
+  background-image: none;
+      background-size: 100%;
+    width: clamp(320px, 10vw, 536px);
+    background-repeat: no-repeat;
+    min-height: 66px;
+    height: 66px;
+}
+
 
 
 
@@ -313,10 +327,14 @@ position: relative;
       max-width: 1440px;
       margin: 0;
       padding: 0 40px 0 0;
-      height: 80px;
+      height: 400px;
       box-sizing: border-box;
       box-shadow: inset 0px -1px 0px 0px rgba(209, 210, 214, 1);
       align-content: center;
+      background-image: url("../assets/newTabletBackgroundCorrect.svg");
+      background-size: 100%;
+    width: clamp(768px, 10vw, 400px);
+    background-repeat: no-repeat;
     }
 
     
@@ -354,6 +372,13 @@ position: relative;
     box-sizing: border-box;
     box-shadow: inset 0px -1px 0px 0px rgba(209, 210, 214, 1);
     align-content: center;
+    background-size: 100%;
+    width: clamp(768px, 10vw, 66px);
+    background-repeat: no-repeat;
+    background-image: none;
+    min-height: unset;
+    height: 66px;
+
   }
   .header__buttons_home-button-profilePage button,
   .header__button_saved-articles button {
@@ -741,10 +766,15 @@ letter-spacing: 0px;
     max-width: 1440px;
     margin: 0 auto;
     padding:  0;
-    height: 80px;
+    min-height: 576px;
     box-sizing: border-box;
     box-shadow: inset 0px -1px 0px 0px rgba(209, 210, 214, 1);
     align-content: center;
+    background-image: url("../assets/headerBackground.svg");
+    background-size: 100%;
+    width: clamp(1440px, 10vw, 576px);
+    background-repeat: no-repeat;
+    
       }
 
       .header__top-bar {
@@ -1122,12 +1152,16 @@ letter-spacing: 0px;
         max-width: 1440px;
         margin: 0 auto;
         padding: 0;
-        
+        min-height: 80px;
         height: 80px;
         box-sizing: border-box;
         box-shadow: inset 0px -1px 0px 0px rgba(209, 210, 214, 1);
         align-content: center;
 
+        background-size: 100%;
+        width: clamp(1440px, 10vw, 576px);
+        background-repeat: no-repeat;
+        background-image: none;
 
 
         

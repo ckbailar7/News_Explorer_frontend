@@ -24,7 +24,7 @@ body {
 
 
 .content__container {
-    background-image: url("../assets/mobileBackground.svg");
+    /* background-image: url("../assets/mobileBackground.svg"); */
     background-repeat: no-repeat;
     background-color: #f5f6f7;
     min-height: 100vh;
@@ -43,7 +43,7 @@ body {
 
   @media  screen and (min-width: 426px) and (max-width: 768px) {
 
-    .content__container {
+    /* .content__container {
         background-image: url("../assets/newTabletBackgroundCorrect.svg");
         background-size: 100%;
         width: clamp(768px, 10vw, 500px);
@@ -51,16 +51,16 @@ body {
     .content__container--profile {
       background-image: none;
       background-color: #fff;
-    }
+    } */
   }
 
 
   @media  screen and (min-width: 769px) and (max-width: 1440px) {
 
     .content__container {
-        background-image: url("../assets/headerBackground.svg");
+        /* background-image: url("../assets/headerBackground.svg");
         background-size: 100% ;
-        width: clamp(1440px, 10vw, 500px);
+        width: clamp(1440px, 10vw, 500px); */
     }
 
     .content__container--profile {
@@ -72,9 +72,9 @@ body {
 
   @media screen and (min-width: 1441px) {
     .content__container {
-        background-image: url("../assets/headerBackground.svg");
+        /* background-image: url("../assets/headerBackground.svg");
         background-size: contain;
-        background-repeat: no-repeat;
+        background-repeat: no-repeat; */
         width: 1440px;
         justify-self: center;
     }

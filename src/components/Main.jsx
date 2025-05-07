@@ -33,15 +33,6 @@ const Main = ({
 
   return (
     <main className="main">
-      <SearchFormComponent
-        handleSearch={handleSearch}
-        loading={loading}
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-        errorMessage={errorMessage}
-        setErrorMessage={setErrorMessage}
-      />
-
       {loading ? (
         <Preloader />
       ) : (

@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import '../blocks/Header.css';
 import headerLogoDark from '../assets/NewsExplorerNewsExplorerHeaderDark.svg';
 import headerLogoWhite from '../assets/headerLogoWhite.svg';
+import SearchFormComponent from './SearchFormComponent';
 
 const Header = ({
   isLoggedIn,
@@ -14,6 +15,12 @@ const Header = ({
   setIsMenuOpen,
   activeModal,
   handleLogout,
+  handleSearch,
+  loading,
+  searchQuery,
+  setSearchQuery,
+  errorMessage,
+  setErrorMessage,
 }) => {
   const currentUser = useContext(currentUserContext);
   const location = useLocation();
@@ -198,6 +205,19 @@ const Header = ({
           </ul>
         </nav>
       </div>
+
+      {isProfilePage ? (
+        <></>
+      ) : (
+        <SearchFormComponent
+          handleSearch={handleSearch}
+          loading={loading}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          errorMessage={errorMessage}
+          setErrorMessage={setErrorMessage}
+        />
+      )}
     </header>
   );
 };

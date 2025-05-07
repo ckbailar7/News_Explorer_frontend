@@ -261,6 +261,12 @@ function App() {
           setIsMenuOpen={setIsMenuOpen}
           activeModal={activeModal}
           handleLogout={handleLogout}
+          loading={loading}
+          handleSearch={handleSearch}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          errorMessage={errorMessage}
+          setErrorMessage={setErrorMessage}
         />
         <Routes>
           <Route
