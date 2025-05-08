@@ -9,6 +9,17 @@
 }
 
 
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+html {
+  min-width: 425px;
+}
+
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -17,6 +28,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
+    width: 100%;
 }
 
 
@@ -28,7 +40,8 @@ body {
     background-repeat: no-repeat;
     background-color: #f5f6f7;
     min-height: 100vh;
-    width: clamp(425px, 10vw, 500px);
+    /* width: clamp(425px, 10vw, 500px); */
+    width: 100%;
     background-size: 100%;
     max-width: 1440px;
     
@@ -41,7 +54,7 @@ body {
     background-color: #fff;
   }
 
-  @media  screen and (min-width: 426px) and (max-width: 768px) {
+  @media  screen and (min-width: 426px) {
 
     /* .content__container {
         background-image: url("../assets/newTabletBackgroundCorrect.svg");
@@ -52,15 +65,26 @@ body {
       background-image: none;
       background-color: #fff;
     } */
+
+
+
+    .content__container {
+      width: 100%;
+    }
+
+    .content__container--profile {
+      width: 100%;
+    }
   }
 
 
-  @media  screen and (min-width: 769px) and (max-width: 1440px) {
+  @media  screen and (min-width: 769px) {
 
     .content__container {
         /* background-image: url("../assets/headerBackground.svg");
         background-size: 100% ;
         width: clamp(1440px, 10vw, 500px); */
+       max-width: 1440px;
     }
 
     .content__container--profile {
@@ -71,11 +95,12 @@ body {
   }
 
   @media screen and (min-width: 1441px) {
+
     .content__container {
         /* background-image: url("../assets/headerBackground.svg");
         background-size: contain;
         background-repeat: no-repeat; */
-        width: 1440px;
+        max-width: 1440px;
         justify-self: center;
     }
 

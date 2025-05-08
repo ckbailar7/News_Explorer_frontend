@@ -19,6 +19,15 @@
 
 @media screen and (min-width: 426px) and (max-width: 768px) {
     .main__about-section {
-        height: auto;
+        height: 354px;
+        width: clamp(768px, 10vw, 354px );
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+    .main__about-section {
+        height: 757px;
+        width: clamp(425px, 10vw, 757px );
+
     }
 }
