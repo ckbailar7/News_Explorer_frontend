@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Roboto";
-  src: url("../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+  src: url("../vendor/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf");
 }
 
 .no-scroll {
@@ -12,13 +12,13 @@
 }
 
 .content__container {
-  background-image: url("../assets/headerBackground.svg");
+  background-image: url("../assets/DesktopBackground25.png");
   background-repeat: no-repeat;
   background-color: #f5f6f7;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  max-width: 1440px;
+  /* min-height: 100vh; */
+  max-width: 100%;
   margin: 0 auto;
   /* padding: 10px; */
   box-sizing: border-box;
@@ -41,32 +41,32 @@
 }
 @media (max-width: 1366px) {
   .content__container {
-    max-width: 1366px;
+    max-width: 100%;
   }
 
   .content__container--profile {
-    max-width: 1366px;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 1280px) {
   .content__container {
-    max-width: 1280px;
+    max-width: 100%;
   }
 
   .content__container--profile {
-    max-width: 1280px;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 1100px) {
   .content__container {
-    max-width: 1100px;
+    max-width: 100%;
     margin: 0 auto;
   }
 
   .content__container--profile {
-    max-width: 1100px;
+    max-width: 100%;
   }
 }
 
@@ -86,10 +86,29 @@
     width: 100%;
     background-repeat: no-repeat;
     background-color: #f5f6f7;
-    max-width: 768px;
+    /* max-width: 768px; */
     margin: 0 auto;
-    background-image: url("../assets/newTabletBackgroundCorrect.svg"); /* Accidentally included footer along with background image from figma download make sure you only download the individual image not the other groups added automatically*/
+    background-image: url("../assets/TabletBackground25.png"); /* Accidentally included footer along with background image from figma download make sure you only download the individual image not the other groups added automatically*/
   }
+  .content__container--profile {
+    background-image: none;
+    background-color: #fff;
+  }
+}
+
+@media (max-width: 560px) {
+  .content__container {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../assets/TabletBackground25.png");
+    background-color: #f5f6f7;
+
+    /* background-size: clamp(560px, 10vh, 536px); */
+    
+    /* max-width: 425px; */
+    margin: 0 auto;
+  }
+
   .content__container--profile {
     background-image: none;
     background-color: #fff;
@@ -98,27 +117,26 @@
 
 @media (max-width: 425px) {
   .content__container {
-    background-image: url("../assets/mobileBackground.svg");
-    background-color: #f5f6f7;
-    background-size: contain;
     width: 100%;
-    max-width: 425px;
-    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-image: url("../assets/MobileBackground25.png");
+    background-size: contain;
+
   }
 
   .content__container--profile {
     background-image: none;
-    background-color: #fff;
+    width: 100%;
   }
 }
 
 @media (max-width: 375px) {
   .content__container {
-    background-image: url("../assets/mobileBackground.svg");
+    background-image: url("../assets/MobileBackground25.png");
     background-color: #f5f6f7;
-    background-size: contain;
-    width: 100%;
-    max-width: 375px;
+background-size: clamp(375px, 10vh, 536px);   
+ width: 100%;
+    /* max-width: 375px; */
     margin: 0 auto;
   }
 
@@ -130,10 +148,11 @@
 
 @media (max-width: 320px) {
   .content__container {
-    background-image: url("../assets/mobileBackground.svg");
+    background-image: url("../assets/MobileBackground25.png");
     background-color: #f5f6f7;
+    background-size: clamp(320px, 10vh, 536px);
     width: 100%;
-    max-width: 320px;
+    /* max-width: 320px; */
     margin: 0 auto;
   }
 

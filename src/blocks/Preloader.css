@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Roboto";
-  src: url("../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+  src: url("../vendor/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf");
 }
 
 .circle-preloader {
@@ -15,7 +15,7 @@
 .circle-preloader__text {
   width: 280px;
   height: 24px;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 400;
   font-size: 18px;
   line-height: 24px;

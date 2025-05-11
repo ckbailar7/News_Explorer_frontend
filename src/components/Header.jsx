@@ -75,7 +75,10 @@ const Header = ({
           }`}
           style={{ display: activeModal ? 'none' : 'block' }}
         >
-          <nav className="header__hamburger-dropdown-menu">
+          <nav
+            className="header__hamburger-dropdown-menu"
+            aria-label="Mobile navigation"
+          >
             <ul className="header__hamburger-dropdown-menu-items">
               <li>
                 <NavLink
@@ -131,7 +134,7 @@ const Header = ({
         {/* Mobile Dropdown Hamburger Menu */}
 
         {/* {navigation} */}
-        <nav className="header__navigation">
+        <nav className="header__navigation" aria-label="Main navigation">
           <ul className="header__nav-list">
             <li className="header__nav-item">
               <NavLink

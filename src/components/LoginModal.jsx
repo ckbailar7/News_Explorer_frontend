@@ -57,7 +57,7 @@ const LoginModal = ({
         <p className="modal-with-form__signInButtonText">Sign in</p>
       </button>
       <p className="modal-with-form__signUpTransfer-container">
-        Or{' '}
+        or{' '}
         <a
           className="modal-with-form__signUpTransfer"
           onClick={handleSignUpModal}

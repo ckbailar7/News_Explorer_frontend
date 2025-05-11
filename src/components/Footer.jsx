@@ -14,11 +14,35 @@ const Footer = ({}) => {
               Home
             </a>
           </button>
-          <button className="footer__tripleten-button">TripleTen</button>
+          <button className="footer__tripleten-button">
+            <a
+              href="https://tripleten.com/home/web/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__tripleten-link"
+            >
+              TripleTen
+            </a>
+          </button>
         </div>
         <div className="footer__buttons-with-icon">
-          <button className="footer__github-button"></button>
-          <button className="footer__facebook-button"></button>
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__github-link"
+          >
+            <button className="footer__github-button"></button>
+          </a>
+
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__facebook-link"
+          >
+            <button className="footer__facebook-button"></button>
+          </a>
         </div>
       </div>
     </footer>

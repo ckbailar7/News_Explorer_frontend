@@ -1,14 +1,18 @@
-import "../blocks/AboutComponent.css";
-import AboutPhoto from "../assets/tripleTenFinalProjPhoto.jpeg";
+import '../blocks/AboutComponent.css';
+import AboutPhoto from '../assets/tripleTenFinalProjPhoto.jpeg';
 
 const AboutComponent = () => {
   return (
     <div className="about-component__container">
       <div className="about-component__image-wrapper">
-        <img className="about-component__image" src={AboutPhoto} alt="" />
+        <img
+          className="about-component__image"
+          src={AboutPhoto}
+          alt="About Photo"
+        />
       </div>
       <div className="about-component__headers-wrapper">
-        <h1 className="about-component__header">About the author</h1>
+        <h2 className="about-component__header">About the author</h2>
         <div className="about-component__paragraph-container">
           <p className="about-component__paragraph">
             This block describes the project author. Here you should indicate

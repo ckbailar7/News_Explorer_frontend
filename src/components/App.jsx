@@ -266,41 +266,50 @@ function App() {
           <Route
             path="/"
             element={
-              <Main
-                defaultCards={defaultCards}
-                cards={cards}
-                defaultCardArray={defaultCardArray}
-                isLoggedIn={isLoggedIn}
-                onBookmarkClick={onBookmarkClick}
-                onDeleteClick={onDeleteClick}
-                loading={loading} // Passing loading state to main
-                handleSearch={handleSearch} // Passing handleSearch functionality to main
-                searchQuery={searchQuery}
-                setSearchQuery={setSearchQuery}
-                errorMessage={errorMessage}
-                setErrorMessage={setErrorMessage}
-                handleSaveNewsArticle={handleSaveNewsArticle}
-                handleRemoveNewsArticle={handleRemoveNewsArticle}
-                hasSearched={hasSearched}
-                setHasSearched={setHasSearched}
-                visibleCount={visibleCount}
-                setVisibleCount={setVisibleCount}
-              />
+              location.pathname === '/' && (
+                <Main
+                  defaultCards={defaultCards}
+                  cards={cards}
+                  defaultCardArray={defaultCardArray}
+                  isLoggedIn={isLoggedIn}
+                  onBookmarkClick={onBookmarkClick}
+                  onDeleteClick={onDeleteClick}
+                  loading={loading} // Passing loading state to main
+                  handleSearch={handleSearch} // Passing handleSearch functionality to main
+                  searchQuery={searchQuery}
+                  setSearchQuery={setSearchQuery}
+                  errorMessage={errorMessage}
+                  setErrorMessage={setErrorMessage}
+                  handleSaveNewsArticle={handleSaveNewsArticle}
+                  handleRemoveNewsArticle={handleRemoveNewsArticle}
+                  hasSearched={hasSearched}
+                  setHasSearched={setHasSearched}
+                  visibleCount={visibleCount}
+                  setVisibleCount={setVisibleCount}
+                />
+              )
             }
           ></Route>
           <Route
             path="/saved-news"
             element={
-              <Profile
-                name={'user1'}
-                numberOfSavedArticles={5}
-                // cards={cards}
-                cards={savedArticles}
-                savedArticlesKeywords={'Keyword1, Keyword2, Keyword3'}
-                isLoggedIn={isLoggedIn}
-                handleRemoveNewsArticle={handleRemoveNewsArticle}
-                handleSaveNewsArticle={handleSaveNewsArticle}
-              />
+              location.pathname === '/saved-news' && (
+                <main>
+                  {' '}
+                  <section>
+                    <Profile
+                      name={'user1'}
+                      numberOfSavedArticles={5}
+                      // cards={cards}
+                      cards={savedArticles}
+                      savedArticlesKeywords={'Keyword1, Keyword2, Keyword3'}
+                      isLoggedIn={isLoggedIn}
+                      handleRemoveNewsArticle={handleRemoveNewsArticle}
+                      handleSaveNewsArticle={handleSaveNewsArticle}
+                    />
+                  </section>
+                </main>
+              )
             }
           ></Route>
         </Routes>

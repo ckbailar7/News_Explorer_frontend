@@ -27,6 +27,11 @@ const NewsCardButton = ({
             aria-label="Delete this article"
             onClick={onDeleteClick}
           ></button>
+          <div className="news-card__delete-button--tooltip">
+            <p className="news-card__button--tooltip--text">
+              Remove from saved
+            </p>
+          </div>
         </div>
       ) : (
         <div className="news-card__bookmark-button--container">

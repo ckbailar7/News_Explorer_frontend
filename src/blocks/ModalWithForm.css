@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Roboto";
-  src: url("../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+  src: url("../vendor/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf");
 }
 
 
@@ -141,7 +141,7 @@
 
 .modal-with-form__SelectText {
   margin: 24px 0 12px 0;
-  font-family: "Cabinet Grotesk medium";
+  font-family: "Cabinet Grotesk medium", sans-serif;
 }
 
 .modal-with-form__signInButton {
@@ -170,6 +170,14 @@
 .modal-with-form__signUpTransfer-container--success {
   align-self: flex-start;
   margin: 0 166px 51px 36px;
+}
+
+.modal-with-form__signUpTransfer-container {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
 }
 
 .modal-with-form__signUpTransfer {

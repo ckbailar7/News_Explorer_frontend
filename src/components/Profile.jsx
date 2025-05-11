@@ -29,12 +29,12 @@ const Profile = ({
     <div className="profile__container">
       <div className="profile__header-container">
         <div className="profile__header1">
-          <h3 className="profile__header1-text">Saved Articles</h3>
+          <h1 className="profile__header1-text">Saved Articles</h1>
         </div>
         <div className="profile__header-greeting">
-          <h1 className="profile__header-greeting-text">
+          <h2 className="profile__header-greeting-text">
             {name}, you have {cards.length} articles{' '}
-          </h1>
+          </h2>
 
           {savedKeywords.length > 0 && (
             <h3 className="profile__header-greeting-by-keyword_container">

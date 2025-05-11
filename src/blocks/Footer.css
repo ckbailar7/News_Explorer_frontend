@@ -1,9 +1,10 @@
 @font-face {
   font-family: "Roboto";
-  src: url("../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+  src: url("../vendor/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf");
 }
 
 .footer {
+  max-width: 1440px;
   display: flex;
   height: 80px;
   /* border-bottom: solid 1px #fff; */
@@ -28,7 +29,7 @@
 .footer__home-button {
   width: 49px;
   height: 24px;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -45,13 +46,19 @@
 .footer__tripleten-button {
   width: 74px;
   height: 24px;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 0px;
   background: none;
   border: none;
+}
+
+.footer__tripleten-link {
+  list-style: none;
+  text-decoration: none;
+  color: #1A1B22;
 }
 
 /* .footer__home-button,
@@ -72,7 +79,7 @@
   border: none;
   width: 24px;
   height: 24px;
-  font-family: "Roboto";
+  font-family: "Roboto",sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
