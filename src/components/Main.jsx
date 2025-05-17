@@ -1,11 +1,11 @@
-import '../blocks/Main.css';
+import './blocks/Main.css';
 import SearchFormComponent from '../components/SearchFormComponent';
 import NewsCardComponent from './NewsCardComponent';
 import AboutComponent from '../components/AboutComponent';
 // import defaultCards from "../contexts/defaultCardArrayPrototype";
 import { useEffect, useState } from 'react';
 import Preloader from './Preloader';
-import FrownyFaceImage from '../assets/not-found_v1.svg';
+import FrownyFaceImage from '../assets/not-found_v1.png';
 
 const Main = ({
   isLoggedIn,

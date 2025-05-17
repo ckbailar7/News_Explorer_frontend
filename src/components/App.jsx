@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { currentUserContext } from '../contexts/currentUserContext';
-import reactLogo from '../assets/react.svg';
+
 import {
   Router,
   Route,
@@ -8,7 +8,7 @@ import {
   useNavigate,
   useLocation,
 } from 'react-router-dom';
-import viteLogo from '/vite.svg';
+
 import Header from './Header';
 import Main from './Main.jsx';
 import Footer from './Footer.jsx';
@@ -18,7 +18,7 @@ import Profile from './Profile';
 import RegistrationSuccessModal from './RegistrationSuccessModal.jsx';
 import defaultCards from '../contexts/defaultCardArrayPrototype';
 
-import '../blocks/App.css';
+import './blocks/App.css';
 import Preloader from './Preloader';
 
 function App() {
@@ -243,108 +243,112 @@ function App() {
     };
   }, []);
   return (
-    <div
-      id="content__container"
-      className={`content__container ${
-        location.pathname === '/saved-news' ? 'content__container--profile' : ''
-      }`}
-    >
-      {/* creating CurrentUser Provider with value of currentUser */}
-      <currentUserContext.Provider value={currentUser}>
-        <Header
-          onCreateLoginModal={handleLoginModal}
-          isLoggedIn={isLoggedIn}
-          setIsLoggedIn={setIsLoggedIn}
-          closeModal={closeModal}
-          isMenuOpen={isMenuOpen}
-          toggleMenu={toggleMenu}
-          setIsMenuOpen={setIsMenuOpen}
-          activeModal={activeModal}
-          handleLogout={handleLogout}
-        />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              location.pathname === '/' && (
-                <Main
-                  defaultCards={defaultCards}
-                  cards={cards}
-                  defaultCardArray={defaultCardArray}
-                  isLoggedIn={isLoggedIn}
-                  onBookmarkClick={onBookmarkClick}
-                  onDeleteClick={onDeleteClick}
-                  loading={loading} // Passing loading state to main
-                  handleSearch={handleSearch} // Passing handleSearch functionality to main
-                  searchQuery={searchQuery}
-                  setSearchQuery={setSearchQuery}
-                  errorMessage={errorMessage}
-                  setErrorMessage={setErrorMessage}
-                  handleSaveNewsArticle={handleSaveNewsArticle}
-                  handleRemoveNewsArticle={handleRemoveNewsArticle}
-                  hasSearched={hasSearched}
-                  setHasSearched={setHasSearched}
-                  visibleCount={visibleCount}
-                  setVisibleCount={setVisibleCount}
-                />
-              )
-            }
-          ></Route>
-          <Route
-            path="/saved-news"
-            element={
-              location.pathname === '/saved-news' && (
-                <main>
-                  {' '}
-                  <section>
-                    <Profile
-                      name={'user1'}
-                      numberOfSavedArticles={5}
-                      // cards={cards}
-                      cards={savedArticles}
-                      savedArticlesKeywords={'Keyword1, Keyword2, Keyword3'}
-                      isLoggedIn={isLoggedIn}
-                      handleRemoveNewsArticle={handleRemoveNewsArticle}
-                      handleSaveNewsArticle={handleSaveNewsArticle}
-                    />
-                  </section>
-                </main>
-              )
-            }
-          ></Route>
-        </Routes>
-        <Footer />
-
-        {activeModal === 'login' && (
-          <LoginModal
-            onClose={closeModal}
-            handleSignUpModal={handleSignUpModal}
-            email={email}
-            password={password}
-            setEmail={setEmail}
-            setPassword={setPassword}
-            errorMessage={errorMessage}
-            setErrorMessage={setErrorMessage}
+    <div className="content">
+      <div
+        id="content__container"
+        className={`content__container ${
+          location.pathname === '/saved-news'
+            ? 'content__container--profile'
+            : ''
+        }`}
+      >
+        {/* creating CurrentUser Provider with value of currentUser */}
+        <currentUserContext.Provider value={currentUser}>
+          <Header
+            onCreateLoginModal={handleLoginModal}
             isLoggedIn={isLoggedIn}
             setIsLoggedIn={setIsLoggedIn}
+            closeModal={closeModal}
+            isMenuOpen={isMenuOpen}
+            toggleMenu={toggleMenu}
             setIsMenuOpen={setIsMenuOpen}
-          />
-        )}
-        {activeModal === 'signup' && (
-          <SignUpModal
-            onClose={closeModal}
-            handleLoginModal={handleLoginModal}
-            handleRegistrationSuccessModal={handleRegistrationSuccessModal}
-          />
-        )}
-        {activeModal === 'success' && (
-          <RegistrationSuccessModal
-            onClose={closeModal}
-            handleLoginModal={handleLoginModal}
             activeModal={activeModal}
+            handleLogout={handleLogout}
           />
-        )}
-      </currentUserContext.Provider>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                location.pathname === '/' && (
+                  <Main
+                    defaultCards={defaultCards}
+                    cards={cards}
+                    defaultCardArray={defaultCardArray}
+                    isLoggedIn={isLoggedIn}
+                    onBookmarkClick={onBookmarkClick}
+                    onDeleteClick={onDeleteClick}
+                    loading={loading} // Passing loading state to main
+                    handleSearch={handleSearch} // Passing handleSearch functionality to main
+                    searchQuery={searchQuery}
+                    setSearchQuery={setSearchQuery}
+                    errorMessage={errorMessage}
+                    setErrorMessage={setErrorMessage}
+                    handleSaveNewsArticle={handleSaveNewsArticle}
+                    handleRemoveNewsArticle={handleRemoveNewsArticle}
+                    hasSearched={hasSearched}
+                    setHasSearched={setHasSearched}
+                    visibleCount={visibleCount}
+                    setVisibleCount={setVisibleCount}
+                  />
+                )
+              }
+            ></Route>
+            <Route
+              path="/saved-news"
+              element={
+                location.pathname === '/saved-news' && (
+                  <main>
+                    {' '}
+                    <section>
+                      <Profile
+                        name={'user1'}
+                        numberOfSavedArticles={5}
+                        // cards={cards}
+                        cards={savedArticles}
+                        savedArticlesKeywords={'Keyword1, Keyword2, Keyword3'}
+                        isLoggedIn={isLoggedIn}
+                        handleRemoveNewsArticle={handleRemoveNewsArticle}
+                        handleSaveNewsArticle={handleSaveNewsArticle}
+                      />
+                    </section>
+                  </main>
+                )
+              }
+            ></Route>
+          </Routes>
+          <Footer />
+
+          {activeModal === 'login' && (
+            <LoginModal
+              onClose={closeModal}
+              handleSignUpModal={handleSignUpModal}
+              email={email}
+              password={password}
+              setEmail={setEmail}
+              setPassword={setPassword}
+              errorMessage={errorMessage}
+              setErrorMessage={setErrorMessage}
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}
+              setIsMenuOpen={setIsMenuOpen}
+            />
+          )}
+          {activeModal === 'signup' && (
+            <SignUpModal
+              onClose={closeModal}
+              handleLoginModal={handleLoginModal}
+              handleRegistrationSuccessModal={handleRegistrationSuccessModal}
+            />
+          )}
+          {activeModal === 'success' && (
+            <RegistrationSuccessModal
+              onClose={closeModal}
+              handleLoginModal={handleLoginModal}
+              activeModal={activeModal}
+            />
+          )}
+        </currentUserContext.Provider>
+      </div>
     </div>
   );
 }

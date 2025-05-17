@@ -1,6 +1,6 @@
 import NewsCardButton from '../components/NewsCardButton';
-import '../blocks/NewsCardComponent.css';
-import imagePlaceholder from '../assets/news-card_image-placeholder.svg';
+import './blocks/NewsCardComponent.css';
+
 import { useLocation } from 'react-router-dom';
 
 const NewsCardComponent = ({

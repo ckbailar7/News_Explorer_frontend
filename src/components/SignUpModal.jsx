@@ -16,6 +16,7 @@ const SignUpModal = ({
           minLength="1"
           maxLength="300"
           placeholder="Enter email"
+          required
         />
       </label>
       <label className="modal-with-form__label">
@@ -27,6 +28,7 @@ const SignUpModal = ({
           minLength="1"
           maxLength="300"
           placeholder="Enter password"
+          required
         />
       </label>
       <label className="modal-with-form__label">
@@ -38,6 +40,7 @@ const SignUpModal = ({
           minLength="1"
           maxLength="300"
           placeholder="Enter username"
+          required
         />
       </label>
       <button className="modal-with-form__signInButton">

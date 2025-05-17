@@ -1,5 +1,5 @@
 import React from 'react';
-import '../blocks/Footer.css';
+import './blocks/Footer.css';
 
 const Footer = ({}) => {
   return (
@@ -9,39 +9,36 @@ const Footer = ({}) => {
       </p>
       <div className="footer__buttons-container">
         <div className="footer__buttons-no-icon">
-          <button className="footer__home-button">
-            <a className="footer__home-button-text" href="/">
-              Home
-            </a>
-          </button>
-          <button className="footer__tripleten-button">
-            <a
-              href="https://tripleten.com/home/web/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer__tripleten-link"
-            >
-              TripleTen
-            </a>
-          </button>
+          <a className="footer__link" href="/">
+            Home
+          </a>
+
+          <a
+            href="https://tripleten.com/home/web/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__link"
+          >
+            TripleTen
+          </a>
         </div>
         <div className="footer__buttons-with-icon">
           <a
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="footer__github-link"
+            className=" footer__link footer__link--icon"
           >
-            <button className="footer__github-button"></button>
+            <span className="footer__icon footer__icon--github"></span>
           </a>
 
           <a
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="footer__facebook-link"
+            className="footer__link footer__link--icon"
           >
-            <button className="footer__facebook-button"></button>
+            <span className="footer__icon footer__icon--facebook"></span>
           </a>
         </div>
       </div>

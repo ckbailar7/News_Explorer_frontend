@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 
-import '../blocks/ModalWithForm.css';
+import './blocks/ModalWithForm.css';
 
 const ModalWithForm = ({ name, title, children, onClose, activeModal }) => {
   const modalRef = useRef(null);
@@ -34,7 +34,11 @@ const ModalWithForm = ({ name, title, children, onClose, activeModal }) => {
           type="button"
           onClick={onClose}
         ></button>
-        <h1 className={RegistrationTitleChange}>{title}</h1>
+        <h2
+          className={`modal-with-form__title${activeModal === 'success' ? ' modal-with-form__title--success' : ''}`}
+        >
+          {title}
+        </h2>
         <form className="modal-with-form__form">{children}</form>
       </div>
     </div>

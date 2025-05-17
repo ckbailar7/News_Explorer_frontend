@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/vendor/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf");
+}
+
+.circle-preloader {
+  width: 100%;
+  height: 282px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.circle-preloader__text {
+  width: 280px;
+  height: 24px;
+  font-family: "Roboto", sans-serif;
+  font-size: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(182, 188, 191, 1);
+  
+  bottom: 80px;
+  
+  margin: 178px auto 80px auto;
+  text-align: center;
+}
+
+.circle-preloader__animation {
+  display: block;
+  width: 74px;
+  height: 74px;
+  border: 4px solid #444;
+  border-bottom-color: #888;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 657px auto;
+  animation: spin 0.75s infinite linear;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (max-width:1024px) {
+  /* .circle-preloader {
+    width: 100%;
+  } */
+   
+}
+
+@media screen and (max-width: 768px) {
+  
+
+  .circle-preloader__animation {
+  margin: 478px auto
+  }
+   
+}
+
+@media screen and (max-width: 425px) {
+  .circle-preloader {
+    width: 425px;
+  }
+
+  .circle-preloader__animation {
+    margin: 790px auto
+    }
+   
+}
+
+@media screen and (max-width: 375px) {
+  .circle-preloader {
+    width: 375px;
+  }
+
+  .circle-preloader__animation {
+    margin: 706px auto
+    }
+   
+}
+
+
+
+
+
+@media screen and (max-width: 320px) {
+  .circle-preloader {
+    width: 320px;
+  }
+
+  .circle-preloader__animation {
+    margin: 614px auto
+    }
+   
+}

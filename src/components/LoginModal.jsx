@@ -40,6 +40,7 @@ const LoginModal = ({
           minLength="1"
           maxLength="300"
           placeholder="Enter email"
+          required
         />
       </label>
       <label className="modal-with-form__label">
@@ -51,6 +52,7 @@ const LoginModal = ({
           minLength="1"
           maxLength="300"
           placeholder="Enter password"
+          required
         />
       </label>
       <button onClick={handleSubmit} className="modal-with-form__signInButton">

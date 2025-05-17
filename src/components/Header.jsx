@@ -2,9 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { currentUserContext } from '../contexts/currentUserContext';
 import { NavLink } from 'react-router-dom';
-import '../blocks/Header.css';
-import headerLogoDark from '../assets/NewsExplorerNewsExplorerHeaderDark.svg';
-import headerLogoWhite from '../assets/headerLogoWhite.svg';
+import './blocks/Header.css';
 
 const Header = ({
   isLoggedIn,
@@ -33,7 +31,7 @@ const Header = ({
 
   const headerLogoChange =
     isProfilePage && !isMenuOpen
-      ? 'header__logo-text--profile-page'
+      ? 'header__logo-text header__logo-text--profile-page'
       : 'header__logo-text';
 
   return (
@@ -56,9 +54,9 @@ const Header = ({
           className={`header__hamburger ${isMenuOpen ? '-open' : ''} ${
             isProfilePage
               ? isMenuOpen
-                ? 'header__hamburger--white'
-                : 'header__hamburger--black'
-              : 'header__hamburger--white'
+                ? 'header__hamburger header__hamburger--white'
+                : 'header__hamburger header__hamburger--black'
+              : 'header__hamburger header__hamburger--white'
           } `}
           onClick={toggleMenu}
           aria-label="Toggle Navigation"
@@ -71,7 +69,7 @@ const Header = ({
 
         <div
           className={`header__hamburger-dropdown-menu-container ${
-            isMenuOpen ? 'header__hamburger-dropdown-menu-container--open' : ''
+            isMenuOpen ? ' header__hamburger-dropdown-menu-container--open' : ''
           }`}
           style={{ display: activeModal ? 'none' : 'block' }}
         >
@@ -82,7 +80,9 @@ const Header = ({
             <ul className="header__hamburger-dropdown-menu-items">
               <li>
                 <NavLink
-                  className="header__hamburger-home-link"
+                  className={({ isActive }) =>
+                    `header__hamburger-link${isActive ? ' active' : ''}`
+                  }
                   to="/"
                   onClick={handleLinkClick}
                 >
@@ -93,7 +93,9 @@ const Header = ({
                 <>
                   <li>
                     <NavLink
-                      className="header__hamburger-saved-articles-link"
+                      className={({ isActive }) =>
+                        `header__hamburger-link${isActive ? ' active' : ''}`
+                      }
                       to="/saved-news"
                       onClick={handleLinkClick}
                     >
@@ -106,7 +108,7 @@ const Header = ({
                         {currentUser?.name || 'Profile'}
                       </span>
                       <button
-                        className="header__hamburger-user-button--logout"
+                        className="header__hamburger-user-button header__hamburger-user-button--logout"
                         onClick={handleLogoutClick}
                       ></button>
                     </li>
@@ -137,13 +139,26 @@ const Header = ({
         <nav className="header__navigation" aria-label="Main navigation">
           <ul className="header__nav-list">
             <li className="header__nav-item">
-              <NavLink
+              {/* <NavLink
                 to="/"
                 className={`header__nav-link ${
-                  isProfilePage ? 'header__nav-link--profile-page' : ''
+                  isProfilePage
+                    ? 'header__nav-link header__nav-link--profile-page'
+                    : ''
                 }`}
+              > */}
+
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `header__nav-link ${isProfilePage ? 'header__nav-link--profile-page' : ''}${isActive ? ' active' : ''}`
+                }
               >
-                <span className="header__nav-text">Home</span>
+                <span
+                  className={`header__nav-text ${isProfilePage ? 'header__nav-text--profile-page' : ''}`}
+                >
+                  Home
+                </span>
               </NavLink>
             </li>
             {isLoggedIn && (
@@ -151,13 +166,13 @@ const Header = ({
                 <li className="header__saved-articles">
                   <NavLink
                     to="/saved-news"
-                    className={`header__nav-link ${
-                      isProfilePage
-                        ? 'header__nav-link--profile-page--saved-articles'
-                        : 'header__nav-link--home-page-inactive--saved-articles'
-                    }`}
+                    className={({ isActive }) =>
+                      `header__nav-link ${isProfilePage ? 'header__nav-link--profile-page-saved-articles' : ''}${isActive ? ' active' : ''}`
+                    }
                   >
-                    <span className="header__saved-articles-text">
+                    <span
+                      className={`header__nav-text--saved-articles ${isProfilePage ? 'header__nav-text--profile-page-saved-articles' : ''}`}
+                    >
                       Saved Articles
                     </span>
                   </NavLink>

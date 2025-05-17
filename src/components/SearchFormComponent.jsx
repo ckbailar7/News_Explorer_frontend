@@ -1,4 +1,4 @@
-import '../blocks/SearchFormComponent.css';
+import './blocks/SearchFormComponent.css';
 
 const SearchFormComponent = ({
   handleSearch,
@@ -29,6 +29,7 @@ const SearchFormComponent = ({
           name="search"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
+          required
         />
 
         <button

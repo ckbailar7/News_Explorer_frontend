@@ -1,6 +1,6 @@
-import '../blocks/App.css';
-import '../blocks/Main.css';
-import '../blocks/Profile.css';
+import './blocks/App.css';
+import './blocks/Main.css';
+import './blocks/Profile.css';
 import NewsCardComponent from './NewsCardComponent';
 
 const Profile = ({
@@ -28,8 +28,8 @@ const Profile = ({
   return (
     <div className="profile__container">
       <div className="profile__header-container">
-        <div className="profile__header1">
-          <h1 className="profile__header1-text">Saved Articles</h1>
+        <div className="profile__header">
+          <h1 className="profile__header-text">Saved Articles</h1>
         </div>
         <div className="profile__header-greeting">
           <h2 className="profile__header-greeting-text">

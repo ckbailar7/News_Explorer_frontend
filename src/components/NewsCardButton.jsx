@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import '../blocks/NewsCardComponent.css';
+import './blocks/NewsCardComponent.css';
 
 const NewsCardButton = ({
   isLoggedIn,
@@ -21,20 +21,18 @@ const NewsCardButton = ({
   return (
     <div>
       {isProfilePage ? (
-        <div className="news-card__delete-button--container">
+        <div className="news-card__delete-button-container">
           <button
             className="news-card__delete-button"
             aria-label="Delete this article"
             onClick={onDeleteClick}
           ></button>
-          <div className="news-card__delete-button--tooltip">
-            <p className="news-card__button--tooltip--text">
-              Remove from saved
-            </p>
+          <div className="news-card__delete-button-tooltip">
+            <p className="news-card__button-tooltip-text">Remove from saved</p>
           </div>
         </div>
       ) : (
-        <div className="news-card__bookmark-button--container">
+        <div className="news-card__bookmark-button-container">
           <button
             className={`news-card__bookmark-button ${
               isSaved ? 'bookmarked' : ''
@@ -54,8 +52,8 @@ const NewsCardButton = ({
       )}
 
       {!isLoggedIn && !isProfilePage && (
-        <div className="news-card__button--tooltip">
-          <p className="news-card__button--tooltip--text">
+        <div className="news-card__button-tooltip">
+          <p className="news-card__button-tooltip-text">
             Sign in to save articles
           </p>
         </div>
