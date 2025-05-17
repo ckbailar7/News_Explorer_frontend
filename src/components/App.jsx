@@ -1,0 +1,356 @@
+import { useState, useEffect } from 'react';
+import { currentUserContext } from '../contexts/currentUserContext';
+
+import {
+  Router,
+  Route,
+  Routes,
+  useNavigate,
+  useLocation,
+} from 'react-router-dom';
+
+import Header from './Header';
+import Main from './Main.jsx';
+import Footer from './Footer.jsx';
+import LoginModal from './LoginModal';
+import SignUpModal from './SignUpModal';
+import Profile from './Profile';
+import RegistrationSuccessModal from './RegistrationSuccessModal.jsx';
+import defaultCards from '../contexts/defaultCardArrayPrototype';
+
+import './blocks/App.css';
+import Preloader from './Preloader';
+
+function App() {
+  const [savedArticles, setSavedArticles] = useState([]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const API_KEY = import.meta.env.VITE_API_KEY;
+  console.log(typeof setSearchQuery);
+  const formatDate = (date) => date.toISOString().split('T')[0];
+  const [hasSearched, setHasSearched] = useState(false);
+  const [cards, setCards] = useState([]);
+  const [visibleCount, setVisibleCount] = useState(3);
+
+  // simulate saving news articles to saved-news
+  const handleSaveNewsArticle = (article) => {
+    setSavedArticles((prevSavedArticles) => {
+      const isAlreadySaved = prevSavedArticles.some(
+        (saved) => saved.url === article.url,
+      );
+      if (isAlreadySaved) return prevSavedArticles; // Do nothing if the article is already saved
+
+      return [...prevSavedArticles, { ...article, isSaved: true }];
+    });
+
+    setCards((prevCards) =>
+      prevCards.map((card) =>
+        card.url === article.url ? { ...card, isSaved: true } : card,
+      ),
+    );
+    console.log('Article saved successfully ', article);
+  };
+
+  // simulate removing an article from saved-news
+  const handleRemoveNewsArticle = (article) => {
+    setSavedArticles((prevSavedArticles) =>
+      prevSavedArticles.filter((saved) => saved.url !== article.url),
+    );
+
+    setCards((prevCards) =>
+      prevCards.map((card) =>
+        card.url === article.url ? { ...card, isSaved: false } : card,
+      ),
+    );
+    console.log('Article removed successfully:', article);
+  };
+
+  // Handle Mock Logout Functionality
+  const handleLogout = async () => {
+    try {
+      setIsLoggedIn(false);
+      console.log('Logged out successfully');
+    } catch (error) {
+      console.error('Error Logging out', error);
+    }
+  };
+
+  const handleSearch = async (query) => {
+    setLoading(true);
+    setErrorMessage('');
+    setHasSearched(true);
+
+    const today = new Date();
+    const weekAgo = new Date();
+    weekAgo.setDate(today.getDate() - 7);
+
+    // const formatDate = (date) => date.toISOString().split("T")[0];
+
+    const from = formatDate(weekAgo);
+    const to = formatDate(today);
+
+    const apiKey = import.meta.env.VITE_API_KEY;
+    const base_Url = import.meta.env.VITE_BASE_URL;
+
+    const url = `${base_Url}?q=${query}&from=${from}&to=${to}&sortBy=popularity&apiKey=${apiKey}`;
+
+    if (!query.trim()) {
+      setErrorMessage('Search cannot be empty');
+      setCards([]);
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const res = await fetch(url);
+      if (!res.ok) {
+        throw new Error('Network response ERROR');
+      }
+
+      const data = await res.json();
+
+      if (data.articles.length === 0) {
+        setCards([]);
+        setErrorMessage('No articles found');
+      } else {
+        const cards = data.articles.map((article, i) => {
+          const isSaved = savedArticles.some(
+            (saved) => saved.url === article.url,
+          );
+
+          return {
+            id: i,
+            title: article.title,
+            description: article.description,
+            image: article.urlToImage,
+            date: article.publishedAt,
+            source: article.source.name,
+            url: article.url,
+            isSaved,
+            keyword: query,
+          };
+        });
+
+        setCards(cards);
+      }
+    } catch (error) {
+      setErrorMessage('An error occurred while fetching data');
+      console.error('Search Failed:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  // creating useLocationCall as a variable for getting the current route
+  const location = useLocation();
+
+  // close menu when changing routes
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  }, [location]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prevState) => {
+      console.log('Toggling menu:', !prevState);
+      return !prevState;
+    });
+  };
+
+  useEffect(() => {
+    console.log(`isMenuOpen >> ${isMenuOpen}`);
+  }, [isMenuOpen]);
+
+  console.log('updated cards:', cards);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+
+    return () => document.body.classList.remove('no-scroll');
+  }, [isMenuOpen]);
+
+  // const MobileDropdown = ({ isMenuOpen }) => {
+
+  // };
+
+  const [currentUser, setCurrentUser] = useState({
+    username: '',
+    email: '',
+    name: '',
+  });
+  // Modal set
+  const [activeModal, setActiveModal] = useState('');
+  //
+  //
+  console.log('activeModal', activeModal);
+
+  const [defaultCardArray, setDefaultCardArray] = useState([]);
+  // Setting isLoggedIn default value to false
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // useState to control preloader
+  const [loading, setLoading] = useState(false);
+
+  // simulate the api response
+
+  const handleLoginModal = () => {
+    setActiveModal('login');
+  };
+
+  const handleSignUpModal = () => {
+    setActiveModal('signup');
+  };
+
+  const handleRegistrationSuccessModal = () => {
+    setActiveModal('success');
+  };
+
+  const onBookmarkClick = () => {
+    console.log('Hello from onBookmarkClick');
+  };
+
+  const onDeleteClick = () => {
+    console.log('Helllo from onDeleteClick');
+  };
+
+  useEffect(() => {
+    setCards(defaultCards);
+  }, []);
+
+  useEffect(() => {
+    setIsLoggedIn(false);
+  }, []);
+
+  const closeModal = () => setActiveModal('');
+
+  useEffect(() => {
+    const closeByEscape = (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    };
+    document.addEventListener('keydown', closeByEscape);
+    return () => {
+      document.removeEventListener('keydown', closeByEscape);
+    };
+  }, []);
+  return (
+    <div className="content">
+      <div
+        id="content__container"
+        className={`content__container ${
+          location.pathname === '/saved-news'
+            ? 'content__container--profile'
+            : ''
+        }`}
+      >
+        {/* creating CurrentUser Provider with value of currentUser */}
+        <currentUserContext.Provider value={currentUser}>
+          <Header
+            onCreateLoginModal={handleLoginModal}
+            isLoggedIn={isLoggedIn}
+            setIsLoggedIn={setIsLoggedIn}
+            closeModal={closeModal}
+            isMenuOpen={isMenuOpen}
+            toggleMenu={toggleMenu}
+            setIsMenuOpen={setIsMenuOpen}
+            activeModal={activeModal}
+            handleLogout={handleLogout}
+          />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                location.pathname === '/' && (
+                  <Main
+                    defaultCards={defaultCards}
+                    cards={cards}
+                    defaultCardArray={defaultCardArray}
+                    isLoggedIn={isLoggedIn}
+                    onBookmarkClick={onBookmarkClick}
+                    onDeleteClick={onDeleteClick}
+                    loading={loading} // Passing loading state to main
+                    handleSearch={handleSearch} // Passing handleSearch functionality to main
+                    searchQuery={searchQuery}
+                    setSearchQuery={setSearchQuery}
+                    errorMessage={errorMessage}
+                    setErrorMessage={setErrorMessage}
+                    handleSaveNewsArticle={handleSaveNewsArticle}
+                    handleRemoveNewsArticle={handleRemoveNewsArticle}
+                    hasSearched={hasSearched}
+                    setHasSearched={setHasSearched}
+                    visibleCount={visibleCount}
+                    setVisibleCount={setVisibleCount}
+                  />
+                )
+              }
+            ></Route>
+            <Route
+              path="/saved-news"
+              element={
+                location.pathname === '/saved-news' && (
+                  <main>
+                    {' '}
+                    <section>
+                      <Profile
+                        name={'user1'}
+                        numberOfSavedArticles={5}
+                        // cards={cards}
+                        cards={savedArticles}
+                        savedArticlesKeywords={'Keyword1, Keyword2, Keyword3'}
+                        isLoggedIn={isLoggedIn}
+                        handleRemoveNewsArticle={handleRemoveNewsArticle}
+                        handleSaveNewsArticle={handleSaveNewsArticle}
+                      />
+                    </section>
+                  </main>
+                )
+              }
+            ></Route>
+          </Routes>
+          <Footer />
+
+          {activeModal === 'login' && (
+            <LoginModal
+              onClose={closeModal}
+              handleSignUpModal={handleSignUpModal}
+              email={email}
+              password={password}
+              setEmail={setEmail}
+              setPassword={setPassword}
+              errorMessage={errorMessage}
+              setErrorMessage={setErrorMessage}
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}
+              setIsMenuOpen={setIsMenuOpen}
+            />
+          )}
+          {activeModal === 'signup' && (
+            <SignUpModal
+              onClose={closeModal}
+              handleLoginModal={handleLoginModal}
+              handleRegistrationSuccessModal={handleRegistrationSuccessModal}
+            />
+          )}
+          {activeModal === 'success' && (
+            <RegistrationSuccessModal
+              onClose={closeModal}
+              handleLoginModal={handleLoginModal}
+              activeModal={activeModal}
+            />
+          )}
+        </currentUserContext.Provider>
+      </div>
+    </div>
+  );
+}
+
+export default App;

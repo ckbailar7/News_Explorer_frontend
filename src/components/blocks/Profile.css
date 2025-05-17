@@ -1,0 +1,239 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/vendor/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("/src/vendor/fonts/Roboto/RobotoSlab-VariableFont_wght.ttf");
+}
+
+.profile__news-card-container {
+  display: flex;
+  /* width: 1440px; */
+  height: auto;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  max-width: 1440px;
+  /* Margin ammount found by halving the projected margin on the brief to take into account the overal width at 1440px, right of 106px and left of 106px, as a result of flexbox, justify and align content  */
+  /* margin: 0 53px 0 51px; */
+  background-color: #f5f6f7;
+  padding: 62px 0;
+  /* margin: 62px 106px 62px 102px; */
+
+  /* display: flex;
+  height: auto;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center; */
+}
+
+.profile__header {
+}
+
+.profile__header-text {
+  width: 712px;
+  height: 24px;
+  /* margin-left: 104px; */
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  margin: 40px 0 28px 104px;
+  color: rgba(26, 27, 34, 0.5);
+}
+
+.profile__header-greeting-text {
+  width: 530px;
+  height: 92px;
+  margin: 0 0 30px 104px;
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  letter-spacing: 0px;
+  color: #1a1b22;
+}
+
+.profile__header-greeting-byKeyword {
+}
+
+.profile__header-greeting-by-keyword_container {
+  display: block;
+  margin: 0 0 56px 0;
+}
+
+.profile__header-greeting-text-by-keyword {
+  width: 712px;
+  height: 24px;
+  /* margin-left: 104px; */
+  margin: 0 0 56px 104px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.profile__header-greeting-keywords {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+@media (max-width: 1366px) {
+  .profile__news-card-container {
+    max-width: 1366px;
+    width: auto;
+  }
+}
+@media (max-width: 1280px) {
+  .profile__news-card-container {
+    max-width: 1280px;
+    width: auto;
+  }
+}
+
+@media (max-width: 1100px) {
+  .profile__news-card-container {
+    max-width: 1100px;
+    width: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .profile__news-card-container {
+    max-width: 1024px;
+  }
+
+  .profile__header {
+    max-width: 1024px;
+  }
+
+  .profile__header-text {
+    width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile__header {
+    margin: 24px 16px 16px 40px;
+  }
+  .profile__header-text {
+    width: 712px;
+    height: 24px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0px;
+  }
+
+  .profile__header-greeting {
+    margin: 0 0 0 40px;
+  }
+
+  .profile__header-greeting-text {
+    width: 100%;
+    height: 68px;
+    margin: 0;
+    font-size: 30px;
+    line-height: 34px;
+    letter-spacing: 0px;
+  }
+
+  .profile__header-greeting-by-keyword_container {
+    margin: 16px 16px 32px 0;
+  }
+
+  .profile__news-card-container {
+    max-width: 768px;
+    width: auto;
+    padding: 32px 0 0 0;
+  }
+
+  .profile__header-greeting-text-by-keyword {
+    margin: 0;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 767px) {
+  .profile__header-text {
+    max-width: 712px;
+    width: auto;
+  }
+
+  .profile__news-card-container {
+    width: auto;
+  }
+}
+
+@media (max-width: 590px) {
+  .profile__news-card-container {
+    width: 100%;
+  }
+
+  .profile__header-text {
+    width: 288px;
+  }
+}
+
+@media (max-width: 375px) {
+  .profile__news-card-container {
+    width: 100%;
+  }
+
+  .profile__header-text {
+    width: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  .profile__header-container {
+    height: 246px;
+  }
+  .profile__header {
+    /* width: 100%; */
+    height: 24px;
+    margin: 8px 16px 0 16px;
+  }
+
+  .profile__header-text {
+    width: 100%;
+    height: 24px;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0px;
+  }
+
+  .profile__header-greeting {
+    /* width: 100%; */
+    height: 68px;
+    margin: 16px 16px 0 16px;
+  }
+
+  .profile__header-greeting-text {
+    width: 100%;
+    height: 68px;
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 34px;
+    letter-spacing: 0px;
+  }
+
+  .profile__header-greeting-by-keyword_container {
+    width: 288px;
+    height: 48px;
+    margin: 50px 17px 32px 0;
+  }
+  .profile__news-card-container {
+    width: 320px;
+  }
+}
